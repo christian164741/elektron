@@ -1,0 +1,40 @@
+
+\cleardoublepage
+\appendix
+% --- Start Anhang (A, B, C, ...) ---
+\setcounter{chapter}{0} % 1 -> A
+\renewcommand{\thechapter}{\Alph{chapter}}
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+\renewcommand{\thesubsection}{\thesection.\arabic{subsection}}
+\renewcommand{\thesubsubsection}{\thesubsection.\arabic{subsubsection}}
+
+% --- Hyperref: eindeutige Link-Anker (wichtig für korrektes Inhaltsverzeichnis) ---
+\renewcommand{\theHchapter}{app.\Alph{chapter}}
+\renewcommand{\theHsection}{\theHchapter.\arabic{section}}
+\renewcommand{\theHsubsection}{\theHsection.\arabic{subsection}}
+\renewcommand{\theHsubsubsection}{\theHsubsection.\arabic{subsubsection}}
+
+\chapter{Mathematische Hintergründe und Herleitungen}
+\label{anhangA}
+
+In diesem Anhang werden die im Haupttext angesprochenen physikalischen Konzepte
+formal und mathematisch vertieft. Ziel ist es, die didaktische Lesbarkeit der
+Kapitel nicht zu beeinträchtigen und zugleich interessierten Lesern die
+vollständigen Herleitungen zugänglich zu machen. 
+
+Die Abschnitte sind thematisch nach den zentralen Eigenschaften des Photons
+gegliedert, darunter Energie-Impuls-Relation, Massehypothese, Helizität und
+Polarisation.\index{Photon!Eigenschaften} Auf diese Weise bildet der Anhang eine Brücke zwischen den
+intuitiven Erklärungen im Haupttext und der mathematischen Strenge der
+Quantenfeldtheorie.
+
+%\section{Kapitel I}
+\phantomsection
+\section{Schrödingergleichung für das Wasserstoffatom}\index{Energie-Impuls-Relation!Photon}
+
+
+In 
+\section{Dirac-Gleichung und Lösungen}
+q
+\section{QED-Grundlagen (Propagatoren, Renormierung)}
+a
