@@ -1,0 +1,452 @@
+\subsection{Bogenlänge: Wie lang ist eine Kurve wirklich?}
+
+% =====================================================
+% 4.1 Warum der Ortsvektor noch keine Länge ist
+% =====================================================
+
+\subsubsection*{Warum der Ortsvektor noch keine Länge ist}
+\phantomsection
+Bisher haben wir Kurven durch einen Ortsvektor
+\[
+\vec r(t)
+\]
+beschrieben.
+Er gibt für jeden Parameterwert \(t\) die Lage eines Punktes in der Ebene oder im Raum an.
+
+Damit ist jedoch eine wichtige Frage noch nicht beantwortet:
+\emph{Wie lang ist die Kurve, die dieser Punkt tatsächlich durchläuft?}
+
+Gerade an dieser Stelle entsteht leicht ein Missverständnis.
+Der Ortsvektor beschreibt nur die momentane Position eines Punktes.
+Er ist also ein Pfeil vom Ursprung zu einem Punkt der Kurve.
+Dieser Pfeil ist aber \emph{nicht} die Länge des zurückgelegten Weges.
+
+\medskip
+
+Man muss daher klar unterscheiden:
+
+\begin{itemize}
+	\item Der \textbf{Ortsvektor} \(\vec r(t)\) beschreibt die Lage eines Punktes.
+	\item Die \textbf{Weglänge} beschreibt, wie weit sich der Punkt entlang der Kurve tatsächlich bewegt hat.
+\end{itemize}
+
+\medskip
+
+Diese Unterscheidung ist grundlegend.
+Ein Punkt kann weit vom Ursprung entfernt sein, obwohl er nur einen kurzen Weg zurückgelegt hat.
+Umgekehrt kann er nach einer langen Bewegung wieder in der Nähe des Ursprungs liegen.
+
+Die Weglänge steckt also nicht im Ortsvektor selbst, sondern in der \emph{Bewegung entlang der Kurve}.
+Und genau hier kommt die Ableitung ins Spiel.
+
+\begin{DidacticBox}[Typisches Missverständnis]
+	\small
+	Der Betrag des Ortsvektors \( |\vec r(t)| \) misst den Abstand eines Punktes vom Ursprung,
+	nicht die Länge der bereits durchlaufenen Kurve.
+	Diese beiden Größen dürfen nicht verwechselt werden.
+\end{DidacticBox}
+
+% =====================================================
+% 4.2 Das kleine Wegstück \(ds\)
+% =====================================================
+
+\subsubsection{Das kleine Wegstück \(ds\)}
+\phantomsection
+Um die Länge einer Kurve zu verstehen, betrachten wir ein sehr kleines Stück der Bewegung.
+
+Ein Punkt bewege sich längs einer Kurve mit Ortsvektor
+\[
+\vec r(t).
+\]
+Ändert sich der Parameter von \(t\) auf \(t+dt\), so ändert sich auch der Ortsvektor um
+\[
+d\vec r.
+\]
+
+Dieses kleine Stück \(d\vec r\) ist ein Vektor.
+Für die Länge der Kurve interessiert uns aber nicht seine Richtung, sondern nur seine Größe.
+Diese Länge bezeichnet man mit
+\[
+ds.
+\]
+
+Es gilt also:
+\[
+ds = |d\vec r|.
+\]
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.1]
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-1,0) grid (6,6);
+		\draw[->,black] (-0.2,0) -- (5.5,0) node[right] {$x$};
+		\draw[->,black] (0,-0.2) -- (0,4.8) node[above] {$y$};
+		
+		\draw[thick,blue!70!black,domain=0.6:4.6,smooth,variable=\x] 
+		plot ({\x},{0.18*(\x-1.0)^2 + 0.7});
+		
+		\coordinate (O) at (0,0);
+		\coordinate (P) at (2.0,{0.18*(2.0-1.0)^2 + 0.7});
+		\coordinate (Q) at (3.8,{0.18*(3.8-1.0)^2 + 0.7});
+		
+		\fill[black] (P) circle (1.5pt);
+		\fill[black] (Q) circle (1.5pt);
+		
+		\node[above left] at (P) {$\vec r(t)$};
+		\node[above right] at (Q) {$\vec r(t+dt)$};
+		
+		\draw[->,thick,red!75!black] (O) -- (P);
+		\draw[->,thick,red!75!black] (O) -- (Q);
+		
+		\draw[->,very thick,orange!80!black] (P) -- (Q)
+		node[midway,below] {$d\vec r$};
+		
+		\draw[very thick,blue!70!black]
+		plot[domain=2.0:3.8,smooth,variable=\x]
+		({\x},{0.18*(\x-1.0)^2 + 0.7});
+		
+		\node[blue!70!black] at (3.4,1.55) {$ds$};
+	\end{tikzpicture}
+\end{center}
+
+Anschaulich bedeutet das:
+\(d\vec r\) ist die kleine Verschiebung als Vektor,
+\(ds\) ist die zugehörige reine Länge dieses kleinen Kurvenstücks.
+
+% =====================================================
+% 4.3 Herleitung der Formel \(ds = |\vec r'(t)|\,dt\)
+% =====================================================
+
+\subsubsection*{Herleitung der Formel \(ds = |\vec r'(t)|\,dt\)}
+\phantomsection
+Da
+\[
+\vec r'(t)=\frac{d\vec r}{dt},
+\]
+folgt durch Multiplikation mit \(dt\):
+\[
+d\vec r = \vec r'(t)\,dt.
+\]
+
+Nun betrachten wir die Länge dieses kleinen Verschiebungsvektors:
+\[
+ds = |d\vec r| = |\vec r'(t)\,dt|.
+\]
+
+Da \(dt\) ein kleines reelles Skalarelement ist, erhält man
+\[
+ds = |\vec r'(t)|\,dt.
+\]
+
+\medskip
+
+Damit erhalten wir die zentrale Formel:
+\[
+\boxed{ds = |\vec r'(t)|\,dt}
+\]
+
+Sie sagt:
+Das kleine Stück der Weglänge ist gleich
+\emph{Betrag der Ableitung} mal \emph{kleines Parameterintervall}.
+
+Wird \(t\) als Zeit interpretiert, dann ist
+\[
+\vec v(t)=\vec r'(t)
+\]
+der Geschwindigkeitsvektor und
+\[
+|\vec r'(t)| = |\vec v(t)|
+\]
+die momentane Schnelligkeit.
+
+Dann lautet die Aussage physikalisch:
+
+\[
+\text{Wegstück} = \text{Schnelligkeit} \cdot \text{Zeitstück}.
+\]
+
+% =====================================================
+% 4.4 Die Bogenlänge als Integral
+% =====================================================
+
+\subsubsection*{Die Bogenlänge als Integral}
+\phantomsection
+Aus vielen kleinen Wegstücken entsteht die gesamte Länge der Kurve.
+
+Addiert man alle infinitesimal kleinen Stücke \(ds\) von \(t=a\) bis \(t=b\), so erhält man die Bogenlänge:
+\[
+L = \int_a^b ds.
+\]
+
+Setzt man
+\[
+ds = |\vec r'(t)|\,dt
+\]
+ein, so folgt die allgemeine Formel:
+\[
+\boxed{L=\int_a^b |\vec r'(t)|\,dt}
+\]
+
+\medskip
+
+Das ist der entscheidende Zusammenhang:
+
+\begin{center}
+	Nicht der Ortsvektor liefert die Strecke, sondern das Integral des Betrags seiner Ableitung.
+\end{center}
+
+Oder physikalisch gesprochen:
+
+\begin{center}
+	Die zurückgelegte Strecke erhält man durch Integration der momentanen Schnelligkeit.
+\end{center}
+
+% =====================================================
+% 4.5 Beispiel 1: Die Gerade
+% =====================================================
+
+\subsubsection*{Beispiel 1: Die Gerade}
+\phantomsection
+Wir betrachten die Gerade
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1+t\\
+	2+3t
+\end{pmatrix}
+=
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix}
++t
+\begin{pmatrix}
+	1\\
+	3
+\end{pmatrix},
+\qquad 0\le t\le 2.
+\]
+
+Dann ist
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	1\\
+	3
+\end{pmatrix}.
+\]
+
+Der Betrag der Ableitung ist konstant:
+\[
+|\vec r'(t)|=\sqrt{1^2+3^2}=\sqrt{10}.
+\]
+
+Damit ergibt sich für die Bogenlänge:
+\[
+L=\int_a^b |\vec r'(t)|\,dt
+\]
+\[
+L=\int_0^2 \sqrt{10}\,dt
+=\left[\sqrt{10}\,t\right]_0^2
+=\sqrt{10}\cdot 2-\sqrt{10}\cdot 0
+=2\sqrt{10}.
+\]
+
+\medskip
+
+Hier zeigt sich ein einfacher Spezialfall:
+Bei einer gleichförmigen Parametrisierung einer Geraden ist die Schnelligkeit konstant.
+Deshalb ist die Länge gleich
+\[
+\text{Schnelligkeit} \times \text{Parameterintervall}.
+\]
+
+\begin{center}
+	\begin{tikzpicture}[scale=1.1]
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-1,-1) grid (4,9);
+		\draw[->] (0,0) -- (4.2,0) node[right] {$x$};
+		\draw[->] (0,0) -- (0,9) node[above] {$y$};
+		
+		\draw[thick, blue] (1,2) -- (3,8);
+		
+		\fill (1,2) circle (2pt) node[left] {$A(1,2)$};
+		\fill (3,8) circle (2pt) node[right] {$B(3,8)$};
+		
+		\fill (1.5,3.5) circle (2pt) node[left] {$\vec r(0{,}5)$};
+		
+		\draw[very thick, red] (1.42,3.26) -- (1.58,3.74);
+		\node[right, red] at (1.58,3.74) {$ds$};
+		
+		\draw[->, thick, red] (1.5,3.5) -- (1.9,4.7);
+		\node[right] at (1.9,4.7) {$\vec r'(t)=\begin{pmatrix}1\\3\end{pmatrix}$};
+		
+		\node[below left] at (1,2) {$t=0$};
+		\node[below right] at (3,8) {$t=2$};
+	\end{tikzpicture}
+\end{center}
+
+Die Gerade beginnt bei \(t=0\) im Punkt \(A=(1,2)\) und endet bei \(t=2\) im Punkt \(B=(3,8)\).
+Da der Tangentialvektor konstant ist, haben alle kleinen Wegstücke dieselbe Richtung.
+Die Kurvenlänge ist deshalb einfach die Länge des geraden Verbindungsstücks:
+\[
+L=2\sqrt{10}.
+\]
+
+% =====================================================
+% 4.6 Beispiel 2: Der Halbkreis
+% =====================================================
+
+\subsubsection*{Beispiel 2: Der Halbkreis}
+\phantomsection
+Wir betrachten den Halbkreis mit Radius \(R\):
+\[
+\vec r(t)=
+\begin{pmatrix}
+	R\cos t\\
+	R\sin t
+\end{pmatrix},
+\qquad 0\le t\le \pi.
+\]
+
+Dann ist
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	-R\sin t\\
+	R\cos t
+\end{pmatrix}.
+\]
+
+Der Betrag ist
+\[
+|\vec r'(t)|
+=
+\sqrt{(-R\sin t)^2+(R\cos t)^2}
+=
+\sqrt{R^2(\sin^2 t+\cos^2 t)}
+=
+R.
+\]
+
+Also folgt:
+\[
+L=\int_0^\pi R\,dt
+=\left[R\,t\right]_0^\pi
+=R\pi.
+\]
+
+\medskip
+
+Das ist genau die bekannte Länge eines Halbkreises.
+
+Hier sieht man besonders schön:
+Der Ortsvektor beschreibt die Lage auf dem Kreis,
+aber die Kurvenlänge entsteht erst durch die Integration des konstanten Betrags der Geschwindigkeit.
+
+% =====================================================
+% 4.7 Beispiel 3: Die Wurfparabel
+% =====================================================
+
+\subsubsection*{Beispiel 3: Die Wurfparabel}
+\phantomsection
+Nun betrachten wir eine Bahnkurve der Form
+\[
+\vec r(t)=
+\begin{pmatrix}
+	v_0 t\\
+	h_0-\frac12 gt^2
+\end{pmatrix}.
+\]
+
+Dann ist
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	v_0\\
+	-gt
+\end{pmatrix}.
+\]
+
+Der Betrag der Geschwindigkeit lautet:
+\[
+|\vec r'(t)|
+=
+\sqrt{v_0^2+g^2t^2}.
+\]
+
+Damit ergibt sich die Bogenlänge zwischen \(t=0\) und \(t=T\) zu
+\[
+L=\int_0^T \sqrt{v_0^2+g^2t^2}\,dt.
+\]
+
+\medskip
+
+Dieses Integral ist deutlich anspruchsvoller als in den ersten beiden Beispielen.
+Gerade daran erkennt man:
+Die Länge einer gekrümmten Bahn ist im Allgemeinen nicht unmittelbar sichtbar,
+sondern muss aus der Bewegung heraus berechnet werden.
+
+Für dieses Kapitel genügt es völlig, die Formel aufzustellen.
+Die genaue Auswertung eines solchen Integrals kann später erfolgen.
+
+% =====================================================
+% 4.8 Was man aus der Formel physikalisch ablesen kann
+% =====================================================
+
+\subsubsection*{Was man aus der Formel physikalisch ablesen kann}
+\phantomsection
+Die Formel
+\[
+L=\int_a^b |\vec r'(t)|\,dt
+\]
+ist nicht nur mathematisch wichtig, sondern auch physikalisch aufschlussreich.
+
+Sie zeigt:
+
+\begin{itemize}
+	\item Für die Weglänge ist nicht die Richtung der Geschwindigkeit entscheidend, sondern ihr Betrag.
+	\item Auch bei ständig wechselnder Bewegungsrichtung lassen sich alle kleinen Wegstücke zur Gesamtstrecke addieren.
+	\item Die Bogenlänge ist genau das Integral der momentanen Schnelligkeit.
+\end{itemize}
+
+\medskip
+
+Damit verbindet sich die Geometrie einer Kurve unmittelbar mit der Kinematik einer Bewegung.
+
+% =====================================================
+% 4.9 Fazit
+% =====================================================
+
+\subsubsection*{Fazit}
+\phantomsection
+Der Ortsvektor
+\[
+\vec r(t)
+\]
+beschreibt die Position eines Punktes,
+aber noch nicht die Länge des tatsächlich zurückgelegten Weges.
+
+Erst die Ableitung
+\[
+\vec r'(t)
+\]
+beschreibt die momentane Bewegung,
+und erst ihr Betrag
+\[
+|\vec r'(t)|
+\]
+liefert die momentane Schnelligkeit entlang der Kurve.
+
+Daraus folgt für die Bogenlänge:
+\[
+\boxed{L=\int_a^b |\vec r'(t)|\,dt}
+\]
+
+\medskip
+
+Der entscheidende Gedanke dieses Kapitels lautet:
+
+\begin{center}
+	Die Länge einer Kurve entsteht nicht aus dem Ortsvektor selbst, sondern aus der Summe aller kleinen Wegstücke entlang der Bewegung.
+\end{center}
+
+Damit ist der Schritt von der bloßen Kurvenbeschreibung zur tatsächlichen Geometrie der Bewegung vollzogen.

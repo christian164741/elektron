@@ -1,0 +1,1067 @@
+\subsection{Ableitungen vektorwertiger Funktionen}
+% =====================================================
+% 3.1 Die erste Ableitung einer vektorwertigen Funktion
+% =====================================================
+
+\subsubsection*{Die erste Ableitung einer vektorwertigen Funktion}
+\phantomsection
+In der Vektoranalysis beschreibt man viele Kurven nicht durch eine Gleichung
+der Form \(y=f(x)\), sondern durch einen \emph{Ortsvektor}, der von einem Parameter
+abhängt. Eine solche Darstellung hat die Form
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)
+\end{pmatrix}
+\qquad \text{oder im Raum} \qquad
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)\\
+	z(t)
+\end{pmatrix}.
+\]
+Dabei ordnet der Parameter \(t\) jedem Wert einen Punkt der Kurve zu.
+
+Um die Ableitung einer solchen Funktion zu definieren, gehen wir genauso vor
+wie im eindimensionalen Fall: Wir betrachten zunächst den Differenzenquotienten.
+Für zwei nahe beieinanderliegende Parameterwerte \(t\) und \(t+h\) ist
+\[
+\vec r(t+h)-\vec r(t)
+\]
+der Verbindungsvektor zwischen den zugehörigen Punkten der Kurve.
+Teilt man diesen Vektor durch \(h\neq 0\), so erhält man den Differenzenquotienten
+\[
+\frac{\vec r(t+h)-\vec r(t)}{h}.
+\]
+
+Existiert der Grenzwert für \(h\to 0\), so heißt er die \emph{Ableitung}
+der vektorwertigen Funktion \(\vec r(t)\):
+\[
+\vec r\,'(t)=\lim_{h\to 0}\frac{\vec r(t+h)-\vec r(t)}{h}.
+\]
+
+Diese Definition ist die direkte Verallgemeinerung der gewöhnlichen Ableitung
+auf vektorwertige Funktionen.
+
+\medskip
+
+Schreiben wir
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)
+\end{pmatrix},
+\]
+so gilt
+\[
+\vec r(t+h)-\vec r(t)=
+\begin{pmatrix}
+	x(t+h)\\
+	y(t+h)
+\end{pmatrix}
+-
+\begin{pmatrix}
+	x(t)\\
+	y(t)
+\end{pmatrix}
+=
+\begin{pmatrix}
+	x(t+h)-x(t)\\
+	y(t+h)-y(t)
+\end{pmatrix}.
+\]
+Daraus folgt
+\[
+\frac{\vec r(t+h)-\vec r(t)}{h}
+=
+\begin{pmatrix}
+	\dfrac{x(t+h)-x(t)}{h}\\[1em]
+	\dfrac{y(t+h)-y(t)}{h}
+\end{pmatrix}.
+\]
+Geht man nun mit \(h\to 0\), so erhält man -- sofern die Grenzwerte existieren --
+\[
+\vec r\,'(t)=
+\begin{pmatrix}
+	x'(t)\\
+	y'(t)
+\end{pmatrix}.
+\]
+
+Im dreidimensionalen Fall ergibt sich entsprechend
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)\\
+	z(t)
+\end{pmatrix}
+\qquad \Longrightarrow \qquad
+\vec r\,'(t)=
+\begin{pmatrix}
+	x'(t)\\
+	y'(t)\\
+	z'(t)
+\end{pmatrix}.
+\]
+
+Damit ist gezeigt:
+Eine vektorwertige Funktion wird \emph{komponentenweise} abgeleitet.
+Die Ableitung ist also wieder ein Vektor.
+
+
+
+
+\subsubsection*{Die erste Ableitung als Tangentialvektor}
+\phantomsection
+Bei einer reellen Funktion \(g(x)\) beschreibt die Ableitung \(g'(x)\) die
+Steigung der Kurve im Punkt \(P\).
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1, yscale=1]
+		
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+		
+		% x-Achse
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+		
+		% Zahlen auf x-Achse
+		\foreach \x in {-3,...,-1}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		\foreach \x in {1,...,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		
+		% y-Achse 
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Zahlen auf y-Achse
+		\foreach \y in {-1}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+		\foreach \y in {1,...,3}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Tangente
+		\draw[thick,color=red] plot[samples=200, domain=0.3:4] (\x,{4.1-\x});
+		
+		% Kurve
+		\draw[thick,color=blue] plot[samples=200, domain=-4:4] (\x,{-0.23*\x*\x+3});
+		
+		% Punkt P
+		\filldraw[color=blue] (2,2.08) circle (1.2pt);
+		\draw[color=blue] (2.3,2.35) node {$P$};
+		
+		% Beschriftung
+		\draw[color=blue] (-2.2,2.4) node {$g(x)$};
+	\end{tikzpicture}
+\end{center}
+
+Bei einer parametrierten Kurve
+\[
+\vec r(u)
+\]
+ist die Situation ähnlich. Die Ableitung ist nun jedoch kein Skalar, sondern ein
+Vektor. Dieser Vektor beschreibt die momentane Richtung der Kurve im betrachteten
+Punkt.
+
+Die Ableitung einer vektorwertigen Funktion ist definiert durch
+\[
+\frac{\mathrm{d}\vec r}{\mathrm{d}u}
+=
+\vec r'(u)
+=
+\lim_{\varepsilon\to 0}
+\frac{\vec r(u+\varepsilon)-\vec r(u)}{\varepsilon}.
+\]
+
+Der Ausdruck
+\[
+\frac{\vec r(u+\varepsilon)-\vec r(u)}{\varepsilon}
+\]
+ist der Differenzenquotient. Er beschreibt die mittlere Änderung der Kurve zwischen
+zwei benachbarten Punkten. Lässt man \(\varepsilon\) gegen Null gehen, so erhält man
+einen Vektor, der in Tangentialrichtung der Kurve zeigt.
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1, yscale=1]
+		
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+		
+		% x-Achse
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+		
+		% Zahlen auf x-Achse
+		\foreach \x in {-3,...,-1}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		\foreach \x in {1,...,3}
+		\draw[shift={(\x,0)},color=black] (0pt,2pt) -- (0pt,-2pt) node[below] {\footnotesize $\x$};
+		
+		% y-Achse 
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Zahlen auf y-Achse
+		\foreach \y in {-1}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+		\foreach \y in {1,...,3}
+		\draw[shift={(0,\y)},color=black] (2pt,0pt) -- (-2pt,0pt) node[left] {\footnotesize $\y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Kurve
+		\draw[thick,color=blue] plot[samples=200, domain=-4:4] (\x,{-0.13*\x*\x+3});
+		
+		% Punkte
+		\filldraw[color=blue] (-2.8,1.98) circle (1.2pt);
+		\filldraw[color=blue] (1,2.87) circle (1.2pt);
+		
+		% Ortsvektoren
+		\draw[->,color=red] (0,0) -- (-2.8,1.98);
+		\draw[->,color=red] (0,0) -- (1,2.87);
+		
+		% Differenzvektor / Tangentialrichtung
+		\draw[->,color=red] (-2.8,1.98) -- (1,2.87);
+		
+		% Beschriftungen
+		\draw[color=red] (-2.3,1.0) node {$\vec r(u)$};
+		\draw[color=red] (1.6,1.0) node {$\vec r(u+\varepsilon)$};
+		\draw[color=red] (-0.8,2.55) node {$\vec r(u+\varepsilon)-\vec r(u)$};
+		\draw[color=blue] (-3.15,2.35) node {$P$};
+	\end{tikzpicture}
+\end{center}
+
+Der Vektor \(\vec r'(u)\) heißt \emph{Tangentialvektor}. Seine Richtung gibt die
+Tangente an die Kurve im Punkt \(P\) an.
+
+Für die Tangentialrichtung ist nur die Richtung von \(\vec r'(u)\) wesentlich.
+Sein Betrag hängt dagegen von der Parametrisierung ab. Man definiert deshalb
+\[
+h(u)=|\vec r'(u)|
+\]
+als den Betrag des Tangentialvektors. Durch Normierung erhält man den
+\emph{Tangenteneinheitsvektor}
+\[
+\vec e(u)=\frac{1}{h(u)}\,\vec r'(u).
+\]
+
+\medskip
+
+\noindent
+\textbf{Beispiel: Halbkreis}
+
+Wir betrachten den oberen Halbkreis mit Radius \(R\) um den Ursprung.
+Er verläuft von \((R,0)\) nach \((-R,0)\).
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1, yscale=1]
+		
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+		
+		% x-Achse
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+		
+		% y-Achse 
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[->,draw=blue,thick] (3,0) arc (0:180:3);
+		
+		% Winkel
+		\draw[->,draw=red] (1,0) arc (0:47:1);
+		\draw [red] (0.65,0.35) node {\footnotesize $u$};
+		
+		% Ortsvektor
+		\draw[->,color=blue] (0,0) -- (2,2.2);
+		\draw[color=blue] (1.35,1.45) node[below left] {$\vec r(u)$};
+		
+		% Beschriftung
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+	\end{tikzpicture}
+\end{center}
+
+Eine natürliche Parametrisierung des Halbkreises ist
+\[
+\vec r(u)=
+\begin{pmatrix}
+	R\cos u\\
+	R\sin u
+\end{pmatrix},
+\qquad u\in[0,\pi].
+\]
+
+Die Ableitung lautet
+\[
+\vec r'(u)=
+\begin{pmatrix}
+	-R\sin u\\
+	R\cos u
+\end{pmatrix}.
+\]
+
+Für \(u=0\) erhält man
+\[
+\vec r'(0)=
+\begin{pmatrix}
+	0\\
+	R
+\end{pmatrix}.
+\]
+Der Tangentialvektor zeigt dort also nach oben.
+
+Für \(u=\frac{\pi}{2}\) gilt
+\[
+\vec r'\!\left(\frac{\pi}{2}\right)=
+\begin{pmatrix}
+	-R\\
+	0
+\end{pmatrix}.
+\]
+Am höchsten Punkt des Halbkreises zeigt der Tangentialvektor also nach links.
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1, yscale=1]
+		
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+		
+		% x-Achse
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+		
+		% y-Achse 
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[->,draw=blue,thick] (3,0) arc (0:180:3);
+		
+		% Winkel
+		\draw[->,draw=red] (1,0) arc (0:47:1);
+		\draw [red] (0.65,0.35) node {\footnotesize $u$};
+		
+		% Ortsvektor
+		\draw[->,color=blue] (0,0) -- (2,2.2);
+		\draw[color=blue] (1.35,1.45) node[below left] {$\vec r(u)$};
+		
+		% Tangentenvektoren
+		\draw[->,color=red,thick] (3,0) -- (3,3);
+		\draw[color=red] (3.55,1.5) node {\footnotesize $\vec r'(0)$};
+		
+		\draw[->,color=red,thick] (0,3) -- (-3,3);
+		\draw[color=red] (-1.5,3.35) node {\footnotesize $\vec r'\!\left(\frac{\pi}{2}\right)$};
+		
+		% Beschriftung
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+	\end{tikzpicture}
+\end{center}
+
+Der Betrag des Tangentialvektors ist
+\begin{align*}
+	h(u)=|\vec r'(u)|
+	&=\sqrt{(-R\sin u)^2+(R\cos u)^2}\\
+	&=\sqrt{R^2\sin^2 u+R^2\cos^2 u}\\
+	&=\sqrt{R^2(\sin^2 u+\cos^2 u)}\\
+	&=R.
+\end{align*}
+
+Der Tangenteneinheitsvektor lautet daher
+\[
+\vec e(u)
+=
+\frac{1}{h(u)}\,\vec r'(u)
+=
+\frac{1}{R}
+\begin{pmatrix}
+	-R\sin u\\
+	R\cos u
+\end{pmatrix}
+=
+\begin{pmatrix}
+	-\sin u\\
+	\cos u
+\end{pmatrix}.
+\]
+
+An diesem Beispiel erkennt man deutlich:
+Die Ableitung einer parametrierten Kurve ist ein Vektor, der in Tangentialrichtung
+zeigt. Ihr Betrag hängt von der Parametrisierung ab, ihre Richtung beschreibt jedoch
+die lokale Richtung der Kurve.
+
+
+
+\subsubsection*{Die erste Ableitung als Geschwindigkeit}
+\phantomsection
+Bisher haben wir die Ableitung einer parametrierten Kurve geometrisch gedeutet:
+Der Vektor \(\vec r'(u)\) zeigt in Tangentialrichtung der Kurve.
+
+Eine zweite wichtige Deutung ergibt sich, wenn der Parameter die Zeit ist.
+Wir schreiben dann
+\[
+\vec r(t)
+\]
+für den Ortsvektor eines bewegten Punktes zum Zeitpunkt \(t\).
+
+Für zwei nahe Zeitpunkte \(t\) und \(t+\Delta t\) ist
+\[
+\vec r(t+\Delta t)-\vec r(t)
+\]
+der Ortsunterschied zwischen den beiden Zeitpunkten.
+Der Quotient
+\[
+\frac{\vec r(t+\Delta t)-\vec r(t)}{\Delta t}
+\]
+beschreibt die mittlere Geschwindigkeit im Zeitintervall \(\Delta t\).
+
+Lässt man \(\Delta t\) gegen Null gehen, so erhält man die momentane Geschwindigkeit:
+\[
+\vec v(t)=\lim_{\Delta t\to 0}\frac{\vec r(t+\Delta t)-\vec r(t)}{\Delta t}.
+\]
+Da dieser Ausdruck genau der Ableitung von \(\vec r(t)\) entspricht, gilt
+\[
+\vec v(t)=\vec r'(t).
+\]
+
+Der Geschwindigkeitsvektor ist also nichts anderes als die Ableitung des Ortsvektors
+nach der Zeit. Er zeigt in die momentane Bewegungsrichtung und liegt tangential an
+der Bahnkurve.
+
+Sein Betrag
+\[
+|\vec v(t)|
+\]
+heißt \emph{momentane Geschwindigkeit} oder \emph{Schnelligkeit}.
+Während der Vektor \(\vec v(t)\) Richtung und Betrag besitzt, beschreibt sein Betrag
+nur, wie schnell sich der Punkt bewegt.
+
+\medskip
+
+\noindent
+\textbf{Beispiel: Gleichförmige Bewegung auf einem Halbkreis}
+
+Wir betrachten wieder den oberen Halbkreis mit Radius \(R\) und wählen diesmal
+den Parameter als Zeit \(t\). Allgemeiner schreiben wir die Bahn in der Form
+\[
+\vec r(t)=
+\begin{pmatrix}
+	R\cos(\omega t)\\
+	R\sin(\omega t)
+\end{pmatrix}.
+\]
+Dabei ist \(\omega\) die Winkelgeschwindigkeit, also der pro Zeiteinheit
+durchlaufene Winkel.
+
+Dann ist der Geschwindigkeitsvektor
+\[
+\vec v(t)=\vec r'(t)=
+\begin{pmatrix}
+	-R\omega\sin(\omega t)\\
+	R\omega\cos(\omega t)
+\end{pmatrix}.
+\]
+
+Für \(t=0\) gilt
+\[
+\vec v(0)=
+\begin{pmatrix}
+	0\\
+	R\omega
+\end{pmatrix}.
+\]
+Die Bewegung beginnt also im Punkt \((R,0)\) zunächst nach oben.
+
+Für \(t=\frac{\pi}{2\omega}\) erhält man
+\[
+\vec v\!\left(\frac{\pi}{2\omega}\right)=
+\begin{pmatrix}
+	-R\omega\\
+	0
+\end{pmatrix}.
+\]
+Am höchsten Punkt des Halbkreises zeigt die Geschwindigkeit nach links.
+
+Der Betrag der Geschwindigkeit ist
+\begin{align*}
+	|\vec v(t)|
+	&=
+	\sqrt{(-R\omega\sin(\omega t))^2+(R\omega\cos(\omega t))^2}\\
+	&=
+	\sqrt{R^2\omega^2\sin^2(\omega t)+R^2\omega^2\cos^2(\omega t)}\\
+	&=
+	\sqrt{R^2\omega^2\bigl(\sin^2(\omega t)+\cos^2(\omega t)\bigr)}\\
+	&=R\omega.
+\end{align*}
+
+Die Schnelligkeit ist also konstant. Der Punkt bewegt sich mit gleichbleibender
+Geschwindigkeit auf dem Halbkreis.
+
+\medskip
+
+An diesem Beispiel erkennt man deutlich:
+Die Ableitung einer parametrierten Kurve kann sowohl geometrisch als Tangentialvektor
+als auch physikalisch als Geschwindigkeitsvektor gedeutet werden.
+Beide Sichtweisen beruhen auf demselben mathematischen Begriff.
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1,yscale=1]
+		
+		% Gitternetz
+		\draw[xstep=1cm,ystep=1cm,very thin,color=lightgray] (-4,4) grid (4,-2);
+		
+		% Achsen
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$};
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[thick,blue,->] (3,0) arc (0:180:3);
+		
+		% Punkt auf dem Halbkreis
+		\coordinate (P) at ({3*cos(50)},{3*sin(50)});
+		
+		% Punkt markieren
+		\filldraw[blue] (P) circle (1.2pt);
+		\draw[blue] ($(P)+(0.35,0.2)$) node {$P=\vec r(t)$};
+		
+		% Ortsvektor
+		\draw[->,thick,blue] (0,0) -- (P);
+		\draw[blue] (1.25,1.6) node {$\vec r(t)$};
+		
+		% Geschwindigkeitsvektor (tangential)
+		\draw[->,thick,red] (P) -- ++({-1.4*sin(50)},{1.4*cos(50)});
+		\draw[red] ($(P)+(-1.3,1.0)$) node {$\vec v(t)=\vec r'(t)$};
+		
+		% Winkel
+		\draw[->,red] (1,0) arc (0:50:1);
+		\draw[red] (0.7,0.35) node {\footnotesize $\omega t$};
+		
+		% Beschriftung Radius
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+		
+	\end{tikzpicture}
+\end{center}
+
+\medskip
+
+Physikalisch ist dieses Ergebnis sehr aufschlussreich.
+Da
+\[
+|\vec v(t)|=R\omega
+\]
+gilt, wächst die Bahngeschwindigkeit mit dem Radius des Halbkreises.
+
+Das bedeutet:
+Bewegen sich zwei Punkte mit derselben Winkelgeschwindigkeit auf den Halbkreisbahnen
+unterschiedlicher Radien, so hat der Punkt auf der größeren Bahn die größere
+lineare Geschwindigkeit.
+Denn bei gleichem Winkelzuwachs wird auf dem größeren Halbkreis in derselben Zeit
+eine längere Strecke zurückgelegt.
+
+Dies ist der bekannte Zusammenhang
+\[
+v=R\omega.
+\]
+
+\begin{DidacticBox}[Kreisbewegung: innen langsamer, außen schneller]
+	\small
+	Bei gleicher Winkelgeschwindigkeit ist die lineare Geschwindigkeit
+	auf einer größeren Kreisbahn größer.
+	Denn dieselbe Winkeländerung entspricht dort einer längeren Bogenlänge.
+\end{DidacticBox}
+
+
+\subsubsection*{Die zweite Ableitung einer vektorwertigen Funktion}
+\phantomsection
+Ist eine vektorwertige Funktion
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)
+\end{pmatrix}
+\]
+differenzierbar, so kann man ihre Ableitung erneut ableiten.
+Man erhält dann die \emph{zweite Ableitung} der Funktion:
+\[
+\vec r''(t)=\frac{\mathrm d}{\mathrm dt}\vec r'(t).
+\]
+
+Die zweite Ableitung ist also nichts anderes als die Ableitung der ersten Ableitung.
+
+\medskip
+
+Da für die erste Ableitung gilt
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	x'(t)\\
+	y'(t)
+\end{pmatrix},
+\]
+folgt durch nochmaliges Ableiten unmittelbar
+\[
+\vec r''(t)=
+\begin{pmatrix}
+	x''(t)\\
+	y''(t)
+\end{pmatrix}.
+\]
+
+Im dreidimensionalen Fall erhält man entsprechend
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)\\
+	z(t)
+\end{pmatrix}
+\qquad \Longrightarrow \qquad
+\vec r''(t)=
+\begin{pmatrix}
+	x''(t)\\
+	y''(t)\\
+	z''(t)
+\end{pmatrix}.
+\]
+
+Auch die zweite Ableitung wird also \emph{komponentenweise} gebildet.
+
+\medskip
+
+Man kann die zweite Ableitung auch wieder über einen Grenzwert definieren.
+Ausgehend von der ersten Ableitung \(\vec r'(t)\) gilt
+\[
+\vec r''(t)
+=
+\lim_{h\to 0}
+\frac{\vec r'(t+h)-\vec r'(t)}{h},
+\]
+sofern dieser Grenzwert existiert.
+
+Diese Darstellung zeigt bereits, worum es bei der zweiten Ableitung geht:
+Sie beschreibt die Änderung des Tangentialvektors \(\vec r'(t)\).
+
+\medskip
+
+\noindent
+\textbf{Beispiel: Halbkreis}
+
+Wir betrachten wieder die Parametrisierung
+\[
+\vec r(t)=
+\begin{pmatrix}
+	R\cos t\\
+	R\sin t
+\end{pmatrix}.
+\]
+
+Dann ist die erste Ableitung
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	-R\sin t\\
+	R\cos t
+\end{pmatrix}
+\]
+und daraus folgt für die zweite Ableitung
+\[
+\vec r''(t)=
+\begin{pmatrix}
+	-R\cos t\\
+	-R\sin t
+\end{pmatrix}.
+\]
+
+Man erkennt:
+Die zweite Ableitung ist wieder ein Vektor.
+
+
+
+\subsubsection*{Die zweite Ableitung als Änderung des Tangentialvektors}
+\phantomsection
+Die zweite Ableitung entsteht dadurch, dass der Tangentialvektor
+\(\vec r'(t)\) selbst von \(t\) abhängt und sich entlang der Kurve verändert.
+Am Halbkreis lässt sich diese geometrische Bedeutung besonders gut erkennen.
+\begin{center}
+	\begin{tikzpicture}[xscale=1,yscale=1]
+		
+		% Gitternetz
+		\draw[xstep=1cm,ystep=1cm,very thin,color=lightgray] (-4,4) grid (4,-2);
+		
+		% Achsen
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$};
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[thick,blue,->] (3,0) arc (0:180:3);
+		
+		% Punkt auf dem Halbkreis, z.B. bei 50 Grad
+		\coordinate (P) at ({3*cos(50)},{3*sin(50)});
+		
+		% Punkt markieren
+		\filldraw[blue] (P) circle (1.2pt);
+		\draw[blue] ($(P)+(0.45,0.25)$) node {$P=\vec r(t)$};
+		
+		% Ortsvektor
+		\draw[->,thick,blue] (0,0) -- (P);
+		\draw[blue] (1.15,1.55) node {$\vec r(t)$};
+		
+		% Tangentialvektor
+		\draw[->,thick,red] (P) -- ++({-1.5*sin(50)},{1.5*cos(50)});
+		\draw[red] ($(P)+(-1.1,1.0)$) node {$\vec r'(t)$};
+		
+		% Zweite Ableitung (nach innen)
+		\draw[->,thick,violet] (P) -- ($(P)!0.55!(0,0)$);
+		\draw[violet] ($(P)+(-0.7,-0.4)$) node {$\vec r''(t)$};
+		
+		% Winkel t
+		\draw[->,red] (1,0) arc (0:50:1);
+		\draw[red] (0.8,0.35) node {\footnotesize $t$};
+		
+		% Radiusbeschriftung
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+		
+	\end{tikzpicture}
+	
+\end{center}
+
+
+
+Beim Halbkreis steht der Tangentialvektor \(\vec r'(t)\) senkrecht auf dem Ortsvektor \(\vec r(t)\).
+Die zweite Ableitung \(\vec r''(t)\) zeigt dagegen nach innen zum Mittelpunkt.
+Daran erkennt man, dass die zweite Ableitung die Änderung des Tangentialvektors beschreibt
+und beim Halbkreis in Richtung des Mittelpunkts zeigt.
+Um zu prüfen, ob die beiden Vektoren \(\vec r'(t)\) und \(\vec r''(t)\)
+senkrecht aufeinander stehen, betrachtet man ihr Skalarprodukt.
+Zwei Vektoren sind genau dann orthogonal, wenn ihr Skalarprodukt null ist.
+
+Für den Halbkreis gilt
+\[
+\vec r'(t)=
+\begin{pmatrix}
+	-R\sin t\\
+	R\cos t
+\end{pmatrix},
+\qquad
+\vec r''(t)=
+\begin{pmatrix}
+	-R\cos t\\
+	-R\sin t
+\end{pmatrix}.
+\]
+Daraus folgt
+\begin{align*}
+	\vec r'(t)\cdot \vec r''(t)
+	&=
+	(-R\sin t)(-R\cos t)+(R\cos t)(-R\sin t)\\
+	&=
+	R^2\sin t\cos t-R^2\cos t\sin t\\
+	&=0.
+\end{align*}
+Also stehen \(\vec r'(t)\) und \(\vec r''(t)\) senkrecht aufeinander.
+
+Die Änderung des Tangentialvektors lässt sich auch direkt über zwei nahe benachbarte
+Tangentialvektoren sichtbar machen.
+
+Nach Division durch \(h\) und im Grenzübergang \(h\to 0\) erhält man die zweite Ableitung
+\[
+\vec r''(t)=\lim_{h\to 0}\frac{\vec r'(t+h)-\vec r'(t)}{h}.
+\]
+\begin{center}
+	\begin{tikzpicture}[xscale=1,yscale=1]
+		
+		% Gitternetz
+		\draw[xstep=1cm,ystep=1cm,very thin,color=lightgray] (-5,4) grid (5,-3);
+		
+		% Achsen
+		\draw[->] (-5,0) -- (5,0) node[below,xshift=-1em] {$x$};
+		\draw[->] (0,-3) -- (0,4) node[left,yshift=-0.5em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[thick,blue,->] (3,0) arc (0:180:3);
+		
+		% Zwei nahe Punkte auf dem Halbkreis
+		\coordinate (P) at ({3*cos(50)},{3*sin(50)});
+		\coordinate (Q) at ({3*cos(62)},{3*sin(62)});
+		
+		% Punkte markieren
+		\filldraw[blue] (P) circle (1.2pt);
+		\filldraw[blue] (Q) circle (1.2pt);
+		
+		% Punktbeschriftung
+		\draw[blue] ($(P)+(0.6,0.15)$) node {$P=\vec r(t)$};
+		\draw[blue] ($(Q)+(-1,-0.32)$) node {$Q=\vec r(t+h)$};
+		
+		% Ortsvektor zu P
+		\draw[->,thick,blue] (0,0) -- (P);
+		\draw[blue] (1.2,1.55) node {$\vec r(t)$};
+		
+		% Tangentialvektor in P
+		\draw[->,thick,red] (P) -- ++({-1.3*sin(50)},{1.3*cos(50)});
+		\draw[red] ($(P)+(-0.55,0.95)$) node {$\vec r'(t)$};
+		
+		% Tangentialvektor in Q
+		\draw[->,thick,red] (Q) -- ++({-1.3*sin(62)},{1.3*cos(62)});
+		\draw[red] ($(Q)+(-1.2,0.85)$) node {$\vec r'(t+h)$};
+		
+		% Radiale Hilfslinie zu P
+		\draw[dashed,gray] (P) -- (0,0);
+		
+		% Unten: parallel verschobene Tangentialvektoren mit gemeinsamem Anfangspunkt
+		\coordinate (A) at (-1.6,-2.0);
+		\coordinate (B) at ($(A)+({1.3*(-sin(50))},{1.3*(cos(50))})$);
+		\coordinate (C) at ($(A)+({1.3*(-sin(62))},{1.3*(cos(62))})$);
+		
+		% gemeinsame Vektoren
+		\draw[->,thick,red] (A) -- (B);
+		\draw[->,thick,red] (A) -- (C);
+		
+		% Differenzvektor
+		\draw[->,thick,violet] (B) -- (C);
+		
+		% Hilfslinie Richtung Mittelpunkt
+		\draw[dashed,gray] (A) -- ++(1.0,1.2);
+		
+		% Beschriftungen unten
+		\draw[red] ($(A)+(-0.15,0.85)$) node[below] {\footnotesize $\vec r'(t)$};
+		\draw[red] ($(A)+(0.05,-0.2)$) node[left] {\footnotesize $\vec r'(t+h)$};
+		\draw[violet] ($(B)!0.5!(C)+(0.3,0.25)$) node {\footnotesize $\vec r'(t+h)-\vec r'(t)$};
+		\draw[gray] (-2.35,-0.7) node {\footnotesize Richtung zum Mittelpunkt};
+		
+		% Winkel t
+		\draw[->,red] (1,0) arc (0:50:1);
+		\draw[red] (0.82,0.35) node {\footnotesize $t$};
+		
+	\end{tikzpicture}
+	
+	
+\end{center}
+
+Am Halbkreis sind \(\vec r'(t)\) und \(\vec r'(t+h)\) Tangentialvektoren
+an zwei nahe benachbarten Punkten der Kurve.
+Verschiebt man diese Vektoren parallel an einen gemeinsamen Anfangspunkt,
+so beschreibt der Verbindungsvektor ihrer Endpunkte die Änderung
+\[
+\vec r'(t+h)-\vec r'(t).
+\]
+Für kleines \(h\) zeigt dieser Differenzvektor bereits in Richtung des Mittelpunkts.
+
+Beim Halbkreis zeigt die zweite Ableitung daher radial nach innen.
+\begin{DidacticBox}[Die zweite Ableitung]
+	\small
+	Die erste Ableitung einer vektorwertigen Funktion liefert den Tangentialvektor.
+	Die zweite Ableitung beschreibt, wie sich dieser Tangentialvektor ändert.
+\end{DidacticBox}
+
+
+
+
+\subsubsection*{Die zweite Ableitung als Beschleunigung}
+\phantomsection
+Wird der Parameter \(t\) als Zeit interpretiert, so beschreibt
+\[
+\vec r(t)
+\]
+den Ort eines bewegten Punktes zum Zeitpunkt \(t\).
+Dann ist die erste Ableitung
+\[
+\vec v(t)=\vec r'(t)
+\]
+der Geschwindigkeitsvektor.
+
+Die zweite Ableitung ergibt sich durch nochmaliges Ableiten nach der Zeit:
+\[
+\vec a(t)=\vec v'(t)=\vec r''(t).
+\]
+Sie heißt \emph{Beschleunigungsvektor}.
+
+Die zweite Ableitung des Ortsvektors beschreibt also, wie sich die Geschwindigkeit
+mit der Zeit ändert.
+Dabei kann sich sowohl der Betrag der Geschwindigkeit als auch ihre Richtung ändern.
+
+\medskip
+
+Dies ist ein wichtiger Punkt:
+Auch wenn die Schnelligkeit eines Körpers konstant ist, kann dennoch eine
+Beschleunigung vorliegen.
+Das ist immer dann der Fall, wenn sich die Bewegungsrichtung ändert.
+
+\medskip
+
+\noindent
+\textbf{Beispiel: Bewegung auf dem Halbkreis}
+
+Wir betrachten wieder die Bahn
+\[
+\vec r(t)=
+\begin{pmatrix}
+	R\cos(\omega t)\\
+	R\sin(\omega t)
+\end{pmatrix}.
+\]
+
+Dann gilt
+\[
+\vec v(t)=\vec r'(t)=
+\begin{pmatrix}
+	-R\omega\sin(\omega t)\\
+	R\omega\cos(\omega t)
+\end{pmatrix}
+\]
+und
+\[
+\vec a(t)=\vec r''(t)=
+\begin{pmatrix}
+	-R\omega^2\cos(\omega t)\\
+	-R\omega^2\sin(\omega t)
+\end{pmatrix}.
+\]
+
+Für \(t=0\) erhält man
+\[
+\vec a(0)=
+\begin{pmatrix}
+	-R\omega^2\\
+	0
+\end{pmatrix}.
+\]
+Die Beschleunigung zeigt also am rechten Rand des Halbkreises nach links,
+also in Richtung des Mittelpunkts.
+
+Für \(t=\frac{\pi}{2\omega}\) gilt
+\[
+\vec a\!\left(\frac{\pi}{2\omega}\right)=
+\begin{pmatrix}
+	0\\
+	-R\omega^2
+\end{pmatrix}.
+\]
+Am höchsten Punkt zeigt die Beschleunigung nach unten, ebenfalls zum Mittelpunkt hin.
+
+Allgemein gilt sogar
+\[
+\vec a(t)=\vec r''(t)=
+\begin{pmatrix}
+	-R\omega^2\cos(\omega t)\\
+	-R\omega^2\sin(\omega t)
+\end{pmatrix}
+=
+-\omega^2 \vec r(t).
+\]
+
+Die Beschleunigung ist also immer entgegengesetzt zum Ortsvektor gerichtet.
+Sie zeigt daher bei dieser Kreisbewegung stets nach innen zum Mittelpunkt.
+
+\medskip
+
+Der Betrag der Beschleunigung ist
+\begin{align*}
+	|\vec a(t)|
+	&=
+	\sqrt{(-R\omega^2\cos(\omega t))^2+(-R\omega^2\sin(\omega t))^2}\\
+	&=
+	\sqrt{R^2\omega^4\cos^2(\omega t)+R^2\omega^4\sin^2(\omega t)}\\
+	&=
+	\sqrt{R^2\omega^4\bigl(\cos^2(\omega t)+\sin^2(\omega t)\bigr)}\\
+	&=R\omega^2.
+\end{align*}
+
+Die Beschleunigung hat also konstanten Betrag.
+Sie ändert bei dieser Bewegung nicht ihre Größe, sondern nur ihre Richtung.
+
+\medskip
+
+An diesem Beispiel erkennt man:
+Die zweite Ableitung eines Ortsvektors ist der Beschleunigungsvektor.
+Bei der Bewegung auf einer Kreisbahn zeigt diese Beschleunigung nach innen zum Mittelpunkt.
+Sie entsteht nicht durch eine Änderung der Schnelligkeit, sondern durch die ständige
+Änderung der Bewegungsrichtung.
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1,yscale=1]
+		
+		% Gitternetz
+		\draw[xstep=1cm,ystep=1cm,very thin,color=lightgray] (-4,4) grid (4,-2);
+		
+		% Achsen
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$};
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[thick,blue,->] (3,0) arc (0:180:3);
+		
+		% Punkt auf dem Halbkreis
+		\coordinate (P) at ({3*cos(50)},{3*sin(50)});
+		
+		% Punkt markieren
+		\filldraw[blue] (P) circle (1.2pt);
+		\draw[blue] ($(P)+(0.45,0.2)$) node {$P=\vec r(t)$};
+		
+		% Ortsvektor
+		\draw[->,thick,blue] (0,0) -- (P);
+		\draw[blue] (1.15,1.55) node {$\vec r(t)$};
+		
+		% Geschwindigkeitsvektor
+		\draw[->,thick,red] (P) -- ++({-1.5*sin(50)},{1.5*cos(50)});
+		\draw[red] ($(P)+(-1.15,1.0)$) node {$\vec v(t)=\vec r'(t)$};
+		
+		% Beschleunigungsvektor
+		\draw[->,thick,violet] (P) -- ($(P)!0.55!(0,0)$);
+		\draw[violet] ($(P)+(-0.65,-0.4)$) node {$\vec a(t)=\vec r''(t)$};
+		
+		% Hilfslinie zum Mittelpunkt
+		\draw[dashed,gray] (P) -- (0,0);
+		
+		% Winkel
+		\draw[->,red] (1,0) arc (0:50:1);
+		\draw[red] (0.7,0.35) node {\footnotesize $\omega t$};
+		
+		% Radiusbeschriftung
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+		
+	\end{tikzpicture}
+\end{center}
+
+In dieser Darstellung ist \(\vec r(t)\) der Ortsvektor des bewegten Punktes,
+\(\vec v(t)=\vec r'(t)\) der Geschwindigkeitsvektor und
+\(\vec a(t)=\vec r''(t)\) der Beschleunigungsvektor.
+Der Geschwindigkeitsvektor liegt tangential an der Bahn,
+während der Beschleunigungsvektor nach innen zum Mittelpunkt zeigt.
+Daran erkennt man, dass bei der Kreisbewegung die Beschleunigung aus der
+Änderung der Bewegungsrichtung entsteht.
+
+\begin{DidacticBox}[Konstante Schnelligkeit bedeutet nicht beschleunigungsfreie Bewegung]
+	\small
+	Ein Körper kann sich mit konstantem Betrag der Geschwindigkeit bewegen
+	und dennoch beschleunigt sein.
+	Entscheidend ist nicht nur, ob sich die Größe der Geschwindigkeit ändert,
+	sondern auch, ob sich ihre Richtung ändert.
+	Genau das geschieht bei der Kreisbewegung.
+\end{DidacticBox}

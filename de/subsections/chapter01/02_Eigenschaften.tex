@@ -1,0 +1,716 @@
+\subsection{Von der Kurve zur Parametrisierung}
+
+
+
+\subsubsection*{Warum eine Kurve allein noch nicht genügt}
+\phantomsection
+Eine gezeichnete Kurve zeigt zunächst nur eine Form in der Ebene oder im Raum.
+Man erkennt, ob sie gerade oder gekrümmt verläuft,
+ob sie geschlossen ist oder offen bleibt.
+Was man aus der bloßen Gestalt einer Kurve jedoch noch nicht ablesen kann, ist,
+wie ein Punkt diese Kurve tatsächlich durchläuft.
+
+Beginnt die Bewegung links oder rechts?
+Wird die Kurve gleichmäßig oder ungleichmäßig durchlaufen?
+Werden bestimmte Punkte nur einmal erreicht oder mehrfach?
+All diese Informationen gehören nicht mehr zur reinen Form der Kurve,
+sondern zu ihrer Beschreibung als Bewegung.
+
+Genau hier setzt der Begriff der \emph{Parametrisierung} an.
+
+\begin{DidacticBox}[Leitidee]
+	Eine Kurve beschreibt die geometrische Form einer Bahn.
+	Eine Parametrisierung beschreibt zusätzlich,
+	wie ein Punkt diese Bahn durchläuft.
+\end{DidacticBox}
+
+
+
+\subsubsection*{Was ist eine Parametrisierung ?}
+\phantomsection
+Eine Parametrisierung ordnet jedem Wert eines Parameters \(t\)
+einen Punkt einer Kurve zu.
+Mathematisch geschieht dies durch eine Abbildung
+\[
+\vec r:I\to\mathbb R^n,
+\qquad
+t\mapsto \vec r(t),
+\]
+wobei \(I\subseteq\mathbb R\) ein Intervall ist.
+
+In der Ebene hat eine solche Parametrisierung meist die Form
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)
+\end{pmatrix},
+\]
+im Raum entsprechend
+\[
+\vec r(t)=
+\begin{pmatrix}
+	x(t)\\
+	y(t)\\
+	z(t)
+\end{pmatrix}.
+\]
+
+Der Parameter \(t\) ist häufig die Zeit,
+muss aber nicht unbedingt als physikalische Zeit interpretiert werden.
+Entscheidend ist nur,
+dass er die Punkte der Kurve in einer bestimmten Reihenfolge erfasst.
+
+Damit wird aus einer bloßen geometrischen Gestalt
+eine mathematisch beschriebene Bewegung entlang dieser Gestalt.
+
+
+
+\subsubsection*{Ein erstes Beispiel}
+\phantomsection
+Am einfachsten erkennt man die Idee der Parametrisierung an einer Geraden.
+Betrachten wir die Vorschrift
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++t
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in\mathbb R.
+\]
+
+Der Vektor
+\[
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
+\]
+ist ein fester Punkt der Geraden,
+der Vektor
+\[
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix}
+\]
+gibt ihre Richtung an.
+
+Für einige einfache Werte des Parameters erhält man
+\[
+\vec r(0)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix},
+\qquad
+\vec r(1)=
+\begin{pmatrix}
+	2\\
+	3
+\end{pmatrix},
+\qquad
+\vec r(-1)=
+\begin{pmatrix}
+	0\\
+	-1
+\end{pmatrix}.
+\]
+
+Der Punkt bewegt sich also entlang einer festen Geraden.
+Mit wachsendem \(t\) durchläuft er diese Gerade in einer bestimmten Richtung.
+
+Allgemein kann eine Gerade durch eine Parametrisierung der Form
+\[
+\vec r(t)=\vec a+t\,\vec v
+\]
+beschrieben werden.
+Dabei ist \(\vec a\) ein Aufpunkt und \(\vec v\) ein Richtungsvektor der Geraden.
+
+
+
+
+\subsubsection*{Der Parameterbereich gehört dazu}
+\phantomsection
+Zu einer Parametrisierung gehört nicht nur die Vorschrift \(\vec r(t)\),
+sondern auch der Bereich der zugelassenen Parameterwerte.
+Erst beides zusammen legt fest,
+welcher Teil einer Kurve beschrieben wird.
+
+So beschreibt
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++t
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix}
+\]
+für \(t\in\mathbb R\) die ganze Gerade.
+
+Beschränkt man den Parameter dagegen auf
+\[
+t\in[-1,1],
+\]
+so erhält man nur das Streckenstück von
+\[
+\begin{pmatrix}
+	0\\
+	-1
+\end{pmatrix}
+\quad \text{bis} \quad
+\begin{pmatrix}
+	2\\
+	3
+\end{pmatrix}.
+\]
+
+Man erkennt daran:
+Dieselbe Formel kann je nach Wahl des Parameterbereichs
+eine ganze Kurve oder nur ein Teilstück beschreiben.
+
+\begin{DidacticBox}[Wichtiger Punkt]
+	Zur Parametrisierung gehört nicht nur die Vorschrift \(\vec r(t)\),
+	sondern auch der Bereich der Parameterwerte.
+	Er entscheidet mit darüber,
+	welcher Teil einer Kurve beschrieben wird.
+\end{DidacticBox}
+
+
+
+
+\subsubsection*{Dieselbe Strecke -- verschiedene Parametrisierungen}
+\phantomsection
+Um den Unterschied zwischen verschiedenen Parametrisierungen sichtbar zu machen,
+betrachten wir die Gerade
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++\phi(t)
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Der feste Punkt
+\[
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
+\]
+ist ein Aufpunkt der Geraden,
+der Vektor
+\[
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix}
+\]
+gibt ihre Richtung an.
+
+Je nach Wahl der Funktion \(\phi(t)\) erhält man verschiedene Parametrisierungen derselben Strecke.
+In allen drei folgenden Beispielen durchläuft \(\phi(t)\) den Wertebereich \([-1,1]\).
+Damit beschreiben alle drei Parametrisierungen dieselbe geometrische Strecke,
+nämlich das Streckenstück von
+\[
+\begin{pmatrix}
+	0\\
+	-1
+\end{pmatrix}
+\quad \text{bis} \quad
+\begin{pmatrix}
+	2\\
+	3
+\end{pmatrix}.
+\]
+
+
+
+% ==================================================
+% 1. lineare Parametrisierung
+% ==================================================
+\begin{center}
+	
+	
+	\begin{tikzpicture}[scale=1.2]
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-2,-2) grid (3,4);
+		% Achsen
+		\draw[->] (-0.8,0) -- (3.2,0) node[right] {$x$};
+		\draw[->] (0,-1.5) -- (0,4.2) node[above] {$y$};
+		
+		% Gerade
+		\draw[thick] (0,-1) -- (2,3);
+		
+		% Punkte für t=-1,-0.5,0,0.5,1
+		\coordinate (P1) at (0,-1);
+		\coordinate (P2) at (0.5,0);
+		\coordinate (P3) at (1,1);
+		\coordinate (P4) at (1.5,2);
+		\coordinate (P5) at (2,3);
+		
+		% Ortsvektoren
+		\draw[->, thick, blue] (0,0) -- (P1);
+		\draw[->, thick, blue] (0,0) -- (P2);
+		\draw[->, thick, blue] (0,0) -- (P3);
+		\draw[->, thick, blue] (0,0) -- (P4);
+		\draw[->, thick, blue] (0,0) -- (P5);
+		
+		% Punkte
+		\filldraw[black] (P1) circle (0.04) node[left] {$t=-1$};
+		\filldraw[black] (P2) circle (0.04) node[right,yshift=0.2cm,xshift=0.1cm] {$t=-0.5$};
+		\filldraw[black] (P3) circle (0.04) node[right] {$t=0$};
+		\filldraw[black] (P4) circle (0.04) node[right] {$t=0.5$};
+		\filldraw[black] (P5) circle (0.04) node[right] {$t=1$};
+		
+		% Titel
+		\node at (1.2,4.9) {$\vec r_1(t)=\begin{pmatrix}1\\1\end{pmatrix}+t\begin{pmatrix}1\\2\end{pmatrix}, \qquad t\in[-1,1]$};
+		
+	\end{tikzpicture}
+\end{center}
+\vspace{1.5em}
+
+% ==================================================
+% 2. kubische Parametrisierung
+% ==================================================
+\begin{center}
+	
+	
+	
+	\begin{tikzpicture}[scale=1.2]
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-2,-2) grid (3,4);
+		% Achsen
+		\draw[->] (-0.8,0) -- (3.2,0) node[right] {$x$};
+		\draw[->] (0,-1.5) -- (0,4.2) node[above] {$y$};
+		
+		% Gerade
+		\draw[thick] (0,-1) -- (2,3);
+		
+		% Punkte für t=-1,-0.5,0,0.5,1
+		% phi(t)=t^3
+		\coordinate (Q1) at (0,-1);
+		\coordinate (Q2) at (0.875,0.75);
+		\coordinate (Q3) at (1,1);
+		\coordinate (Q4) at (1.125,1.25);
+		\coordinate (Q5) at (2,3);
+		
+		% Ortsvektoren
+		\draw[->, thick, blue] (0,0) -- (Q1);
+		\draw[->, thick, blue] (0,0) -- (Q2);
+		\draw[->, thick, blue] (0,0) -- (Q3);
+		\draw[->, thick, blue] (0,0) -- (Q4);
+		\draw[->, thick, blue] (0,0) -- (Q5);
+		
+		% Punkte
+		\filldraw[black] (Q1) circle (0.04) node[left] {$t=-1$};
+		\filldraw[black] (Q2) circle (0.04) node[right] {$t=-0.5$};
+		\filldraw[black] (Q3) circle (0.04) node[right] {$t=0$};
+		\filldraw[black] (Q4) circle (0.04) node[right] {$t=0.5$};
+		\filldraw[black] (Q5) circle (0.04) node[right] {$t=1$};
+		
+		% Titel
+		\node at (1.2,4.9) {$\vec r_2(t)=\begin{pmatrix}1\\1\end{pmatrix}+t^3\begin{pmatrix}1\\2\end{pmatrix}\qquad t\in[-1,1]$};
+		
+	\end{tikzpicture}
+\end{center}
+\vspace{1.5em}
+
+% ==================================================
+% 3. trigonometrische Parametrisierung
+% ==================================================
+
+\begin{center}
+	
+	
+	\begin{tikzpicture}[scale=1.2]
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-2,-2) grid (3,4);
+		% Achsen
+		\draw[->] (-0.8,0) -- (3.2,0) node[right] {$x$};
+		\draw[->] (0,-1.5) -- (0,4.2) node[above] {$y$};
+		
+		% Gerade
+		\draw[thick] (0,-1) -- (2,3);
+		
+		% Punkte für t=-1,-0.5,0,0.5,1
+		% phi(t)=sin(pi/2 t)
+		\coordinate (R1) at (0,-1);
+		\coordinate (R2) at ({1-0.7071},{1-1.4142});
+		\coordinate (R3) at (1,1);
+		\coordinate (R4) at ({1+0.7071},{1+1.4142});
+		\coordinate (R5) at (2,3);
+		
+		% Ortsvektoren
+		\draw[->, thick, blue] (0,0) -- (R1);
+		\draw[->, thick, blue] (0,0) -- (R2);
+		\draw[->, thick, blue] (0,0) -- (R3);
+		\draw[->, thick, blue] (0,0) -- (R4);
+		\draw[->, thick, blue] (0,0) -- (R5);
+		
+		% Punkte
+		\filldraw[black] (R1) circle (0.04) node[left] {$t=-1$};
+		\filldraw[black] (R2) circle (0.04) node[right] {$t=-0.5$};
+		\filldraw[black] (R3) circle (0.04) node[right] {$t=0$};
+		\filldraw[black] (R4) circle (0.04) node[right] {$t=0.5$};
+		\filldraw[black] (R5) circle (0.04) node[right] {$t=1$};
+		
+		% Titel
+		\node at (1.2,4.9) {$\vec r_3(t)=\begin{pmatrix}1\\1\end{pmatrix}+\sin\!\left(\frac{\pi}{2}t\right)\begin{pmatrix}1\\2\end{pmatrix}\qquad t\in[-1,1]$};
+		
+	\end{tikzpicture}
+\end{center}
+%\caption{Drei verschiedene Parametrisierungen derselben Strecke. Die Spitzen der Ortsvektoren liegen %jeweils auf derselben Geraden, sind aber unterschiedlich entlang der Strecke verteilt.}
+
+Drei verschiedene Parametrisierungen derselben Strecke. Die Spitzen der Ortsvektoren liegen jeweils auf derselben Geraden, sind aber unterschiedlich entlang der Strecke verteilt
+In der ersten Darstellung sind die Punkte für gleiche Änderungen des Parameters gleichmäßig über die Strecke verteilt.
+In der zweiten Darstellung mit \(t^3\) liegen die Punkte dichter in der Nähe des Mittelpunkts.
+In der dritten Darstellung mit der Sinusfunktion werden die Punkte anders über die Strecke verteilt,
+obwohl wieder dieselbe geometrische Strecke beschrieben wird.
+
+Man erkennt daran deutlich:
+Die geometrische Kurve und ihre Parametrisierung sind nicht dasselbe.
+Die Kurve bleibt gleich,
+aber die Art, wie sie durchlaufen wird, kann verschieden sein.
+
+
+% =====================================================
+% 2.6 Ein typischer Fehler: Nicht jede Ersetzung des Parameters ist geeignet
+% =====================================================
+
+\subsubsection*{Ein typischer Fehler: Nicht jede Ersetzung des Parameters ist geeignet}
+\phantomsection
+Hat man einmal eine Parametrisierung gefunden,
+liegt der Gedanke nahe, den Parameter einfach durch eine andere Funktion zu ersetzen.
+Doch dabei ist Vorsicht nötig:
+Nicht jede solche Ersetzung beschreibt wieder dieselbe Kurve.
+
+Betrachten wir erneut die Strecke
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++t
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Eine naheliegende Idee wäre nun,
+statt \(t\) den Ausdruck \(t^2\) zu verwenden:
+\[
+\vec q(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++t^2
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Diese Vorschrift beschreibt zwar weiterhin Punkte auf derselben Geraden,
+aber nicht mehr die ganze Strecke.
+Denn für \(t\in[-1,1]\) gilt
+\[
+t^2\in[0,1].
+\]
+
+Damit wird nur das Teilstück
+\[
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++\lambda
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad \lambda\in[0,1],
+\]
+durchlaufen.
+Der Teil der Strecke, der zu negativen Werten von \(\lambda\) gehört,
+wird überhaupt nicht erreicht.
+
+Man erkennt daran:
+Es genügt nicht, irgendeine Funktion an die Stelle des Parameters zu setzen.
+Entscheidend ist,
+welche Werte diese Funktion tatsächlich annimmt.
+
+% =====================================================
+% 2.7 Auch der Cosinus kann täuschen
+% =====================================================
+
+\subsubsection*{Auch der Cosinus kann täuschen}
+\phantomsection
+Betrachten wir die Parametrisierung
+\[
+\vec r(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++\sin\!\left(\frac{\pi}{2}t\right)
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Da die Sinusfunktion auf diesem Intervall alle Werte zwischen \(-1\) und \(1\) annimmt,
+beschreibt diese Vorschrift die gesamte Strecke von
+\[
+\begin{pmatrix}
+	0\\
+	-1
+\end{pmatrix}
+\quad \text{bis} \quad
+\begin{pmatrix}
+	2\\
+	3
+\end{pmatrix}.
+\]
+
+Ersetzt man den Sinus nun durch einen Cosinus,
+so erhält man
+\[
+\vec q(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++\cos\!\left(\frac{\pi}{2}t\right)
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Diese Vorschrift beschreibt weiterhin Punkte auf derselben Geraden,
+aber nicht mehr die ganze Strecke.
+Denn auf dem Intervall \([-1,1]\) nimmt der Cosinus nur Werte zwischen \(0\) und \(1\) an.
+
+Damit wird nur das Teilstück
+\[
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++\lambda
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad \lambda\in[0,1],
+\]
+durchlaufen,
+also nur der Abschnitt vom Punkt
+\[
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
+\]
+bis zum Punkt
+\[
+\begin{pmatrix}
+	2\\
+	3
+\end{pmatrix}.
+\]
+
+Außerdem wird dieses Teilstück nicht nur einmal,
+sondern vorwärts und rückwärts durchlaufen:
+Für \(t=-1\) und \(t=1\) erhält man denselben Punkt,
+während bei \(t=0\) der Endpunkt der Strecke erreicht wird.
+
+% =====================================================
+% 2.8 Wenn die Punkte die Gerade verlassen
+% =====================================================
+
+
+\subsubsection*{Wenn die Punkte die Gerade verlassen}
+\phantomsection
+Noch deutlicher wird der Unterschied an einem Beispiel,
+bei dem die Punkte nicht einmal mehr auf derselben Geraden bleiben.
+
+Betrachten wir die Vorschrift
+\[
+\vec q(t)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix}
++
+\begin{pmatrix}
+	1+t\\
+	1+t^2
+\end{pmatrix}
+\begin{pmatrix}
+	1\\
+	2
+\end{pmatrix},
+\qquad t\in[-1,1].
+\]
+
+Auf den ersten Blick sieht diese Darstellung einer Geradenparametrisierung ähnlich.
+Tatsächlich beschreibt sie jedoch keine Gerade mehr.
+
+Setzt man einige Werte des Parameters ein, so erhält man
+\[
+\vec q(-1)=
+\begin{pmatrix}
+	0\\
+	2
+\end{pmatrix},
+\qquad
+\vec q(0)=
+\begin{pmatrix}
+	1\\
+	1
+\end{pmatrix},
+\qquad
+\vec q(1)=
+\begin{pmatrix}
+	2\\
+	2
+\end{pmatrix}.
+\]
+
+Diese Punkte liegen nicht auf derselben Geraden wie zuvor.
+Eliminiert man den Parameter, so folgt aus
+\[
+x=1+t
+\]
+zunächst
+\[
+t=x-1.
+\]
+Damit ergibt sich
+\[
+y=1+(x-1)^2.
+\]
+
+Die Vorschrift beschreibt also keine Gerade,
+sondern eine Parabel.
+
+Man erkennt daran:
+Sobald die beiden Koordinaten nicht mehr in der Form
+\[
+\vec r(t)=\vec a+\phi(t)\vec v
+\]
+gekoppelt sind,
+verlässt man im Allgemeinen die ursprüngliche Gerade.
+
+\begin{DidacticBox}[Wichtige Warnung]
+	Nicht jede Vorschrift mit einem Parameter beschreibt nur eine andere Parametrisierung derselben Kurve.
+	Schon kleine Änderungen in den Komponenten können dazu führen,
+	dass eine völlig andere Kurve entsteht.
+\end{DidacticBox}
+
+% =====================================================
+% 2.9 Beispiel: Ein Halbkreis in zwei Parametrisierungen
+% =====================================================
+
+\subsubsection*{Beispiel: Ein Halbkreis in zwei Parametrisierungen}
+\phantomsection
+Als Beispiel betrachten wir den oberen Halbkreis mit Radius \(R\) um den Ursprung.
+Er verläuft von \((R,0)\) nach \((-R,0)\).
+
+\begin{center}
+	\begin{tikzpicture}[xscale=1, yscale=1]
+		
+		% Gitternetzlinien
+		\draw[xstep=1cm, ystep=1cm, very thin, color=lightgray] (-4,4) grid (4,-2);
+		
+		% x-Achse
+		\draw[->] (-4,0) -- (4,0) node[below,xshift=-1em] {$x$}; 
+		
+		% y-Achse 
+		\draw[->] (0,-2) -- (0,4) node[left,yshift=-1em] {$y$};
+		
+		% Ursprung
+		\draw[color=black] (0pt,-10pt) node[right] {\footnotesize $0$};
+		
+		% Halbkreis
+		\draw[thick,blue,->] (3,0) arc (0:180:3);
+		
+		% Ortsvektor
+		\draw[->,color=blue] (0,0) -- (2,2.2) node[below,xshift=-2.7em,yshift=-0.5em] {$\vec r(u)$}; 
+		
+		% Winkel
+		\draw[->,draw=red] (1,0) arc (0:47:1);
+		\draw [red] (0.6,0.35) node {\footnotesize $u$};
+		
+		% Beschriftung
+		\draw[color=black] (3,-10pt) node {\footnotesize $R$};
+		\draw[color=black] (-3,-10pt) node {\footnotesize $-R$};
+	\end{tikzpicture}
+\end{center}
+
+\textbf{1. Parametrisierung mit dem Winkel}
+
+Die natürliche Parametrisierung des Halbkreises lautet
+\[
+\vec r(u)=
+\begin{pmatrix}
+	R\cos u\\
+	R\sin u
+\end{pmatrix},
+\qquad u\in[0,\pi].
+\]
+
+Für \(u=0\) erhält man den Punkt \((R,0)\), für \(u=\pi\)
+den Punkt \((-R,0)\).
+Der Parameter \(u\) ist hier gerade der Polarwinkel.
+
+\medskip
+
+\textbf{2. Parametrisierung über die \(x\)-Koordinate}
+
+Aus der Kreisgleichung
+\[
+x^2+y^2=R^2
+\]
+folgt für den oberen Halbkreis
+\[
+y=\sqrt{R^2-x^2}.
+\]
+Damit kann derselbe Halbkreis auch durch
+\[
+\vec r(t)=
+\begin{pmatrix}
+	t\\
+	\sqrt{R^2-t^2}
+\end{pmatrix},
+\qquad t\in[-R,R]
+\]
+parametrisiert werden.
+
+\medskip
+
+Beide Darstellungen beschreiben dieselbe geometrische Kurve, aber mit unterschiedlichen Parametern.
+Daran erkennt man: Eine Parametrisierung legt nicht nur fest, \emph{welche} Kurve beschrieben wird, sondern auch, \emph{wie} sie durchlaufen wird.
