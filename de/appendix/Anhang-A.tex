@@ -13,23 +13,360 @@
 \renewcommand{\theHsection}{\theHchapter.\arabic{section}}
 \renewcommand{\theHsubsection}{\theHsection.\arabic{subsection}}
 \renewcommand{\theHsubsubsection}{\theHsubsection.\arabic{subsubsection}}
-
-\chapter{Mathematische Hintergründe und Herleitungen}
-\label{anhangA}
+% =====================================================
+% Anhang A: Mathematische Herleitungen
+% =====================================================
+\chapter{Mathematische Herleitungen}
+\label{app:mathematische-herleitungen}
 
 In diesem Anhang werden die im Haupttext angesprochenen physikalischen Konzepte
 formal und mathematisch vertieft. Ziel ist es, die didaktische Lesbarkeit der
-Kapitel nicht zu beeinträchtigen und zugleich interessierten Lesern die
-vollständigen Herleitungen zugänglich zu machen. 
+Kapitel nicht zu beeinträchtigen und zugleich interessierten Leserinnen und Lesern
+die wichtigsten Herleitungen zugänglich zu machen.
 
-Die Abschnitte sind thematisch nach den zentralen Eigenschaften des Photons
-gegliedert, darunter Energie-Impuls-Relation, Massehypothese, Helizität und
-Polarisation.\index{Photon!Eigenschaften} Auf diese Weise bildet der Anhang eine Brücke zwischen den
-intuitiven Erklärungen im Haupttext und der mathematischen Strenge der
-Quantenfeldtheorie.
+Die Abschnitte sind thematisch nach zentralen Eigenschaften und Experimenten des
+Elektrons\index{Elektron} gegliedert. Dazu gehören unter anderem das
+Ladung-Masse-Verhältnis\index{Ladung-Masse-Verhältnis}, die Bestimmung der
+Elementarladung\index{Elementarladung}, die Bewegung geladener Teilchen in
+elektrischen und magnetischen Feldern\index{elektrisches Feld}\index{Magnetfeld},
+sowie quantenmechanische Eigenschaften wie Spin\index{Spin}, Wellenfunktion\index{Wellenfunktion}
+und Aufenthaltswahrscheinlichkeit\index{Aufenthaltswahrscheinlichkeit}.
+
+Auf diese Weise bildet der Anhang eine Brücke zwischen den anschaulichen Erklärungen
+im Haupttext und der mathematischen Beschreibung des Elektrons in klassischer Physik,
+Quantenmechanik\index{Quantenmechanik}, Relativitätstheorie\index{Relativitätstheorie}
+und moderner Teilchenphysik\index{Teilchenphysik}.
+
+
 
 %\section{Kapitel I}
 \phantomsection
+% =====================================================
+% Bestimmung des Ladung-Masse-Verhältnisses nach Thomson
+% =====================================================
+\section{Bestimmung des Ladung-Masse-Ver-\newline hältnisses nach Thomson}
+\label{app:thomson-qm-herleitung}
+
+J. J. Thomson\index{Thomson, J. J.} bestimmte im Jahr 1897 nicht direkt die
+Masse des Elektrons und auch nicht dessen einzelne elektrische Ladung. Beides war
+damals noch unbekannt. Er untersuchte vielmehr Kathodenstrahlen\index{Kathodenstrahl}
+und zeigte, dass sie sich wie Ströme negativ geladener Teilchen verhalten.
+
+Historisch sauber formuliert ging Thomson also von Teilchen mit unbekannter Ladung
+\(q\) und unbekannter Masse \(m\) aus. Sein Ziel war es, aus der Ablenkung dieser
+Teilchen in elektrischen und magnetischen Feldern das Verhältnis
+\[
+\frac{q}{m}
+\]
+zu bestimmen. Dieses Verhältnis nennt man das Ladung-Masse-Verhältnis
+\index{Ladung-Masse-Verhältnis}.
+
+\subsection*{Elektrische Ablenkung}
+
+Ein Teilchen mit der Ladung \(q\) erfährt in einem elektrischen Feld
+\index{elektrisches Feld} der Feldstärke \(E\) die Kraft
+\[
+F_\mathrm{el} = qE.
+\]
+Nach dem zweiten Newtonschen Gesetz gilt
+\[
+F = ma.
+\]
+Setzt man beide Ausdrücke gleich, erhält man
+\[
+ma = qE.
+\]
+Damit folgt für die Beschleunigung:
+\[
+a = \frac{qE}{m}.
+\]
+
+Diese Gleichung zeigt bereits den entscheidenden Punkt: Die Ablenkung eines geladenen
+Teilchens hängt nicht nur vom elektrischen Feld ab, sondern vom Verhältnis seiner
+Ladung zu seiner Masse.
+
+Da Thomson zunächst nicht wusste, wie groß \(q\) und \(m\) einzeln sind, war gerade
+das Verhältnis
+\[
+\frac{q}{m}
+\]
+die experimentell zugängliche Größe.
+
+\begin{MathBox}[Warum Thomson das Verhältnis \(q/m\) bestimmte]
+	\label{box:thomson-qm-statt-einzelwerte}
+	Thomson kannte weder die Ladung noch die Masse der Kathodenstrahlteilchen einzeln.
+	Aus der Ablenkung im elektrischen Feld ergab sich aber eine Größe, die beide
+	miteinander verbindet:
+	\[
+	a = \frac{qE}{m}.
+	\]
+	
+	Damit war nicht \(q\) allein und auch nicht \(m\) allein messbar, sondern zunächst
+	das Verhältnis
+	\[
+	\frac{q}{m}.
+	\]
+\end{MathBox}
+
+\subsection*{Magnetische Ablenkung}
+
+Bewegt sich ein geladenes Teilchen mit der Geschwindigkeit \(v\) senkrecht zu einem
+Magnetfeld\index{Magnetfeld} der Flussdichte \(B\), so erfährt es die magnetische
+Lorentzkraft\index{Lorentzkraft}
+\[
+F_\mathrm{mag} = qvB.
+\]
+
+Diese Kraft wirkt senkrecht zur Bewegungsrichtung. Sie ändert daher vor allem die
+Richtung der Bewegung und kann den Kathodenstrahl ablenken.
+
+Thomson nutzte elektrische und magnetische Felder, um das Verhalten der
+Kathodenstrahlen gezielt zu untersuchen. Besonders wichtig war der Fall, in dem sich
+elektrische und magnetische Ablenkung gegenseitig aufhoben. Dann lief der Strahl
+geradlinig weiter.
+
+In diesem Fall gilt dem Betrag nach:
+\[
+|F_\mathrm{el}| = |F_\mathrm{mag}|.
+\]
+Also:
+\[
+|q|E = |q|vB.
+\]
+Die unbekannte Ladung \(|q|\) kürzt sich heraus:
+\[
+E = vB.
+\]
+Damit erhält man die Geschwindigkeit der Teilchen:
+\[
+v = \frac{E}{B}.
+\]
+
+Das ist ein wichtiger Schritt: Die Geschwindigkeit der Kathodenstrahlteilchen lässt
+sich bestimmen, ohne die einzelne Ladung oder die Masse des Teilchens bereits zu
+kennen.
+
+\begin{MathBox}[Bestimmung der Geschwindigkeit]
+	\label{box:thomson-geschwindigkeit-qm}
+	Wenn elektrische und magnetische Ablenkung einander gerade aufheben, gilt:
+	\[
+	|q|E = |q|vB.
+	\]
+	
+	Die unbekannte Ladung kürzt sich heraus. Dadurch folgt:
+	\[
+	v = \frac{E}{B}.
+	\]
+	
+	Die Geschwindigkeit der Teilchen kann also aus den bekannten Feldgrößen bestimmt
+	werden.
+\end{MathBox}
+\newpage
+\noindent
+\subsection*{Ablenkung im elektrischen Feld}
+Abbildung~\ref{fig:thomson-ablenkung-y1-y2} zeigt die geometrische Zerlegung der
+Gesamtablenkung. Sie macht deutlich, warum die beobachtete Ablenkung auf dem Schirm
+aus zwei Anteilen besteht.
+\FloatBarrier
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=\textwidth]{bilder/thomson_ablenkung_de.png}
+	\caption{Geometrische Zerlegung der Ablenkung eines geladenen Teilchens im elektrischen Feld. 
+		Innerhalb der Ablenkplatten entsteht die Ablenkung \(y_1\). Nach dem Verlassen des Feldes 
+		bewegt sich das Teilchen mit einer vertikalen Geschwindigkeitskomponente \(v_y\) weiter und 
+		erfährt auf der feldfreien Strecke bis zum Schirm die zusätzliche Ablenkung \(y_2\). Die 
+		gesamte Ablenkung auf dem Schirm ist daher \(y = y_1 + y_2\).}
+	\label{fig:thomson-ablenkung-y1-y2}
+\end{figure}
+
+Nun betrachtet man die Ablenkung des Strahls im elektrischen Feld allein. Die Teilchen
+fliegen mit der horizontalen Geschwindigkeit \(v\) durch ein Plattenpaar der Länge
+\(l\). Zwischen den Platten herrscht ein elektrisches Feld der Stärke \(E\).
+
+Die Zeit, die ein Teilchen im Feld verbringt, ist
+\[
+t = \frac{l}{v}.
+\]
+
+Während dieser Zeit wird es senkrecht zur ursprünglichen Bewegungsrichtung beschleunigt:
+\[
+a = \frac{qE}{m}.
+\]
+
+Für den Betrag der Ablenkung innerhalb des Feldbereichs gilt:
+\[
+y_1 = \frac{1}{2} a t^2.
+\]
+Einsetzen ergibt:
+\[
+y_1
+=
+\frac{1}{2}
+\frac{|q|E}{m}
+\left(\frac{l}{v}\right)^2.
+\]
+Damit:
+\[
+y_1
+=
+\frac{1}{2}
+\frac{|q|E}{m}
+\frac{l^2}{v^2}.
+\]
+
+Nach dem Verlassen des elektrischen Feldes besitzt das Teilchen zusätzlich eine
+senkrechte Geschwindigkeitskomponente. Dadurch wird es auf dem Weg zum Schirm weiter
+abgelenkt.
+
+Die senkrechte Geschwindigkeit am Ende des Feldbereichs beträgt:
+\[
+v_y = at
+=
+\frac{|q|E}{m}\frac{l}{v}.
+\]
+
+Ist der Abstand vom Ende der Platten bis zum Schirm \(L\), so ist die Flugzeit auf
+dieser Strecke:
+\[
+t_2 = \frac{L}{v}.
+\]
+
+Die zusätzliche Ablenkung ist daher:
+\[
+y_2 = v_y t_2.
+\]
+Also:
+\[
+y_2
+=
+\frac{|q|E}{m}
+\frac{l}{v}
+\frac{L}{v}.
+\]
+Damit:
+\[
+y_2
+=
+\frac{|q|E}{m}
+\frac{lL}{v^2}.
+\]
+
+Die gesamte Ablenkung auf dem Schirm ist:
+\[
+y = y_1 + y_2.
+\]
+Somit:
+\[
+y
+=
+\frac{1}{2}
+\frac{|q|E}{m}
+\frac{l^2}{v^2}
++
+\frac{|q|E}{m}
+\frac{lL}{v^2}.
+\]
+
+Man klammert den gemeinsamen Faktor aus:
+\[
+y
+=
+\frac{|q|E}{m v^2}
+\left(
+\frac{l^2}{2} + lL
+\right).
+\]
+
+Daraus folgt:
+\[
+\frac{|q|}{m}
+=
+\frac{y v^2}
+{
+	E\left(\frac{l^2}{2} + lL\right)
+}.
+\]
+
+Da zuvor
+\[
+v = \frac{E}{B}
+\]
+bestimmt wurde, kann man schreiben:
+\[
+\frac{|q|}{m}
+=
+\frac{y}{E\left(\frac{l^2}{2} + lL\right)}
+\left(\frac{E}{B}\right)^2.
+\]
+
+Damit ist das Ladung-Masse-Verhältnis aus messbaren Größen bestimmt.
+
+\begin{MathBox}[Thomsons Messgröße]
+	\label{box:thomson-ladung-masse-verhaeltnis}
+	Thomson bestimmte aus der Ablenkung der Kathodenstrahlen nicht die Ladung und
+	die Masse einzeln, sondern das Verhältnis:
+	\[
+	\frac{|q|}{m}
+	=
+	\frac{y}{E\left(\frac{l^2}{2} + lL\right)}
+	\left(\frac{E}{B}\right)^2.
+	\]
+	
+	Die konkrete Versuchsanordnung kann in Details variieren. Die Grundidee bleibt
+	aber gleich: Aus der Ablenkung geladener Teilchen in bekannten Feldern erhält man
+	das Verhältnis von Ladung zu Masse.
+\end{MathBox}
+
+\subsection*{Historische Bedeutung}
+
+Thomson fand, dass das Ladung-Masse-Verhältnis der Kathodenstrahlteilchen sehr viel
+größer war als bei bekannten Ionen\index{Ion}. Daraus folgte: Entweder war ihre Ladung
+ungewöhnlich groß, oder ihre Masse war außerordentlich klein.
+
+Die spätere Entwicklung zeigte, dass die zweite Deutung richtig war. Die Teilchen der
+Kathodenstrahlen besitzen eine sehr kleine Masse. Damit war klar: Atome\index{Atom}
+sind nicht unteilbar, sondern enthalten kleinere Bestandteile.
+
+Erst Millikans Öltröpfchenexperiment\index{Öltröpfchenexperiment} lieferte später den
+Betrag der einzelnen Elektronenladung:
+\[
+|q| = e.
+\]
+Zusammen mit Thomsons Messung von \(|q|/m\) konnte daraus die Elektronenmasse bestimmt
+werden:
+\[
+m_\mathrm{e}
+=
+\frac{e}{|q|/m}.
+\]
+
+Damit ergänzen sich die beiden Experimente: Thomson bestimmte das Verhältnis
+\(|q|/m\), Millikan bestimmte die Elementarladung \(e\). Erst zusammen machten beide
+Experimente das Elektron\index{Elektron} quantitativ fassbar.
+
+\begin{DidacticBox}[Thomson und Millikan gehören zusammen]
+	\label{box:thomson-millikan-zusammenhang}
+	Thomson zeigte, dass Kathodenstrahlen aus negativ geladenen Teilchen bestehen,
+	und bestimmte ihr Ladung-Masse-Verhältnis:
+	\[
+	\frac{|q|}{m}.
+	\]
+	
+	Millikan bestimmte später den Betrag der einzelnen elektrischen Ladung:
+	\[
+	|q| = e.
+	\]
+	
+	Erst aus beiden Ergebnissen zusammen konnte die Masse des Elektrons berechnet
+	werden:
+	\[
+	m_\mathrm{e}
+	=
+	\frac{e}{|q|/m}.
+	\]
+\end{DidacticBox}
+
 \section{Schrödingergleichung für das Wasserstoffatom}\index{Energie-Impuls-Relation!Photon}
 
 
