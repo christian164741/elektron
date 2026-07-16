@@ -1,0 +1,507 @@
+
+\subsection{Der Weg zur Dirac-Gleichung}
+\label{subsec:weg_zur_diracgleichung}
+
+Die Grenzen der Schrödingergleichung zeigten, dass für schnelle
+Elektronen eine neue Beschreibung notwendig war. Diese musste sowohl
+die Regeln der Quantenmechanik als auch die spezielle
+Relativitätstheorie berücksichtigen.
+
+Der Ausgangspunkt war die relativistische Energie-Impuls-Beziehung%
+\index{Energie-Impuls-Beziehung!relativistische}
+
+\begin{equation}
+	E^2
+	=
+	p^2c^2
+	+
+	m^2c^4.
+	\tag{\ref{eq:relativistische_energie_impuls_kapitel07}}
+\end{equation}
+
+Für die Energie selbst folgt daraus
+
+\begin{equation}
+	E
+	=
+	\pm
+	\sqrt{
+		p^2c^2
+		+
+		m^2c^4
+	}.
+	\label{eq:relativistische_energie_quadratwurzel}
+\end{equation}
+
+Bereits an dieser Stelle tritt ein grundlegendes Problem auf: Die
+Energie besitzt einen positiven und einen negativen Lösungszweig.
+Außerdem enthält die Gleichung eine Quadratwurzel aus dem
+Impulsoperator.
+
+\begin{DidacticBox}[Das zentrale Problem]
+	\label{box:zentrales_problem_weg_dirac}
+	
+	Die Schrödingergleichung verwendet die einfache nichtrelativistische
+	Energie
+	
+	\begin{equation}
+		E_{\mathrm{kin}}
+		=
+		\frac{p^2}{2m}.
+	\end{equation}
+	
+	Die relativistische Energie enthält dagegen eine Quadratwurzel:
+	
+	\begin{equation}
+		E
+		=
+		\sqrt{
+			p^2c^2
+			+
+			m^2c^4
+		}.
+	\end{equation}
+	
+	Diese Quadratwurzel lässt sich nicht ohne Weiteres in eine einfache
+	lokale Wellengleichung übertragen.
+\end{DidacticBox}
+
+\subsubsection*{Von Energie und Impuls zu Operatoren}
+
+In der Quantenmechanik werden Energie und Impuls durch Operatoren%
+\index{Operator!Quantenmechanik} ersetzt.
+
+Für die Energie gilt
+
+\begin{equation}
+	E
+	\longrightarrow
+	\hat{E}
+	=
+	\mathrm{i}\hbar
+	\frac{\partial}{\partial t}.
+	\label{eq:energieoperator_weg_dirac}
+\end{equation}
+
+Für den Impuls gilt
+
+\begin{equation}
+	\mathbf{p}
+	\longrightarrow
+	\hat{\mathbf{p}}
+	=
+	-\mathrm{i}\hbar\nabla.
+	\label{eq:impulsoperator_weg_dirac}
+\end{equation}
+
+Dieser Übergang verbindet eine klassische Energieformel mit einer
+quantenmechanischen Wellengleichung.
+
+Bei der nichtrelativistischen Energie
+
+\begin{equation}
+	E
+	=
+	\frac{p^2}{2m}
+\end{equation}
+
+führt diese Ersetzung unmittelbar zur Schrödingergleichung.
+
+Bei der relativistischen Energie ist der Weg schwieriger.
+
+\subsubsection*{Der erste relativistische Ansatz}
+
+Ein naheliegender Versuch besteht darin, nicht die Quadratwurzel aus
+Gleichung \eqref{eq:relativistische_energie_quadratwurzel}, sondern
+zunächst die quadrierte Beziehung
+
+\begin{equation}
+	E^2
+	=
+	p^2c^2
+	+
+	m^2c^4
+\end{equation}
+
+zu verwenden.
+
+Werden Energie und Impuls durch ihre Operatoren ersetzt, entsteht die
+Klein-Gordon-Gleichung\index{Klein-Gordon-Gleichung}:
+
+\begin{equation}
+	\frac{1}{c^2}
+	\frac{\partial^2\Psi}{\partial t^2}
+	-
+	\nabla^2\Psi
+	+
+	\frac{m^2c^2}{\hbar^2}
+	\Psi
+	=
+	0.
+	\label{eq:klein_gordon_weg_dirac_einfach}
+\end{equation}
+
+Diese Gleichung ist relativistisch. Raum und Zeit werden in ihr
+wesentlich gleichartiger behandelt als in der Schrödingergleichung.
+
+Für Teilchen mit Spin \(0\) ist die Klein-Gordon-Gleichung eine
+grundlegende Gleichung der relativistischen Quantentheorie.
+
+Das Elektron besitzt jedoch den Spin
+
+\begin{equation}
+	s
+	=
+	\frac{\hbar}{2}.
+\end{equation}
+
+Daher konnte die Klein-Gordon-Gleichung das Elektron nicht vollständig
+beschreiben.
+
+\begin{PhysicsBox}[Bedeutung der Klein-Gordon-Gleichung]
+	\label{box:bedeutung_klein_gordon_weg_dirac}
+	
+	Die Klein-Gordon-Gleichung war kein erfolgloser oder falscher Ansatz.
+	
+	Sie beschreibt relativistische Teilchen und Felder mit Spin \(0\).
+	Für das Elektron reicht sie jedoch nicht aus, weil dessen Spin nicht in
+	der Gleichung enthalten ist.
+\end{PhysicsBox}
+
+\subsubsection*{Das Problem der zweiten Zeitableitung}
+
+Die Schrödingergleichung besitzt nur eine erste Ableitung nach der Zeit:
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\Psi}{\partial t}
+	=
+	\hat{H}\Psi.
+\end{equation}
+
+Ist der Zustand \(\Psi\) zu einem bestimmten Zeitpunkt bekannt, kann
+seine weitere zeitliche Entwicklung daraus berechnet werden.
+
+Die Klein-Gordon-Gleichung enthält dagegen eine zweite Ableitung nach
+der Zeit:
+
+\begin{equation}
+	\frac{\partial^2\Psi}{\partial t^2}.
+\end{equation}
+
+Dadurch unterscheidet sich ihre mathematische Struktur grundlegend von
+der Schrödingergleichung.
+
+Außerdem lässt sich die zugehörige erhaltene Dichte bei einer
+Einzelteilchenbeschreibung nicht immer als positive
+Wahrscheinlichkeitsdichte interpretieren.
+
+Paul Dirac\index{Dirac, Paul} suchte deshalb nach einer relativistischen
+Gleichung, die wie die Schrödingergleichung nur eine erste
+Zeitableitung enthält.
+
+\begin{DidacticBox}[Diracs Forderung]
+	\label{box:diracs_forderung_erste_ordnung}
+	
+	Dirac wollte eine Gleichung der Form
+	
+	\begin{equation}
+		\mathrm{i}\hbar
+		\frac{\partial\Psi}{\partial t}
+		=
+		\hat{H}_{\mathrm D}\Psi
+	\end{equation}
+	
+	erhalten.
+	
+	Der neue Hamiltonoperator sollte
+	
+	\begin{itemize}
+		\item relativistisch korrekt,
+		\item linear im Impuls und
+		\item mit einer positiven Wahrscheinlichkeitsdichte vereinbar
+		sein.
+	\end{itemize}
+\end{DidacticBox}
+
+\subsubsection*{Die Quadratwurzel wird linearisiert}
+
+Diracs entscheidende Idee bestand darin, die relativistische Energie
+nicht direkt als Quadratwurzel zu verwenden.
+
+Stattdessen suchte er einen Ausdruck, der linear im Impuls ist:
+
+\begin{equation}
+	E
+	=
+	c\boldsymbol{\alpha}\cdot\mathbf{p}
+	+
+	\beta mc^2.
+	\label{eq:linearer_energieansatz_dirac}
+\end{equation}
+
+Dabei sind \(\boldsymbol{\alpha}\) und \(\beta\) zunächst unbekannte
+Größen.
+
+Der Ausdruck
+
+\begin{equation}
+	\boldsymbol{\alpha}\cdot\mathbf{p}
+	=
+	\alpha_xp_x
+	+
+	\alpha_yp_y
+	+
+	\alpha_zp_z
+\end{equation}
+
+enthält die drei räumlichen Komponenten des Impulses.
+
+Diracs Forderung lautete: Wird der lineare Ausdruck quadriert, muss
+wieder die relativistische Energie-Impuls-Beziehung entstehen:
+
+\begin{equation}
+	\left(
+	c\boldsymbol{\alpha}\cdot\mathbf{p}
+	+
+	\beta mc^2
+	\right)^2
+	=
+	p^2c^2
+	+
+	m^2c^4.
+	\label{eq:forderung_quadrat_dirac_ansatz}
+\end{equation}
+
+Dieser Vorgang wird als Linearisierung%
+\index{Linearisierung!relativistische Energie} bezeichnet.
+
+\begin{PhysicsBox}[Diracs Linearisierung]
+	\label{box:diracs_linearisierung}
+	
+	Dirac ersetzte die Quadratwurzel
+	
+	\begin{equation}
+		E
+		=
+		\sqrt{
+			p^2c^2
+			+
+			m^2c^4
+		}
+	\end{equation}
+	
+	durch einen linearen Ausdruck:
+	
+	\begin{equation}
+		E
+		=
+		c\boldsymbol{\alpha}\cdot\mathbf{p}
+		+
+		\beta mc^2.
+	\end{equation}
+	
+	Die unbekannten Größen \(\boldsymbol{\alpha}\) und \(\beta\) mussten so
+	gewählt werden, dass beim Quadrieren wieder die relativistische
+	Energieformel entsteht.
+\end{PhysicsBox}
+
+\subsubsection*{Warum gewöhnliche Zahlen nicht ausreichen}
+
+Beim Quadrieren des Dirac-Ansatzes entstehen neben den gewünschten
+Termen auch gemischte Produkte.
+
+Vereinfacht betrachtet treten beispielsweise Ausdrücke der Form
+
+\begin{equation}
+	\alpha_x\alpha_y
+	+
+	\alpha_y\alpha_x
+\end{equation}
+
+und
+
+\begin{equation}
+	\alpha_x\beta
+	+
+	\beta\alpha_x
+\end{equation}
+
+auf.
+
+Damit diese unerwünschten gemischten Terme verschwinden, müssen die
+Größen bestimmte Bedingungen erfüllen:
+
+\begin{equation}
+	\alpha_i\alpha_j
+	+
+	\alpha_j\alpha_i
+	=
+	0
+	\qquad
+	\text{für}
+	\quad
+	i\neq j
+\end{equation}
+
+und
+
+\begin{equation}
+	\alpha_i\beta
+	+
+	\beta\alpha_i
+	=
+	0.
+\end{equation}
+
+Gewöhnliche Zahlen können diese Bedingungen nicht erfüllen, da bei
+ihnen die Reihenfolge der Multiplikation keine Rolle spielt:
+
+\begin{equation}
+	ab
+	=
+	ba.
+\end{equation}
+
+Dirac benötigte daher mathematische Objekte, bei denen die Reihenfolge
+der Multiplikation entscheidend ist.
+
+Solche Objekte sind Matrizen\index{Matrix!Dirac-Gleichung}.
+
+\begin{DidacticBox}[Warum erscheinen Matrizen?]
+	\label{box:warum_matrizen_weg_dirac}
+	
+	Die Matrizen wurden nicht eingeführt, um die Gleichung künstlich
+	komplizierter zu machen.
+	
+	Sie waren mathematisch notwendig.
+	
+	Nur Matrizen können die Bedingungen erfüllen, durch die beim
+	Quadrieren des linearen Ansatzes alle unerwünschten gemischten Terme
+	verschwinden.
+\end{DidacticBox}
+
+\subsubsection*{Vier Komponenten statt einer}
+
+Die benötigten Matrizen besitzen mindestens vier Zeilen und vier
+Spalten. Deshalb kann die Wellenfunktion nicht mehr aus nur einer
+einzigen komplexen Funktion bestehen.
+
+Sie muss vier Komponenten besitzen:
+
+\begin{equation}
+	\Psi
+	=
+	\begin{pmatrix}
+		\psi_1 \\
+		\psi_2 \\
+		\psi_3 \\
+		\psi_4
+	\end{pmatrix}.
+	\label{eq:dirac_spinor_weg_dirac}
+\end{equation}
+
+Eine solche vierkomponentige Wellenfunktion wird als
+Dirac-Spinor\index{Dirac-Spinor} bezeichnet.
+
+Die vier Komponenten enthalten mehr Information als die
+Wellenfunktion der Schrödingergleichung. Sie ermöglichen die
+Beschreibung von
+
+\begin{itemize}
+	\item zwei möglichen Spinrichtungen und
+	\item positiven und negativen Energielösungen.
+\end{itemize}
+
+\begin{PhysicsBox}[Vom Skalar zum Spinor]
+	\label{box:vom_skalar_zum_spinor}
+	
+	In der Schrödingergleichung kann die Wellenfunktion zunächst eine
+	einzige komplexe Funktion sein.
+	
+	In der Dirac-Theorie besteht der Zustand aus vier miteinander
+	gekoppelten Komponenten.
+	
+	Diese vierkomponentige Struktur ist die mathematische Grundlage für den
+	Spin und die Teilchen-Antiteilchen-Beschreibung.
+\end{PhysicsBox}
+
+\subsubsection*{Der Dirac-Hamiltonoperator}
+
+Diracs linearer Hamiltonoperator%
+\index{Hamiltonoperator!Dirac-Gleichung} lautet
+
+\begin{equation}
+	\hat{H}_{\mathrm D}
+	=
+	c\boldsymbol{\alpha}\cdot\hat{\mathbf{p}}
+	+
+	\beta m_{\mathrm e}c^2.
+	\label{eq:dirac_hamiltonoperator_weg}
+\end{equation}
+
+Mit dem Impulsoperator
+
+\begin{equation}
+	\hat{\mathbf{p}}
+	=
+	-\mathrm{i}\hbar\nabla
+\end{equation}
+
+ergibt sich
+
+\begin{equation}
+	\hat{H}_{\mathrm D}
+	=
+	-\mathrm{i}\hbar c
+	\boldsymbol{\alpha}\cdot\nabla
+	+
+	\beta m_{\mathrm e}c^2.
+\end{equation}
+
+Wird dieser Hamiltonoperator in die allgemeine Gleichung der
+zeitlichen Entwicklung eingesetzt, erhält man
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\Psi}{\partial t}
+	=
+	\left(
+	-\mathrm{i}\hbar c
+	\boldsymbol{\alpha}\cdot\nabla
+	+
+	\beta m_{\mathrm e}c^2
+	\right)
+	\Psi.
+	\label{eq:diracgleichung_am_ende_des_weges}
+\end{equation}
+
+Damit war die gesuchte relativistische Gleichung für das Elektron
+gefunden.
+
+\begin{HistoryBox}[Diracs Ergebnis]
+	\label{box:diracs_ergebnis_weg_dirac}
+	
+	Dirac hatte zunächst nur versucht, Quantenmechanik und spezielle
+	Relativitätstheorie miteinander zu verbinden.
+	
+	Die daraus entstandene Gleichung enthielt jedoch mehr als erwartet:
+	
+	\begin{itemize}
+		\item Der Spin des Elektrons ergab sich aus der mathematischen
+		Struktur.
+		\item Die Gleichung besaß positive und negative Energielösungen.
+		\item Die negativen Lösungen führten später zur Beschreibung des
+		Positrons.
+	\end{itemize}
+	
+	Die Mathematik sagte damit neue physikalische Eigenschaften voraus.
+\end{HistoryBox}
+
+Der entscheidende Schritt bestand somit nicht darin, die
+Schrödingergleichung lediglich um eine kleine Korrektur zu ergänzen.
+Dirac musste die mathematische Beschreibung des Elektrons grundlegend
+erweitern.
+
+Im nächsten Abschnitt wird die daraus entstandene Dirac-Gleichung und
+ihre physikalische Bedeutung genauer betrachtet.

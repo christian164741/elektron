@@ -433,12 +433,302 @@ negativen Ladung des Elektrons. Das Kreuzprodukt \(\vec{v} \times \vec{B}\)
 gibt die Richtung der magnetischen Kraft für eine positive Ladung an. Beim
 Elektron ist die Richtung umgekehrt.
 
+\section{Schrödingergleichung für das Wasserstoffatom}
+\label{app:mathe_schroedingergleichung}
+\index{Schrödingergleichung!Wasserstoffatom}
+\index{Wasserstoffatom!Schrödingergleichung}
+
+Das Wasserstoffatom\index{Wasserstoffatom} ist das einfachste gebundene
+Atomsystem. Es besteht aus einem Proton\index{Proton} und einem Elektron
+\index{Elektron}. Zwischen beiden wirkt die elektrische Coulomb-Anziehung
+\index{Coulomb-Anziehung}. Da das Proton positiv und das Elektron negativ
+geladen ist, ist die potentielle Energie negativ.
+
+Ziel dieser Herleitung ist es, die stationäre Schrödingergleichung
+\index{Schrödingergleichung!stationäre} für das Elektron im Coulomb-Feld des
+Protons herzuleiten. Dabei wird zunächst angenommen, dass der Atomkern ruht und
+das Elektron sich im elektrischen Feld des Kerns bewegt. Diese Näherung ist für
+das Verständnis ausreichend. Eine genauere Behandlung verwendet statt der
+Elektronenmasse die reduzierte Masse des Elektron-Proton-Systems.
+
+\subsection*{Gesamtenergie eines Teilchens}
+
+In der klassischen Mechanik setzt sich die Gesamtenergie eines Teilchens aus
+kinetischer und potentieller Energie zusammen:
+
+\begin{equation}
+	E = E_\mathrm{kin} + E_\mathrm{pot}
+	\label{eq:app_gesamtenergie_klassisch}
+\end{equation}
+
+Für ein Teilchen der Masse \(m\) mit Impuls \(p\) gilt für die kinetische
+Energie:
+
+\begin{equation}
+	E_\mathrm{kin} = \frac{p^2}{2m}
+	\label{eq:app_kinetische_energie_impuls}
+\end{equation}
+
+Damit lautet die Gesamtenergie:
+
+\begin{equation}
+	E = \frac{p^2}{2m} + V(\vec r)
+	\label{eq:app_gesamtenergie_potential}
+\end{equation}
+
+Dabei ist \(V(\vec r)\)\index{Potential} die potentielle Energie des Teilchens
+am Ort \(\vec r\).
+
+\subsection*{Übergang zur Quantenmechanik}
+
+In der Quantenmechanik wird der Zustand eines Teilchens durch eine
+Wellenfunktion\index{Wellenfunktion} \(\psi(\vec r)\) beschrieben. Die
+klassischen Größen Energie und Impuls werden durch Operatoren ersetzt.
+
+Für die Energie verwendet man den Energieoperator:
+
+\begin{equation}
+	E \rightarrow \hat{E}
+	\label{eq:app_energie_operator}
+\end{equation}
+
+Für stationäre Zustände führt dies auf die Eigenwertgleichung
+
+\begin{equation}
+	\hat{H}\psi = E\psi .
+	\label{eq:app_stationaere_schroedingergleichung_allgemein}
+\end{equation}
+
+Der Operator \(\hat{H}\)\index{Hamilton-Operator} heißt Hamilton-Operator. Er
+beschreibt die Gesamtenergie des Systems.
+
+Der Impuls wird in der Ortsdarstellung durch den Impulsoperator
+\index{Impulsoperator} ersetzt:
+
+\begin{equation}
+	\vec p \rightarrow \hat{\vec p} = -i\hbar \nabla .
+	\label{eq:app_impulsoperator}
+\end{equation}
+
+Dabei ist
+
+\begin{equation}
+	\hbar = \frac{h}{2\pi}
+	\label{eq:app_hquer}
+\end{equation}
+
+das reduzierte Plancksche Wirkungsquantum\index{Plancksches Wirkungsquantum}.
+
+Für das Quadrat des Impulses ergibt sich dadurch:
+
+\begin{equation}
+	p^2 \rightarrow \hat{p}^{\,2}
+	= -\hbar^2 \nabla^2 .
+	\label{eq:app_impulsquadrat_operator}
+\end{equation}
+
+Der Operator \(\nabla^2\)\index{Laplace-Operator} ist der Laplace-Operator.
+
+Setzt man diesen Ausdruck in die klassische Energiegleichung ein, erhält man
+für den Hamilton-Operator eines Teilchens im Potential \(V(\vec r)\):
+
+\begin{equation}
+	\hat{H}
+	=
+	-\frac{\hbar^2}{2m}\nabla^2
+	+
+	V(\vec r).
+	\label{eq:app_hamilton_operator_allgemein}
+\end{equation}
+
+Damit folgt die stationäre Schrödingergleichung:
+
+\begin{equation}
+	\left(
+	-\frac{\hbar^2}{2m}\nabla^2
+	+
+	V(\vec r)
+	\right)\psi(\vec r)
+	=
+	E\psi(\vec r).
+	\label{eq:app_stationaere_schroedingergleichung_potential}
+\end{equation}
+
+\subsection*{Coulomb-Potential des Wasserstoffatoms}
+
+Beim Wasserstoffatom befindet sich das Elektron im elektrischen Feld des
+Protons. Die potentielle Energie zweier Punktladungen \(q_1\) und \(q_2\) im
+Abstand \(r\) lautet:
+
+\begin{equation}
+	V(r)
+	=
+	\frac{1}{4\pi\varepsilon_0}
+	\frac{q_1 q_2}{r}.
+	\label{eq:app_coulomb_potential_allgemein}
+\end{equation}
+
+Für das Proton gilt
+
+\begin{equation}
+	q_\mathrm{p} = +e
+	\label{eq:app_ladung_proton}
+\end{equation}
+
+und für das Elektron
+
+\begin{equation}
+	q_\mathrm{e} = -e .
+	\label{eq:app_ladung_elektron}
+\end{equation}
+
+Damit ergibt sich:
+
+\begin{equation}
+	q_\mathrm{p} q_\mathrm{e}
+	=
+	(+e)(-e)
+	=
+	-e^2 .
+	\label{eq:app_ladungsprodukt_wasserstoff}
+\end{equation}
+
+Das Coulomb-Potential des Elektrons im Feld des Protons lautet daher:
+
+\begin{equation}
+	V(r)
+	=
+	-\frac{e^2}{4\pi\varepsilon_0 r}.
+	\label{eq:app_coulomb_potential_wasserstoff}
+\end{equation}
+
+Das Minuszeichen zeigt, dass es sich um eine anziehende Wechselwirkung handelt.
+Das Elektron ist an den Atomkern gebunden.
+
+\subsection*{Einsetzen in die Schrödingergleichung}
+
+Für das Elektron im Wasserstoffatom setzt man nun \(m = m_\mathrm{e}\) und das
+Coulomb-Potential aus Gleichung~\ref{eq:app_coulomb_potential_wasserstoff}
+in die stationäre Schrödingergleichung ein:
+
+\begin{equation}
+	\left(
+	-\frac{\hbar^2}{2m_\mathrm{e}}\nabla^2
+	-\frac{e^2}{4\pi\varepsilon_0 r}
+	\right)\psi(\vec r)
+	=
+	E\psi(\vec r).
+	\label{eq:app_schroedingergleichung_wasserstoff}
+\end{equation}
+
+Dies ist die stationäre Schrödingergleichung für das Wasserstoffatom in der
+Näherung eines ruhenden Atomkerns.
+
+\begin{PhysicsBox}[Schrödingergleichung des Wasserstoffatoms]
+	\label{box:app_schroedingergleichung_wasserstoff}
+	Die Schrödingergleichung für das Wasserstoffatom beschreibt ein Elektron im
+	anziehenden Coulomb-Potential des Protons. Der kinetische Term beschreibt die
+	räumliche Änderung der Wellenfunktion, der Potentialterm die elektrische
+	Anziehung zwischen Elektron und Proton.
+\end{PhysicsBox}
+
+\subsection*{Bedeutung der einzelnen Terme}
+
+Der Term
+
+\begin{equation}
+	-\frac{\hbar^2}{2m_\mathrm{e}}\nabla^2
+	\label{eq:app_kinetischer_term_wasserstoff}
+\end{equation}
+
+beschreibt die kinetische Energie des Elektrons. Da in der Quantenmechanik der
+Impuls durch einen Differentialoperator dargestellt wird, enthält dieser Term
+den Laplace-Operator. Er gibt an, wie stark sich die Wellenfunktion räumlich
+ändert.
+
+Der Term
+
+\begin{equation}
+	-\frac{e^2}{4\pi\varepsilon_0 r}
+	\label{eq:app_potentialterm_wasserstoff}
+\end{equation}
+
+beschreibt die potentielle Energie des Elektrons im Coulomb-Feld des Protons.
+Bei kleinem Abstand \(r\) ist die Anziehung stark, bei großem Abstand wird sie
+schwächer.
+
+Die rechte Seite
+
+\begin{equation}
+	E\psi(\vec r)
+	\label{eq:app_energie_eigenwert_wasserstoff}
+\end{equation}
+
+zeigt, dass es sich um eine Eigenwertgleichung\index{Eigenwertgleichung}
+handelt. Nur bestimmte Energiewerte \(E\) sind erlaubt. Diese erlaubten Werte
+entsprechen den Energieniveaus des Wasserstoffatoms.
+
+\subsection*{Energieniveaus}
+
+Die Lösung der Schrödingergleichung für das Wasserstoffatom liefert diskrete
+Energiewerte\index{Energiewert!diskreter}. Sie hängen von der Hauptquantenzahl
+\(n\)\index{Hauptquantenzahl} ab:
+
+\begin{equation}
+	E_n
+	=
+	-\frac{13{,}6\,\mathrm{eV}}{n^2},
+	\qquad
+	n = 1,2,3,\dots
+	\label{eq:app_energieniveaus_wasserstoff_ev}
+\end{equation}
+
+Der niedrigste Zustand besitzt \(n=1\). Seine Energie beträgt
+
+\begin{equation}
+	E_1 = -13{,}6\,\mathrm{eV}.
+	\label{eq:app_grundzustand_wasserstoff}
+\end{equation}
+
+Das Minuszeichen bedeutet, dass das Elektron an den Atomkern gebunden ist. Erst
+wenn dem Atom mindestens \(13{,}6\,\mathrm{eV}\) zugeführt werden, kann das
+Elektron vollständig vom Proton getrennt werden. Dies entspricht der
+Ionisationsenergie\index{Ionisationsenergie} des Wasserstoffatoms.
+
+\subsection*{Orbitale statt Bahnen}
+
+Die Lösungen der Schrödingergleichung liefern nicht nur Energiewerte, sondern
+auch Wellenfunktionen. Aus diesen Wellenfunktionen ergibt sich die
+Wahrscheinlichkeitsdichte\index{Wahrscheinlichkeitsdichte}:
+
+\begin{equation}
+	\rho(\vec r)
+	=
+	|\psi(\vec r)|^2 .
+	\label{eq:app_wahrscheinlichkeitsdichte_wasserstoff}
+\end{equation}
+
+Diese Größe beschreibt, mit welcher Wahrscheinlichkeit das Elektron in einem
+bestimmten Raumbereich gefunden wird. Daraus entstehen die Orbitale
+\index{Orbital}\index{Atomorbital}. Ein Orbital ist also keine klassische Bahn,
+sondern eine räumliche Wahrscheinlichkeitsverteilung.
+
+Damit erklärt die Schrödingergleichung zwei zentrale Eigenschaften des
+Wasserstoffatoms:
+
+\begin{enumerate}
+	\item Die Energien des Elektrons sind quantisiert.
+	\item Das Elektron bewegt sich nicht auf festen Bahnen, sondern wird durch
+	eine räumliche Wahrscheinlichkeitsverteilung beschrieben.
+\end{enumerate}
+
+Die Schrödingergleichung verbindet damit die Welleneigenschaft des Elektrons
+mit der Struktur des Atoms. Sie bildet die mathematische Grundlage für die
+Orbitaltheorie und für das moderne Atommodell.
 
 
-\section{Schrödingergleichung für das Wasserstoffatom}\index{Energie-Impuls-Relation!Photon}
 
 
-In 
 \section{Dirac-Gleichung und Lösungen}
 q
 \section{QED-Grundlagen (Propagatoren, Renormierung)}

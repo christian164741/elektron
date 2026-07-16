@@ -1,0 +1,490 @@
+
+\subsection{Der Spin als Folge der Theorie}
+\label{subsec:spin_als_folge_der_theorie}
+
+Der Spin\index{Spin!als Folge der Dirac-Gleichung} des Elektrons war
+bereits vor der Dirac-Gleichung aus Experimenten bekannt. In der
+nichtrelativistischen Quantenmechanik musste er jedoch als zusätzliche
+Eigenschaft eingeführt werden.
+
+Die Dirac-Gleichung änderte diese Situation grundlegend. Der Spin
+erscheint in ihr nicht als nachträgliche Ergänzung, sondern ergibt sich
+aus der mathematischen Struktur der relativistischen Theorie.
+
+\begin{HistoryBox}[Vom experimentellen Befund zur Theorie]
+	\label{box:spin_vom_experiment_zur_theorie}
+	
+	Experimente hatten gezeigt, dass das Elektron zwei mögliche
+	Spinrichtungen besitzt und sich in einem Magnetfeld entsprechend
+	aufspaltet.
+	
+	Die Schrödingergleichung allein konnte diese Beobachtung nicht
+	erklären.
+	
+	Erst die Dirac-Gleichung zeigte, dass ein relativistisches Elektron
+	zwangsläufig eine innere zweifache Struktur besitzt, die dem Spin
+	\(\hbar/2\) entspricht.
+\end{HistoryBox}
+
+\subsubsection*{Drehimpuls in der klassischen Mechanik}
+
+In der klassischen Mechanik entsteht ein Drehimpuls%
+\index{Drehimpuls!klassischer} beispielsweise dann, wenn sich ein
+Teilchen auf einer Kreisbahn bewegt.
+
+Der Bahndrehimpuls lautet
+
+\begin{equation}
+	\mathbf{L}
+	=
+	\mathbf{r}
+	\times
+	\mathbf{p},
+	\label{eq:bahndrehimpuls_spin_dirac}
+\end{equation}
+
+wobei
+
+\begin{itemize}
+	\item \(\mathbf{r}\) der Ortsvektor und
+	\item \(\mathbf{p}\) der Impuls
+\end{itemize}
+
+ist.
+
+Dieser Drehimpuls hängt von der Bewegung des Teilchens im Raum ab. Ein
+Elektron in einem Atom kann deshalb einen Bahndrehimpuls besitzen.
+
+Der Spin ist jedoch etwas anderes. Er ist unabhängig davon vorhanden,
+ob sich das Elektron auf einer Bahn bewegt oder nicht.
+
+\begin{DidacticBox}[Bahndrehimpuls und Spin]
+	\label{box:bahndrehimpuls_und_spin}
+	
+	Der Bahndrehimpuls entsteht durch die Bewegung eines Teilchens im
+	Raum:
+	
+	\begin{equation}
+		\mathbf{L}
+		=
+		\mathbf{r}\times\mathbf{p}.
+	\end{equation}
+	
+	Der Spin ist dagegen eine innere Quanteneigenschaft des Elektrons.
+	
+	Auch ein Elektron ohne Bahndrehimpuls besitzt Spin.
+\end{DidacticBox}
+
+\subsubsection*{Warum der Spin keine klassische Rotation ist}
+
+Der Begriff Spin stammt vom englischen Wort für Drehung. Diese
+Bezeichnung kann jedoch zu einem falschen Bild führen.
+
+Das Elektron darf nicht als kleine geladene Kugel verstanden werden,
+die sich um ihre eigene Achse dreht. Ein solches klassisches Modell
+würde zu erheblichen Schwierigkeiten führen.
+
+Wollte man das gemessene magnetische Moment durch eine rotierende
+Kugel erklären, müssten sich Teile ihrer Oberfläche unter bestimmten
+Annahmen schneller als das Licht bewegen. Außerdem gibt es keinen
+experimentellen Hinweis auf eine räumliche Ausdehnung oder Oberfläche
+des Elektrons.
+
+Der Spin ist daher keine mechanische Eigenrotation, sondern eine
+fundamentale Eigenschaft des Quantenzustandes.
+
+\begin{DidacticBox}[Kein rotierendes Kügelchen]
+	\label{box:spin_keine_klassische_rotation}
+	
+	Der Elektronenspin darf nicht als klassische Drehung eines kleinen
+	Körpers verstanden werden.
+	
+	Der Begriff beschreibt eine quantenmechanische Form des Drehimpulses,
+	die keine unmittelbare Entsprechung in der klassischen Mechanik
+	besitzt.
+\end{DidacticBox}
+
+\subsubsection*{Die vierkomponentige Struktur}
+
+Die Wellenfunktion der Dirac-Gleichung ist ein vierkomponentiger
+Spinor\index{Dirac-Spinor!Spinstruktur}:
+
+\begin{equation}
+	\Psi
+	=
+	\begin{pmatrix}
+		\psi_1 \\
+		\psi_2 \\
+		\psi_3 \\
+		\psi_4
+	\end{pmatrix}.
+	\label{eq:dirac_spinor_spinstruktur}
+\end{equation}
+
+Die Komponenten sind durch die Dirac-Gleichung miteinander gekoppelt.
+Sie enthalten unter anderem Informationen über die beiden möglichen
+Spinrichtungen.
+
+Im nichtrelativistischen Grenzfall werden die positiven
+Energielösungen im Wesentlichen durch zwei Komponenten beschrieben.
+Diese beiden Komponenten entsprechen den beiden möglichen
+Spinorientierungen.
+
+Vereinfacht kann man sie als
+
+\begin{equation}
+	\chi_{\uparrow}
+	=
+	\begin{pmatrix}
+		1 \\
+		0
+	\end{pmatrix}
+\end{equation}
+
+und
+
+\begin{equation}
+	\chi_{\downarrow}
+	=
+	\begin{pmatrix}
+		0 \\
+		1
+	\end{pmatrix}
+\end{equation}
+
+darstellen.
+
+Diese zweikomponentigen Größen werden als Pauli-Spinoren%
+\index{Pauli-Spinor} bezeichnet.
+
+\begin{PhysicsBox}[Zwei mögliche Spinrichtungen]
+	\label{box:zwei_spinrichtungen_dirac}
+	
+	Für eine Messung des Spins entlang einer festgelegten Raumrichtung
+	gibt es beim Elektron zwei mögliche Ergebnisse:
+	
+	\begin{equation}
+		s_z
+		=
+		+\frac{\hbar}{2}
+	\end{equation}
+	
+	oder
+	
+	\begin{equation}
+		s_z
+		=
+		-\frac{\hbar}{2}.
+	\end{equation}
+	
+	Diese beiden Möglichkeiten werden häufig als Spin nach oben und Spin
+	nach unten bezeichnet.
+	
+	Sie sind keine klassischen räumlichen Ausrichtungen einer rotierenden
+	Kugel, sondern mögliche Messergebnisse eines Quantenzustandes.
+\end{PhysicsBox}
+
+\subsubsection*{Der Spinoperator}
+
+In der Quantenmechanik werden messbare Größen durch Operatoren
+beschrieben.
+
+Der Spinoperator des Elektrons kann in der Dirac-Theorie in der Form
+
+\begin{equation}
+	\hat{\mathbf{S}}
+	=
+	\frac{\hbar}{2}
+	\boldsymbol{\Sigma}
+	\label{eq:spinoperator_dirac}
+\end{equation}
+
+geschrieben werden.
+
+Die Größe \(\boldsymbol{\Sigma}\) besteht aus Matrizen, die auf die
+Komponenten des Dirac-Spinors wirken.
+
+In einer gebräuchlichen Darstellung gilt
+
+\begin{equation}
+	\Sigma_i
+	=
+	\begin{pmatrix}
+		\sigma_i & 0 \\
+		0 & \sigma_i
+	\end{pmatrix},
+	\label{eq:sigma_dirac_spinoperator}
+\end{equation}
+
+wobei \(\sigma_i\) die Pauli-Matrizen%
+\index{Pauli-Matrizen!Spinoperator} sind.
+
+Für das grundlegende Verständnis ist vor allem entscheidend, dass der
+Spinoperator unmittelbar aus derselben Matrizenstruktur entsteht, die
+bereits für die Dirac-Gleichung notwendig war.
+
+\begin{MathBox}[Spinoperator der Dirac-Theorie]
+	\label{box:spinoperator_dirac}
+	
+	Der Spinoperator lautet
+	
+	\begin{equation}
+		\hat{\mathbf{S}}
+		=
+		\frac{\hbar}{2}
+		\boldsymbol{\Sigma}.
+	\end{equation}
+	
+	Der Faktor \(\hbar/2\) zeigt, dass das Elektron ein Teilchen mit
+	Spin \(1/2\) ist.
+	
+	Die Matrizen \(\boldsymbol{\Sigma}\) wirken auf die Komponenten des
+	Dirac-Spinors und unterscheiden die möglichen Spinrichtungen.
+\end{MathBox}
+
+\subsubsection*{Spin und Gesamtdrehimpuls}
+
+In einem System können Bahndrehimpuls und Spin gleichzeitig auftreten.
+
+Der gesamte Drehimpuls%
+\index{Gesamtdrehimpuls!Elektron} setzt sich dann aus beiden Anteilen
+zusammen:
+
+\begin{equation}
+	\mathbf{J}
+	=
+	\mathbf{L}
+	+
+	\mathbf{S}.
+	\label{eq:gesamtdrehimpuls_dirac_spin}
+\end{equation}
+
+Dabei bezeichnet
+
+\begin{itemize}
+	\item \(\mathbf{L}\) den Bahndrehimpuls und
+	\item \(\mathbf{S}\) den Spin.
+\end{itemize}
+
+In der relativistischen Theorie ist der Bahndrehimpuls allein im
+Allgemeinen keine erhaltene Größe. Erst der Gesamtdrehimpuls aus
+Bahndrehimpuls und Spin besitzt die richtige Erhaltungseigenschaft.
+
+Dies zeigt, dass beide Größen in der Dirac-Theorie eng miteinander
+verbunden sind.
+
+\begin{PhysicsBox}[Erhaltung des Gesamtdrehimpulses]
+	\label{box:erhaltung_gesamtdrehimpuls_dirac}
+	
+	Für ein relativistisches Elektron müssen Bahndrehimpuls und Spin
+	gemeinsam betrachtet werden:
+	
+	\begin{equation}
+		\mathbf{J}
+		=
+		\mathbf{L}
+		+
+		\mathbf{S}.
+	\end{equation}
+	
+	Die Dirac-Gleichung zeigt damit, dass der Spin ein notwendiger
+	Bestandteil des gesamten Drehimpulses ist.
+\end{PhysicsBox}
+
+\subsubsection*{Der Spin im Magnetfeld}
+
+Das Elektron besitzt eine elektrische Ladung. Sein Spin ist deshalb mit
+einem magnetischen Moment%
+\index{magnetisches Moment!Spin des Elektrons} verbunden.
+
+In einem äußeren Magnetfeld \(\mathbf{B}\) besitzt dieses magnetische
+Moment eine Wechselwirkungsenergie:
+
+\begin{equation}
+	E_{\mathrm{mag}}
+	=
+	-
+	\boldsymbol{\mu}_{\mathrm s}
+	\cdot
+	\mathbf{B}.
+	\label{eq:spin_wechselwirkungsenergie_magnetfeld}
+\end{equation}
+
+Je nach Spinrichtung relativ zum Magnetfeld entstehen unterschiedliche
+Energien.
+
+Dadurch können zuvor gleiche Energiezustände aufgespalten werden. Diese
+Aufspaltung bildet die Grundlage zahlreicher spektroskopischer
+Messverfahren.
+
+Das magnetische Moment des Elektrons lautet
+
+\begin{equation}
+	\boldsymbol{\mu}_{\mathrm s}
+	=
+	-g
+	\frac{e}{2m_{\mathrm e}}
+	\mathbf{S}.
+	\label{eq:magnetisches_moment_spin_dirac}
+\end{equation}
+
+Das Minuszeichen hängt mit der negativen elektrischen Ladung des
+Elektrons zusammen.
+
+\begin{DidacticBox}[Spin im Magnetfeld]
+	\label{box:spin_im_magnetfeld}
+	
+	In einem Magnetfeld hängt die Energie eines Elektrons von seiner
+	Spinrichtung ab.
+	
+	Die beiden möglichen Spinrichtungen können deshalb unterschiedliche
+	Energien besitzen.
+	
+	Diese Energieaufspaltung kann experimentell gemessen werden und macht
+	den Spin sichtbar.
+\end{DidacticBox}
+
+\subsubsection*{Der \(g\)-Faktor des Elektrons}
+
+Der dimensionslose Faktor \(g\) bestimmt die Stärke der Kopplung
+zwischen Spin und magnetischem Moment.
+
+Aus der Dirac-Gleichung folgt
+
+\begin{equation}
+	g
+	=
+	2.
+	\label{eq:g_faktor_aus_dirac_spin}
+\end{equation}
+
+Dieses Ergebnis war bemerkenswert, weil es nicht zusätzlich in die
+Theorie eingesetzt werden musste.
+
+Der experimentell gemessene Wert liegt geringfügig über \(2\). Die
+kleine Abweichung wird als anomales magnetisches Moment%
+\index{anomales magnetisches Moment!Elektron} bezeichnet.
+
+Sie entsteht durch Quanteneffekte, die erst in der
+Quantenelektrodynamik%
+\index{Quantenelektrodynamik!anomales magnetisches Moment}
+vollständig beschrieben werden.
+
+\begin{PhysicsBox}[Diracs Vorhersage des \(g\)-Faktors]
+	\label{box:dirac_vorhersage_g_faktor}
+	
+	Die Dirac-Gleichung liefert für ein punktförmiges Elektron
+	
+	\begin{equation}
+		g=2.
+	\end{equation}
+	
+	Dieser Wert folgt unmittelbar aus der relativistischen
+	Spinorstruktur.
+	
+	Die geringe Abweichung des gemessenen Wertes von \(2\) ist keine
+	Widerlegung der Dirac-Gleichung. Sie entsteht durch zusätzliche
+	Quanteneffekte des elektromagnetischen Feldes.
+\end{PhysicsBox}
+
+\subsubsection*{Der nichtrelativistische Grenzfall}
+
+Für Elektronen mit kleinen Geschwindigkeiten kann die Dirac-Gleichung
+näherungsweise vereinfacht werden.
+
+Dabei entsteht die Pauli-Gleichung%
+\index{Pauli-Gleichung!aus der Dirac-Gleichung}. Sie enthält bereits
+die Wechselwirkung zwischen Spin und Magnetfeld.
+
+Vereinfacht lautet der zugehörige Hamiltonoperator
+
+\begin{equation}
+	\hat{H}_{\mathrm P}
+	=
+	\frac{1}{2m_{\mathrm e}}
+	\left(
+	\hat{\mathbf{p}}
+	+
+	e\mathbf{A}
+	\right)^2
+	-
+	\boldsymbol{\mu}_{\mathrm s}
+	\cdot
+	\mathbf{B},
+	\label{eq:pauli_hamiltonoperator_aus_dirac}
+\end{equation}
+
+wobei \(\mathbf{A}\) das magnetische Vektorpotential%
+\index{Vektorpotential!magnetisches} bezeichnet.
+
+Der zweite Term enthält unmittelbar die Wechselwirkung zwischen Spin
+und Magnetfeld.
+
+Damit zeigt sich:
+
+\begin{equation}
+	\text{Dirac-Gleichung}
+	\longrightarrow
+	\text{Pauli-Gleichung}
+\end{equation}
+
+für kleine Geschwindigkeiten.
+
+Wird zusätzlich der Spin vernachlässigt, erhält man schließlich die
+gewöhnliche Schrödingergleichung.
+
+\begin{DidacticBox}[Die Pauli-Gleichung als Näherung]
+	\label{box:pauli_gleichung_naeherung_dirac}
+	
+	Die Pauli-Gleichung ist keine unabhängige Erklärung des Spins.
+	
+	Sie ist die nichtrelativistische Näherung der Dirac-Gleichung für ein
+	Teilchen mit Spin \(1/2\).
+	
+	Damit wird verständlich, warum der Spin in der Pauli-Gleichung
+	zusätzlich erscheint, in der Dirac-Gleichung jedoch bereits enthalten
+	ist.
+\end{DidacticBox}
+
+\subsubsection*{Warum der Spin zwangsläufig erscheint}
+
+Dirac hatte den Spin nicht als Ausgangspunkt seiner Theorie verwendet.
+
+Seine Forderungen waren zunächst rein physikalischer und mathematischer
+Natur:
+
+\begin{itemize}
+	\item Die Gleichung sollte relativistisch sein.
+	\item Sie sollte nur Ableitungen erster Ordnung enthalten.
+	\item Sie sollte eine sinnvolle Wahrscheinlichkeitsdichte besitzen.
+	\item Beim Quadrieren sollte die relativistische
+	Energie-Impuls-Beziehung entstehen.
+\end{itemize}
+
+Diese Forderungen machten Matrizen und eine mehrkomponentige
+Wellenfunktion notwendig.
+
+Aus genau dieser Struktur entstand der Spin.
+
+\begin{HistoryBox}[Der Spin als theoretische Notwendigkeit]
+	\label{box:spin_theoretische_notwendigkeit}
+	
+	Dirac setzte den Elektronenspin nicht von Hand in seine Gleichung ein.
+	
+	Der Spin erschien, weil eine relativistische Quantengleichung für das
+	Elektron eine mehrkomponentige Wellenfunktion und eine besondere
+	Matrizenstruktur benötigt.
+	
+	Damit wurde aus einer zuvor zusätzlich angenommenen Eigenschaft eine
+	Folge der Theorie.
+\end{HistoryBox}
+
+Die Dirac-Gleichung erklärte somit nicht nur die relativistische
+Bewegung des Elektrons. Sie zeigte auch, warum ein Elektron zwei
+Spinrichtungen besitzt und weshalb sein Spin mit einem magnetischen
+Moment verbunden ist.
+
+Neben dem Spin enthielt die Gleichung jedoch noch eine weitere
+unerwartete Eigenschaft: Sie besaß Lösungen mit negativer Energie.
+Deren Deutung führte schließlich zur Vorhersage des Positrons.
+

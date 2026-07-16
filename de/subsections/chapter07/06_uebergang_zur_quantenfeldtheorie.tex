@@ -1,0 +1,666 @@
+
+\subsection{Übergang zur Quantenfeldtheorie}
+\label{subsec:uebergang_zur_quantenfeldtheorie}
+
+Die Dirac-Gleichung\index{Dirac-Gleichung!Grenzen der Einteilchentheorie}
+beschreibt ein relativistisches Elektron mit Spin und führte zur
+Vorhersage des Positrons. Damit löste sie wesentliche Probleme der
+nichtrelativistischen Quantenmechanik.
+
+Gleichzeitig zeigte sich jedoch eine neue Grenze: In relativistischen
+Prozessen kann die Anzahl der Teilchen nicht immer als fest
+vorausgesetzt werden.
+
+Elektronen und Positronen können erzeugt und vernichtet werden. Eine
+Theorie, die lediglich die Wellenfunktion eines einzelnen Elektrons
+beschreibt, reicht deshalb für solche Vorgänge nicht mehr aus.
+
+Der notwendige nächste Schritt führt zur
+Quantenfeldtheorie\index{Quantenfeldtheorie}.
+
+\begin{DidacticBox}[Die entscheidende Grenze der Einteilchentheorie]
+	\label{box:grenze_einteilchentheorie}
+	
+	Die Dirac-Gleichung kann die Bewegung und den Spin eines einzelnen
+	Elektrons beschreiben.
+	
+	Bei genügend hohen Energien können jedoch neue Elektronen und
+	Positronen entstehen. Ebenso können Teilchen durch Annihilation
+	verschwinden.
+	
+	Sobald sich die Anzahl der Teilchen ändern kann, genügt eine
+	gewöhnliche Einteilchen-Wellenfunktion nicht mehr.
+\end{DidacticBox}
+
+\subsubsection*{Warum eine feste Teilchenzahl nicht ausreicht}
+
+In der gewöhnlichen Quantenmechanik wird häufig ein System mit einer
+festen Anzahl von Teilchen betrachtet.
+
+Ein Elektron kann beispielsweise
+
+\begin{itemize}
+	\item seinen Ort verändern,
+	\item seinen Impuls verändern,
+	\item seinen Energiezustand wechseln oder
+	\item mit einem äußeren Feld wechselwirken.
+\end{itemize}
+
+Es bleibt dabei jedoch als Elektron im betrachteten System vorhanden.
+
+In der relativistischen Physik kann genügend Energie in neue Teilchen
+umgewandelt werden. Ein Photon kann in der Nähe eines Atomkerns ein
+Elektron-Positron-Paar erzeugen:
+
+\begin{equation}
+	\gamma
+	+
+	Z
+	\longrightarrow
+	e^-
+	+
+	e^+
+	+
+	Z.
+	\label{eq:paarbildung_uebergang_feldtheorie}
+\end{equation}
+
+Umgekehrt können Elektron und Positron annihilieren:
+
+\begin{equation}
+	e^-
+	+
+	e^+
+	\longrightarrow
+	\gamma
+	+
+	\gamma.
+	\label{eq:annihilation_uebergang_feldtheorie}
+\end{equation}
+
+Vor und nach diesen Prozessen ist die Anzahl der Teilchen
+unterschiedlich.
+
+Eine Theorie mit einer fest vorgegebenen Teilchenzahl kann solche
+Vorgänge nicht vollständig erfassen.
+
+\begin{PhysicsBox}[Veränderliche Teilchenzahl]
+	\label{box:veraenderliche_teilchenzahl}
+	
+	In einer relativistischen Quantentheorie können
+	
+	\begin{itemize}
+		\item Teilchen erzeugt,
+		\item Antiteilchen erzeugt,
+		\item Teilchen vernichtet und
+		\item Strahlung in Materie oder Materie in Strahlung umgewandelt
+		werden.
+	\end{itemize}
+	
+	Die Erhaltung der Energie bleibt dabei bestehen. Energie kann jedoch
+	in Ruhemasse, Bewegungsenergie und Strahlungsenergie übergehen.
+\end{PhysicsBox}
+
+\subsubsection*{Das Feld als grundlegende Größe}
+
+Die Quantenfeldtheorie verändert den Ausgangspunkt der Beschreibung.
+
+Nicht mehr das einzelne Teilchen steht im Mittelpunkt, sondern ein
+Feld\index{Feld!Quantenfeldtheorie}, das sich über Raum und Zeit
+erstreckt.
+
+Für jede Teilchenart wird ein entsprechendes Quantenfeld betrachtet.
+Beim Elektron ist dies das Elektronenfeld%
+\index{Elektronenfeld} oder genauer das Dirac-Feld%
+\index{Dirac-Feld}.
+
+Ein Elektron wird dann als Anregung dieses Feldes verstanden.
+
+Auch ein Positron ist eine Anregung desselben Feldes, jedoch mit den
+Eigenschaften des Antiteilchens.
+
+\begin{DidacticBox}[Teilchen als Anregungen eines Feldes]
+	\label{box:teilchen_als_feldanregungen}
+	
+	In der Quantenfeldtheorie ist ein Elektron kein völlig eigenständiges
+	Objekt, das unabhängig von einem Feld existiert.
+	
+	Es ist ein bestimmter angeregter Zustand des Elektronenfeldes.
+	
+	Ein Positron ist eine andere mögliche Anregung desselben Feldes.
+\end{DidacticBox}
+
+Diese Sichtweise ähnelt in gewisser Weise einer Welle auf einer
+Wasseroberfläche. Die Welle ist kein zusätzliches Material neben dem
+Wasser, sondern ein angeregter Zustand der Wasseroberfläche.
+
+Der Vergleich ist jedoch nur begrenzt gültig. Ein Quantenfeld ist kein
+klassischer Stoff und benötigt kein materielles Trägermedium.
+
+\subsubsection*{Vom Dirac-Spinor zum Feldoperator}
+
+In der Einteilchentheorie ist
+
+\begin{equation}
+	\Psi(\mathbf{r},t)
+\end{equation}
+
+eine Wellenfunktion beziehungsweise ein Dirac-Spinor.
+
+In der Quantenfeldtheorie wird daraus ein
+Feldoperator\index{Feldoperator}
+
+\begin{equation}
+	\Psi(\mathbf{r},t)
+	\longrightarrow
+	\hat{\Psi}(\mathbf{r},t).
+	\label{eq:dirac_spinor_zum_feldoperator}
+\end{equation}
+
+Der Operator \(\hat{\Psi}\) beschreibt nicht mehr nur den Zustand eines
+bereits vorhandenen Elektrons. Er kann auch Zustände mit
+unterschiedlichen Teilchenzahlen miteinander verbinden.
+
+Vereinfacht enthält das quantisierte Dirac-Feld Anteile, die
+
+\begin{itemize}
+	\item ein Elektron vernichten und
+	\item ein Positron erzeugen
+\end{itemize}
+
+können.
+
+Der adjungierte Feldoperator enthält entsprechend Anteile, die
+
+\begin{itemize}
+	\item ein Elektron erzeugen und
+	\item ein Positron vernichten
+\end{itemize}
+
+können.
+
+\begin{MathBox}[Symbolische Struktur des Dirac-Feldes]
+	\label{box:symbolische_struktur_dirac_feld}
+	
+	Vereinfacht kann die Struktur des quantisierten Dirac-Feldes als
+	
+	\begin{equation}
+		\hat{\Psi}
+		\sim
+		\hat{b}
+		+
+		\hat{d}^{\dagger}
+	\end{equation}
+	
+	geschrieben werden.
+	
+	Dabei steht
+	
+	\begin{itemize}
+		\item \(\hat{b}\) für die Vernichtung eines Elektrons und
+		\item \(\hat{d}^{\dagger}\) für die Erzeugung eines Positrons.
+	\end{itemize}
+	
+	Die vollständige Gleichung enthält zusätzlich Impuls-, Spin- und
+	Raumzeitabhängigkeiten.
+\end{MathBox}
+
+Die Symbole \(\hat{b}\) und \(\hat{d}^{\dagger}\) werden als
+Vernichtungs- und Erzeugungsoperatoren%
+\index{Vernichtungsoperator}%
+\index{Erzeugungsoperator}
+bezeichnet.
+
+Sie verändern die Anzahl der Teilchen in einem Quantenzustand.
+
+\subsubsection*{Zustände mit unterschiedlicher Teilchenzahl}
+
+Der Zustandsraum einer Quantenfeldtheorie muss Zustände mit
+unterschiedlich vielen Teilchen enthalten.
+
+Ein möglicher Zustand kann beispielsweise kein Elektron enthalten:
+
+\begin{equation}
+	\lvert 0\rangle.
+\end{equation}
+
+Dieser Zustand wird als Vakuumzustand%
+\index{Vakuumzustand} bezeichnet.
+
+Ein Zustand mit einem Elektron kann symbolisch geschrieben werden als
+
+\begin{equation}
+	\lvert e^-\rangle.
+\end{equation}
+
+Ein Zustand mit einem Elektron und einem Positron lautet beispielsweise
+
+\begin{equation}
+	\lvert e^-e^+\rangle.
+\end{equation}
+
+Durch einen Erzeugungsoperator kann aus dem Vakuum ein Teilchenzustand
+entstehen:
+
+\begin{equation}
+	\hat{b}^{\dagger}
+	\lvert 0\rangle
+	=
+	\lvert e^-\rangle.
+	\label{eq:erzeugung_elektron_vakuum}
+\end{equation}
+
+Entsprechend kann ein Vernichtungsoperator ein vorhandenes Elektron
+entfernen:
+
+\begin{equation}
+	\hat{b}
+	\lvert e^-\rangle
+	=
+	\lvert 0\rangle.
+	\label{eq:vernichtung_elektron_vakuum}
+\end{equation}
+
+\begin{DidacticBox}[Was bedeutet Teilchenvernichtung?]
+	\label{box:bedeutung_teilchenvernichtung}
+	
+	Teilchenvernichtung bedeutet nicht, dass Energie oder andere
+	Erhaltungsgrößen verschwinden.
+	
+	Der ursprüngliche Teilchenzustand geht in einen anderen Zustand über.
+	Die Energie kann beispielsweise in Photonen oder in die
+	Bewegungsenergie anderer Teilchen übergehen.
+	
+	Die Gesamtenergie und die übrigen Erhaltungsgrößen bleiben erhalten.
+\end{DidacticBox}
+
+\subsubsection*{Das elektromagnetische Feld wird ebenfalls quantisiert}
+
+Für eine vollständige Beschreibung der Wechselwirkung zwischen
+Elektronen und Licht genügt es nicht, nur das Elektronenfeld zu
+quantisieren.
+
+Auch das elektromagnetische Feld%
+\index{elektromagnetisches Feld!Quantisierung}
+muss quantenmechanisch behandelt werden.
+
+Die Anregungen des quantisierten elektromagnetischen Feldes sind
+Photonen\index{Photon!Feldanregung}.
+
+Damit ergibt sich eine einheitliche Beschreibung:
+
+\begin{itemize}
+	\item Elektronen sind Anregungen des Elektronenfeldes.
+	\item Positronen sind Antiteilchenanregungen des Elektronenfeldes.
+	\item Photonen sind Anregungen des elektromagnetischen Feldes.
+\end{itemize}
+
+Die Wechselwirkung zwischen diesen Feldern wird durch die
+Quantenelektrodynamik%
+\index{Quantenelektrodynamik} beschrieben.
+
+\begin{PhysicsBox}[Grundidee der Quantenelektrodynamik]
+	\label{box:grundidee_quantenelektrodynamik}
+	
+	Die Quantenelektrodynamik beschreibt die Wechselwirkung zwischen
+	
+	\begin{itemize}
+		\item dem Elektronen-Positronen-Feld und
+		\item dem elektromagnetischen Feld.
+	\end{itemize}
+	
+	Dabei können Elektronen und Positronen Photonen aussenden oder
+	aufnehmen.
+	
+	Die Quantenelektrodynamik wird häufig mit der Abkürzung QED bezeichnet.
+\end{PhysicsBox}
+
+\subsubsection*{Wechselwirkung zwischen Elektronen und Photonen}
+
+Ein Elektron kann ein Photon aussenden:
+
+\begin{equation}
+	e^-
+	\longrightarrow
+	e^-
+	+
+	\gamma.
+	\label{eq:elektron_emission_photon_symbolisch}
+\end{equation}
+
+Ein Elektron kann auch ein Photon absorbieren:
+
+\begin{equation}
+	e^-
+	+
+	\gamma
+	\longrightarrow
+	e^-.
+	\label{eq:elektron_absorption_photon_symbolisch}
+\end{equation}
+
+Diese symbolischen Gleichungen zeigen lediglich die beteiligten
+Teilchen. Ein freies Elektron kann im leeren Raum nicht beliebig ein
+reales Photon aussenden oder aufnehmen, da dabei gleichzeitig Energie
+und Impuls erhalten bleiben müssen.
+
+In der Nähe eines Atomkerns, innerhalb eines Atoms oder bei der
+Wechselwirkung mit anderen Teilchen sind entsprechende Prozesse
+möglich.
+
+Die Quantenelektrodynamik beschreibt außerdem Vorgänge wie
+
+\begin{itemize}
+	\item die Streuung von Elektronen,
+	\item die Streuung von Photonen an Elektronen,
+	\item Paarbildung,
+	\item Annihilation und
+	\item Korrekturen des magnetischen Moments.
+\end{itemize}
+
+\subsubsection*{Feynman-Diagramme}
+
+Viele Prozesse der Quantenelektrodynamik können mithilfe von
+Feynman-Diagrammen%
+\index{Feynman-Diagramm}
+dargestellt werden.
+
+In solchen Diagrammen werden Teilchen und ihre Wechselwirkungen durch
+Linien und Verbindungspunkte symbolisiert.
+
+Typischerweise stehen
+
+\begin{itemize}
+	\item gerade Linien für Elektronen oder Positronen,
+	\item gewellte Linien für Photonen und
+	\item Verbindungspunkte für Wechselwirkungen.
+\end{itemize}
+
+Ein Feynman-Diagramm ist jedoch kein genaues Bild einer räumlichen
+Teilchenbahn. Es stellt einen mathematischen Beitrag zur
+Wahrscheinlichkeit eines Prozesses dar.
+
+\begin{DidacticBox}[Feynman-Diagramme sind keine Fotografien]
+	\label{box:feynman_diagramme_keine_fotografien}
+	
+	Ein Feynman-Diagramm zeigt nicht, wie Teilchen im Raum tatsächlich auf
+	kleinen Bahnen fliegen.
+	
+	Es ist eine grafische Darstellung mathematischer Terme, mit denen die
+	Wahrscheinlichkeit eines Wechselwirkungsprozesses berechnet wird.
+\end{DidacticBox}
+
+\subsubsection*{Virtuelle Teilchen}
+
+In Berechnungen mit Feynman-Diagrammen treten häufig innere Linien auf.
+Sie werden mit sogenannten virtuellen Teilchen%
+\index{virtuelles Teilchen} verbunden.
+
+Virtuelle Teilchen sind keine frei beobachtbaren Teilchen, die
+vorübergehend direkt gemessen werden könnten.
+
+Sie sind Bestandteile der mathematischen Beschreibung einer
+Wechselwirkung. Sie müssen nicht dieselbe Energie-Impuls-Beziehung
+erfüllen wie frei beobachtbare Teilchen.
+
+Beobachtbare Elektronen, Positronen und Photonen treten dagegen als
+reale Anfangs- oder Endzustände eines Prozesses auf.
+
+\begin{NoteBox}[Vorsicht beim Begriff virtuelles Teilchen]
+	\label{box:vorsicht_virtuelle_teilchen}
+	
+	Die Aussage, ein virtuelles Teilchen leihe sich kurzzeitig Energie aus,
+	ist eine verbreitete, aber irreführende Vereinfachung.
+	
+	Energie bleibt auch in der Quantenfeldtheorie erhalten.
+	
+	Virtuelle Teilchen sind mathematische Zwischenbeiträge innerhalb einer
+	Berechnung und keine direkt beobachtbaren kurzlebigen Teilchen.
+\end{NoteBox}
+
+\subsubsection*{Das Vakuum ist nicht einfach leer}
+
+Der Vakuumzustand enthält keine frei beobachtbaren Teilchen. Trotzdem
+ist er nicht mit dem klassischen Begriff eines vollkommen leeren
+Raumes gleichzusetzen.
+
+Auch im Vakuum sind die Quantenfelder vorhanden. Sie befinden sich in
+ihrem niedrigsten Energiezustand.
+
+Die Quanteneigenschaften dieses Zustandes können messbare Auswirkungen
+haben. Dazu gehören beispielsweise Korrekturen an Energieniveaus und
+am magnetischen Moment des Elektrons.
+
+Solche Effekte werden häufig unter dem Begriff
+Vakuumfluktuationen\index{Vakuumfluktuationen} zusammengefasst.
+
+Dabei ist Vorsicht mit anschaulichen Bildern geboten. Das Vakuum sollte
+nicht einfach als Raum voller ständig spontan entstehender und wieder
+verschwindender klassischer Teilchen verstanden werden.
+
+\begin{DidacticBox}[Quantenfeldtheoretisches Vakuum]
+	\label{box:quantenfeldtheoretisches_vakuum}
+	
+	Das Vakuum ist der Zustand mit der niedrigsten möglichen Energie.
+	
+	Es enthält keine frei messbaren Teilchen, aber die Quantenfelder selbst
+	sind weiterhin vorhanden.
+	
+	Ihre Quanteneigenschaften können beobachtbare physikalische
+	Auswirkungen besitzen.
+\end{DidacticBox}
+
+\subsubsection*{Die Dirac-Gleichung bleibt erhalten}
+
+Der Übergang zur Quantenfeldtheorie bedeutet nicht, dass die
+Dirac-Gleichung falsch oder überflüssig wird.
+
+Die Gleichung bleibt die grundlegende Bewegungsgleichung des freien
+Elektronenfeldes.
+
+Der entscheidende Unterschied besteht darin, dass der Dirac-Spinor nun
+als Operatorfeld behandelt wird:
+
+\begin{equation}
+	\Psi
+	\longrightarrow
+	\hat{\Psi}.
+\end{equation}
+
+Dadurch können Elektronen und Positronen erzeugt und vernichtet werden.
+
+Die Einteilchen-Dirac-Gleichung ist somit ein wichtiger Grenzfall der
+umfassenderen Quantenfeldtheorie.
+
+\begin{PhysicsBox}[Die Dirac-Gleichung in der Feldtheorie]
+	\label{box:diracgleichung_in_feldtheorie}
+	
+	Die Quantenfeldtheorie ersetzt die Dirac-Gleichung nicht.
+	
+	Sie erweitert ihre Bedeutung:
+	
+	\begin{itemize}
+		\item Aus der Wellenfunktion wird ein quantisiertes Feld.
+		\item Elektronen und Positronen werden zu Anregungen dieses Feldes.
+		\item Die Anzahl der Teilchen kann sich verändern.
+	\end{itemize}
+	
+	Die mathematische Struktur der Dirac-Gleichung bleibt dabei erhalten.
+\end{PhysicsBox}
+
+\subsubsection*{Warum die Feldtheorie notwendig ist}
+
+Die Quantenfeldtheorie löst mehrere Probleme, die in einer
+relativistischen Einteilchentheorie auftreten:
+
+\begin{enumerate}
+	\item Sie erlaubt eine veränderliche Anzahl von Teilchen.
+	\item Sie beschreibt Teilchen und Antiteilchen einheitlich.
+	\item Sie behandelt Materie und Strahlung als quantisierte Felder.
+	\item Sie ermöglicht die Berechnung von Paarbildung und
+	Annihilation.
+	\item Sie erklärt Korrekturen, die über die einfache
+	Dirac-Gleichung hinausgehen.
+\end{enumerate}
+
+Ein besonders bedeutendes Beispiel ist das magnetische Moment des
+Elektrons.
+
+Die Dirac-Gleichung liefert zunächst
+
+\begin{equation}
+	g
+	=
+	2.
+\end{equation}
+
+Die Quantenelektrodynamik berücksichtigt zusätzlich die Wechselwirkung
+des Elektrons mit dem quantisierten elektromagnetischen Feld und
+erklärt dadurch die geringe Abweichung vom Wert \(2\).
+
+\subsubsection*{Vom Teilchenbild zum Feldbild}
+
+Der historische Weg zur modernen Beschreibung des Elektrons lässt sich
+vereinfacht zusammenfassen:
+
+\begin{equation}
+	\begin{aligned}
+		\text{klassisches Teilchen}
+		&\longrightarrow
+		\text{Quantenobjekt}
+		\\
+		&\longrightarrow
+		\text{relativistischer Spinor}
+		\\
+		&\longrightarrow
+		\text{Anregung eines Quantenfeldes}.
+	\end{aligned}
+	\label{eq:entwicklung_elektronenbild}
+\end{equation}
+
+Jede Stufe erweitert die vorherige Beschreibung.
+
+Das klassische Teilchenbild bleibt für viele technische Anwendungen
+nützlich. Die Schrödingergleichung beschreibt zahlreiche atomare und
+molekulare Vorgänge. Die Dirac-Gleichung ergänzt Relativität, Spin und
+Antiteilchen.
+
+Die Quantenfeldtheorie wird notwendig, wenn Teilchen erzeugt,
+vernichtet oder durch quantisierte Felder beeinflusst werden.
+
+\begin{DidacticBox}[Mehrere Beschreibungen, kein Widerspruch]
+	\label{box:mehrere_beschreibungen_elektron}
+	
+	Das Elektron kann je nach Fragestellung unterschiedlich beschrieben
+	werden:
+	
+	\begin{itemize}
+		\item als klassisches geladenes Teilchen,
+		\item durch eine Schrödinger-Wellenfunktion,
+		\item durch einen Dirac-Spinor oder
+		\item als Anregung eines Quantenfeldes.
+	\end{itemize}
+	
+	Diese Modelle widersprechen sich nicht grundsätzlich. Sie besitzen
+	unterschiedliche Gültigkeitsbereiche und unterschiedliche
+	Genauigkeiten.
+\end{DidacticBox}
+
+\subsubsection*{Bedeutung für die moderne Physik}
+
+Die Verbindung von Quantenmechanik und spezieller Relativitätstheorie
+führte nicht lediglich zu einer verbesserten Bewegungsgleichung für
+das Elektron.
+
+Sie veränderte das grundlegende Verständnis von Materie.
+
+Teilchen werden in der modernen Physik als quantisierte Anregungen von
+Feldern beschrieben. Antiteilchen sind dabei keine mathematischen
+Sonderfälle, sondern notwendige Bestandteile relativistischer
+Quantenfelder.
+
+Die Quantenelektrodynamik entwickelte sich zu einer der präzisesten
+physikalischen Theorien. Sie beschreibt die elektromagnetische
+Wechselwirkung von Elektronen, Positronen und Photonen.
+
+\begin{HistoryBox}[Vom Elektron zur Quantenfeldtheorie]
+	\label{box:vom_elektron_zur_quantenfeldtheorie}
+	
+	Die Suche nach einer relativistischen Gleichung für ein einzelnes
+	Elektron führte schrittweise zu einer umfassenderen Theorie.
+	
+	Die negativen Energielösungen wiesen auf Antiteilchen hin. Paarbildung
+	und Annihilation zeigten, dass die Teilchenzahl nicht fest sein kann.
+	
+	Daraus entstand die Vorstellung, dass nicht einzelne Teilchen, sondern
+	Quantenfelder die grundlegenden Größen der Theorie sind.
+\end{HistoryBox}
+
+\subsubsection*{Zusammenfassung des Kapitels}
+
+Die Schrödingergleichung beschreibt Elektronen zuverlässig im
+nichtrelativistischen Bereich. Für hohe Geschwindigkeiten und Energien
+musste sie jedoch erweitert werden.
+
+Dirac gelang es, eine Gleichung zu formulieren, die Quantenmechanik und
+spezielle Relativitätstheorie miteinander verbindet.
+
+Aus der Dirac-Gleichung folgten
+
+\begin{itemize}
+	\item der Spin des Elektrons,
+	\item sein magnetisches Moment,
+	\item positive und negative Energielösungen sowie
+	\item die Existenz des Positrons.
+\end{itemize}
+
+Die Möglichkeit von Paarbildung und Annihilation zeigte schließlich,
+dass eine feste Teilchenzahl nicht ausreicht.
+
+In der Quantenfeldtheorie werden Elektronen und Positronen daher als
+Anregungen eines quantisierten Dirac-Feldes beschrieben. Photonen sind
+Anregungen des elektromagnetischen Feldes.
+
+\begin{PhysicsBox}[Vom Elektron zum Quantenfeld]
+	\label{box:vom_elektron_zum_quantenfeld}
+	
+	Die moderne Beschreibung des Elektrons verbindet vier zentrale Ideen:
+	
+	\begin{enumerate}
+		\item Das Elektron besitzt Quanteneigenschaften.
+		\item Seine Bewegung muss relativistisch beschrieben werden können.
+		\item Es besitzt Spin und ein Antiteilchen.
+		\item Es ist eine Anregung eines quantisierten Feldes.
+	\end{enumerate}
+	
+	Damit führt der Weg von der Schrödingergleichung über die
+	Dirac-Gleichung unmittelbar zur Quantenfeldtheorie.
+\end{PhysicsBox}
+
+\subsubsection*{Fazit}
+
+Die Entwicklung von der Schrödingergleichung über die Dirac-Gleichung
+bis zur Quantenfeldtheorie zeigt, wie eng physikalische Prinzipien und
+mathematische Strukturen miteinander verbunden sind.
+
+Dirac wollte Quantenmechanik und spezielle Relativitätstheorie in einer
+gemeinsamen Gleichung vereinen. Aus den dafür notwendigen
+mathematischen Bedingungen folgten jedoch Eigenschaften, die nicht
+zusätzlich vorausgesetzt worden waren: der Spin des Elektrons, die
+vierkomponentige Struktur seines Zustandes und Lösungen, die auf ein
+Antiteilchen hinwiesen.
+
+Das Positron\index{Positron!mathematische Vorhersage} wurde damit
+zunächst als mathematische Konsequenz sichtbar und erst später
+experimentell nachgewiesen.
+
+\begin{HistoryBox}[Mathematik als Wegweiser]
+	\label{box:mathematik_als_wegweiser_dirac}
+	
+	Die Dirac-Gleichung zeigt, dass Mathematik in der Physik mehr sein kann
+	als ein Werkzeug zur Berechnung.
+	
+	Aus physikalischen Prinzipien und mathematischer Konsequenz entstand
+	die Vorhersage einer zuvor unbekannten Naturerscheinung.
+\end{HistoryBox}
+

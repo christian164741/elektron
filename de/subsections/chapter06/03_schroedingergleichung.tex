@@ -1,0 +1,108 @@
+\subsection{Schrödingergleichung für das Wasserstoffatom}
+\label{subsec:schroedingergleichung_wasserstoffatom}
+
+Der Wellencharakter des Elektrons\index{Wellencharakter!des Elektrons} führt
+direkt zur Frage, wie sich ein Elektron\index{Elektron} mathematisch beschreiben
+lässt. In der klassischen Mechanik wird die Bewegung eines Teilchens durch seine
+Bahn beschrieben. Man gibt Ort und Geschwindigkeit an und berechnet daraus die
+weitere Bewegung. In der Quantenmechanik\index{Quantenmechanik} ist diese
+Vorstellung nicht mehr ausreichend.
+
+Die zentrale Größe ist nicht mehr eine Bahnkurve, sondern die
+Wellenfunktion\index{Wellenfunktion}. Sie wird meist mit \(\psi\) bezeichnet.
+Die Wellenfunktion selbst ist nicht direkt messbar. Aus ihrem Betragsquadrat
+ergibt sich jedoch die Wahrscheinlichkeit\index{Wahrscheinlichkeit}, ein
+Elektron an einem bestimmten Ort zu finden:
+
+\begin{equation}
+	P(\vec r) \propto |\psi(\vec r)|^2 .
+	\label{eq:wahrscheinlichkeit_psi_quadrat}
+\end{equation}
+
+Die Gleichung, mit der sich die Wellenfunktion eines nichtrelativistischen
+Teilchens berechnen lässt, ist die Schrödingergleichung
+\index{Schrödingergleichung}. Für stationäre Zustände besitzt sie die Form:
+
+\begin{equation}
+	\hat{H}\psi = E\psi .
+	\label{eq:stationaere_schroedingergleichung}
+\end{equation}
+
+Dabei ist \(\hat{H}\)\index{Hamilton-Operator} der Hamilton-Operator. Er
+beschreibt die Gesamtenergie des Systems. Die Größe \(E\)\index{Energie} ist
+die Energie des jeweiligen Zustands. Die Wellenfunktion \(\psi\) beschreibt den
+zugehörigen quantenmechanischen Zustand\index{Zustand!quantenmechanischer}.
+
+Für das Wasserstoffatom\index{Wasserstoffatom} ist diese Gleichung besonders
+wichtig. Das Wasserstoffatom besteht aus einem Proton\index{Proton} und einem
+Elektron. Das Elektron befindet sich im elektrischen Feld des positiv geladenen
+Atomkerns\index{Atomkern}. Zwischen Elektron und Proton wirkt die
+Coulomb-Anziehung\index{Coulomb-Anziehung}.
+
+In vereinfachter Form lautet die stationäre Schrödingergleichung für das
+Elektron im Wasserstoffatom:
+In dieser vereinfachten Darstellung wird der Atomkern als ruhend angenommen.
+Die mathematischen Hintergründe dieser Gleichung werden in
+Anhang~\ref{app:mathe_schroedingergleichung} genauer beschrieben.
+\begin{equation}
+	\left(
+	-\frac{\hbar^2}{2m_\mathrm{e}}\nabla^2
+	-\frac{e^2}{4\pi\varepsilon_0 r}
+	\right)\psi
+	=
+	E\psi .
+	\label{eq:schroedingergleichung_wasserstoff}
+\end{equation}
+
+Der erste Term
+
+\begin{equation}
+	-\frac{\hbar^2}{2m_\mathrm{e}}\nabla^2
+	\label{eq:kinetischer_term_schroedinger}
+\end{equation}
+
+beschreibt die kinetische Energie\index{kinetische Energie} des Elektrons. Der
+Operator \(\nabla^2\)\index{Laplace-Operator} ist der Laplace-Operator. Er
+beschreibt, wie stark sich die Wellenfunktion räumlich verändert.
+
+Der zweite Term
+
+\begin{equation}
+	-\frac{e^2}{4\pi\varepsilon_0 r}
+	\label{eq:coulomb_potential_wasserstoff}
+\end{equation}
+
+beschreibt die potentielle Energie\index{potentielle Energie} des Elektrons im
+Coulomb-Feld\index{Coulomb-Feld} des Protons. Das Minuszeichen zeigt, dass die
+Kraft anziehend ist. Je kleiner der Abstand \(r\)\index{Abstand} zwischen
+Elektron und Proton ist, desto stärker ist diese Wechselwirkung.
+
+\begin{PhysicsBox}[Bedeutung der Schrödingergleichung]
+	\label{box:bedeutung_schroedingergleichung}
+	Die Schrödingergleichung ersetzt im Atom die klassische Bahn des Elektrons
+	durch eine Wellenfunktion. Aus dieser Wellenfunktion ergeben sich die
+	möglichen Energien und die Aufenthaltswahrscheinlichkeiten des Elektrons.
+\end{PhysicsBox}
+
+Die Lösungen der Schrödingergleichung für das Wasserstoffatom liefern nicht
+beliebige Energien. Es sind nur bestimmte Energiewerte erlaubt. Man spricht von
+diskreten Energieniveaus\index{Energieniveau!diskretes}. Damit erklärt die
+Quantenmechanik, warum Atome nur bestimmte Lichtfrequenzen aufnehmen oder
+aussenden können.
+
+Gleichzeitig liefern die Lösungen räumliche Verteilungen für die
+Aufenthaltswahrscheinlichkeit des Elektrons. Diese Verteilungen sind keine
+klassischen Kreisbahnen. Sie beschreiben Bereiche, in denen das Elektron mit
+hoher Wahrscheinlichkeit gefunden wird. Aus diesen Lösungen entsteht die
+Vorstellung der Orbitale\index{Orbital}\index{Atomorbital}.
+
+Damit unterscheidet sich das quantenmechanische Bild grundlegend vom bohrschen
+Atommodell\index{bohrsches Atommodell}. Im bohrschen Modell bewegt sich das
+Elektron noch auf bestimmten Bahnen um den Kern. In der Schrödinger-Theorie gibt
+es solche Bahnen nicht mehr. Das Elektron wird durch einen Zustand beschrieben,
+dessen räumliche Struktur durch die Wellenfunktion festgelegt ist.
+
+Die Schrödingergleichung bildet damit den mathematischen Übergang vom
+klassischen Elektronenbild zum modernen Atommodell. Sie erklärt sowohl die
+diskreten Energien des Wasserstoffatoms als auch die räumliche Struktur der
+Elektronenhülle\index{Elektronenhülle}.

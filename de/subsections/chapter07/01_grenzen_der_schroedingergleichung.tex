@@ -1,0 +1,352 @@
+
+\subsection{Grenzen der Schrödingergleichung}
+\label{subsec:grenzen_schroedingergleichung}
+
+Die Schrödingergleichung%
+\index{Schrödingergleichung!Grenzen}
+gehört zu den erfolgreichsten Gleichungen der modernen Physik. Mit ihr
+lassen sich unter anderem Atome, Moleküle, chemische Bindungen und viele
+Eigenschaften von Festkörpern beschreiben.
+
+Trotz dieses Erfolges ist sie keine vollständige Theorie des Elektrons.
+Sie gilt nur unter bestimmten Voraussetzungen. Vor allem ist sie eine
+nichtrelativistische Gleichung%
+\index{Quantenmechanik!nichtrelativistische}. Sie beschreibt Teilchen
+zuverlässig, solange deren Geschwindigkeit deutlich kleiner als die
+Lichtgeschwindigkeit ist.
+
+Bei sehr hohen Energien treten jedoch relativistische Effekte auf.
+Dann müssen Quantenmechanik und spezielle Relativitätstheorie%
+\index{Relativitätstheorie!spezielle} miteinander verbunden werden.
+
+\subsubsection*{Die nichtrelativistische Energie}
+
+Die Schrödingergleichung beruht auf der klassischen Beziehung zwischen
+kinetischer Energie und Impuls:
+
+\begin{equation}
+	E_{\mathrm{kin}}
+	=
+	\frac{p^2}{2m}.
+	\label{eq:klassische_energie_schroedinger_grenzen}
+\end{equation}
+
+Dabei bezeichnet \(p\) den Impuls und \(m\) die Masse des Teilchens.
+
+Diese Beziehung ist eine sehr gute Näherung, solange
+
+\begin{equation}
+	v
+	\ll
+	c
+\end{equation}
+
+gilt. Die Geschwindigkeit \(v\) des Teilchens muss also wesentlich
+kleiner als die Lichtgeschwindigkeit \(c\) sein.
+
+Für ein freies Teilchen lautet die Schrödingergleichung
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial}{\partial t}
+	\Psi(\mathbf{r},t)
+	=
+	-\frac{\hbar^2}{2m}
+	\nabla^2
+	\Psi(\mathbf{r},t).
+	\label{eq:freie_schroedingergleichung_grenzen}
+\end{equation}
+
+Der Ausdruck auf der rechten Seite entsteht unmittelbar aus der
+klassischen Energieformel
+
+\begin{equation}
+	E_{\mathrm{kin}}
+	=
+	\frac{p^2}{2m}.
+\end{equation}
+
+Für hohe Geschwindigkeiten gilt jedoch die relativistische
+Energie-Impuls-Beziehung%
+\index{Energie-Impuls-Beziehung!relativistische}
+
+\begin{equation}
+	E^2
+	=
+	p^2c^2
+	+
+	m^2c^4.
+	\label{eq:relativistische_energie_impuls_kapitel07}
+\end{equation}
+
+Diese Beziehung unterscheidet sich grundlegend von der klassischen
+Formel. Insbesondere enthält sie die Ruheenergie%
+\index{Ruheenergie}
+
+\begin{equation}
+	E_0
+	=
+	mc^2.
+\end{equation}
+
+\begin{PhysicsBox}[Nichtrelativistische Näherung]
+	\label{box:nichtrelativistische_naeherung_schroedinger}
+	
+	Die Schrödingergleichung ist zuverlässig, solange die kinetische
+	Energie des Elektrons wesentlich kleiner als seine Ruheenergie ist:
+	
+	\begin{equation}
+		E_{\mathrm{kin}}
+		\ll
+		m_{\mathrm e}c^2.
+	\end{equation}
+	
+	Für das Elektron beträgt die Ruheenergie
+	
+	\begin{equation}
+		m_{\mathrm e}c^2
+		\approx
+		\SI{511}{\kilo\electronvolt}.
+	\end{equation}
+	
+	Je näher die Energie des Elektrons an diese Größenordnung herankommt,
+	desto wichtiger werden relativistische Korrekturen.
+\end{PhysicsBox}
+
+Das bedeutet nicht, dass die Schrödingergleichung bei jeder hohen
+Energie plötzlich vollständig versagt. Relativistische Abweichungen
+werden schrittweise größer. Für präzise Berechnungen müssen sie daher
+bereits berücksichtigt werden, bevor die kinetische Energie die
+Ruheenergie erreicht.
+
+\subsubsection*{Raum und Zeit werden unterschiedlich behandelt}
+
+In der Schrödingergleichung tritt die zeitliche Ableitung in erster
+Ordnung auf:
+
+\begin{equation}
+	\frac{\partial\Psi}{\partial t}.
+\end{equation}
+
+Die räumliche Abhängigkeit erscheint dagegen über den
+Laplace-Operator\index{Laplace-Operator} mit Ableitungen zweiter
+Ordnung:
+
+\begin{equation}
+	\nabla^2\Psi
+	=
+	\frac{\partial^2\Psi}{\partial x^2}
+	+
+	\frac{\partial^2\Psi}{\partial y^2}
+	+
+	\frac{\partial^2\Psi}{\partial z^2}.
+\end{equation}
+
+Raum und Zeit werden mathematisch also unterschiedlich behandelt.
+
+In der speziellen Relativitätstheorie bilden Raum und Zeit dagegen
+eine gemeinsame vierdimensionale Raumzeit%
+\index{Raumzeit}. Eine relativistische Gleichung muss so formuliert
+sein, dass sie unter Lorentz-Transformationen%
+\index{Lorentz-Transformation} ihre Form behält.
+
+Die gewöhnliche Schrödingergleichung erfüllt diese Forderung nicht. Sie
+ist an die nichtrelativistische Mechanik und deren
+Galilei-Trans- \newline formationen%
+\index{Galilei-Transformation} angepasst.
+
+\begin{DidacticBox}[Was ist das eigentliche Problem?]
+	\label{box:raum_zeit_schroedinger}
+	
+	Die Schrödingergleichung behandelt die Zeit anders als den Raum.
+	
+	Das ist im nichtrelativistischen Bereich kein Fehler. Dort ist diese
+	Form genau die passende Näherung.
+	
+	Für eine relativistische Theorie reicht sie jedoch nicht aus, weil
+	Raum und Zeit dann gemeinsam beschrieben werden müssen.
+\end{DidacticBox}
+
+\subsubsection*{Der Spin ist nicht Bestandteil der Gleichung}
+
+Das Elektron besitzt einen intrinsischen Drehimpuls, den
+Spin\index{Spin!Elektron}. Dieser Spin ist keine klassische Drehung
+einer kleinen Kugel. Er ist eine grundlegende Quanteneigenschaft des
+Elektrons.
+
+Für das Elektron gilt
+
+\begin{equation}
+	s
+	=
+	\frac{\hbar}{2}.
+	\label{eq:spin_elektron_grenzen}
+\end{equation}
+
+Die ursprüngliche Schrödingergleichung enthält den Spin nicht. Ein
+Elektron wird darin zunächst nur durch eine skalare Wellenfunktion
+beschrieben.
+
+Der Spin kann nachträglich durch eine Erweiterung der Theorie
+berücksichtigt werden. Dies führt zur Pauli-Gleichung%
+\index{Pauli-Gleichung}. Dabei wird der Zustand des Elektrons durch zwei
+Komponenten beschrieben, die den beiden möglichen Spinrichtungen
+zugeordnet sind.
+
+Die Pauli-Gleichung beschreibt auch die Wechselwirkung zwischen dem
+Spin und einem Magnetfeld. Sie erklärt jedoch nicht, warum das Elektron
+überhaupt den Spin \(\hbar/2\) besitzt.
+
+\begin{DidacticBox}[Der Spin wird nicht hergeleitet]
+	\label{box:spin_nicht_hergeleitet_schroedinger}
+	
+	Die Schrödingergleichung widerspricht dem Elektronenspin nicht.
+	
+	Der Spin ist jedoch nicht von Anfang an in ihrer mathematischen
+	Struktur enthalten. Er muss zusätzlich eingeführt werden.
+	
+	Eine relativistische Theorie des Elektrons sollte den Spin dagegen
+	unmittelbar aus der Gleichung selbst ergeben.
+\end{DidacticBox}
+
+\subsubsection*{Die Anzahl der Teilchen bleibt fest}
+
+In der gewöhnlichen Quantenmechanik wird meist eine feste Anzahl von
+Teilchen vorausgesetzt. Ein Elektron kann sich bewegen, gebunden werden
+oder seinen Energiezustand ändern. Es bleibt dabei jedoch als Teilchen
+erhalten.
+
+Bei hohen Energien können Teilchen und Antiteilchen%
+\index{Antiteilchen} jedoch erzeugt oder vernichtet werden.
+
+Ein energiereiches Photon kann beispielsweise in der Nähe eines
+Atomkerns ein Elektron-Positron-Paar erzeugen:
+
+\begin{equation}
+	\gamma
+	\longrightarrow
+	e^-
+	+
+	e^+.
+	\label{eq:paarbildung_elektron_positron_grenzen}
+\end{equation}
+
+Dieser Vorgang wird als Paarbildung%
+\index{Paarbildung!Elektron und Positron} bezeichnet.
+
+Die dafür mindestens erforderliche Ruheenergie beträgt
+
+\begin{equation}
+	E_{\mathrm{min}}
+	=
+	2m_{\mathrm e}c^2
+	\approx
+	\SI{1.022}{\mega\electronvolt}.
+	\label{eq:mindestenergie_paarbildung}
+\end{equation}
+
+Das Positron\index{Positron} besitzt dieselbe Masse wie das Elektron,
+aber eine positive elektrische Ladung.
+
+Eine Theorie mit einer fest vorgegebenen Teilchenzahl kann solche
+Prozesse nicht vollständig beschreiben. Dafür wird später eine
+Quantenfeldtheorie%
+\index{Quantenfeldtheorie} benötigt.
+
+\begin{PhysicsBox}[Feste Teilchenzahl]
+	\label{box:feste_teilchenzahl_schroedinger}
+	
+	Die Schrödingergleichung beschreibt gewöhnlich Zustände mit einer
+	festen Anzahl von Teilchen.
+	
+	Sie kann deshalb nicht vollständig erfassen, dass bei hohen Energien
+	
+	\begin{itemize}
+		\item Teilchen erzeugt,
+		\item Antiteilchen erzeugt und
+		\item Teilchen wieder vernichtet werden können.
+	\end{itemize}
+	
+	Solche Prozesse erfordern eine relativistische Quantenfeldtheorie.
+\end{PhysicsBox}
+
+\subsubsection*{Was die Schrödingergleichung dennoch leistet}
+
+Die genannten Grenzen dürfen nicht den Eindruck erwecken, die
+Schrödingergleichung sei nur eine grobe oder ungenaue Theorie.
+
+Für nichtrelativistische Systeme ist sie außerordentlich erfolgreich.
+Sie bildet unter anderem die Grundlage für die Beschreibung von
+
+\begin{itemize}
+	\item Elektronen in Atomen,
+	\item chemischen Bindungen,
+	\item Molekülen,
+	\item Halbleitern,
+	\item Festkörpern und
+	\item zahlreichen quantenmechanischen Experimenten.
+\end{itemize}
+
+Ihre Grenzen treten vor allem dann hervor, wenn
+
+\begin{itemize}
+	\item sich Elektronen mit sehr hohen Geschwindigkeiten bewegen,
+	\item starke relativistische Effekte auftreten,
+	\item der Spin aus der Theorie selbst erklärt werden soll oder
+	\item Teilchen erzeugt und vernichtet werden können.
+\end{itemize}
+
+\begin{DidacticBox}[Eine Näherung ist keine falsche Theorie]
+	\label{box:naeherung_keine_falsche_theorie}
+	
+	Die Schrödingergleichung ist nicht falsch.
+	
+	Sie ist eine äußerst genaue Näherung für den nichtrelativistischen
+	Bereich. Ihre Grenzen zeigen lediglich, dass sie nicht für alle
+	Energien und alle physikalischen Prozesse geeignet ist.
+	
+	Auch die klassische Mechanik bleibt für langsame und große Körper
+	richtig anwendbar, obwohl sie durch die Relativitätstheorie und die
+	Quantenmechanik erweitert wurde.
+\end{DidacticBox}
+
+\subsubsection*{Die Suche nach einer neuen Gleichung}
+
+Eine relativistische Gleichung für das Elektron musste mehrere
+Bedingungen gleichzeitig erfüllen:
+
+\begin{enumerate}
+	\item Sie musste mit der speziellen Relativitätstheorie vereinbar
+	sein.
+	\item Sie musste die relativistische Energie-Impuls-Beziehung
+	berücksichtigen.
+	\item Sie musste eine sinnvolle Wahrscheinlichkeitsinterpretation
+	ermöglichen.
+	\item Sie sollte den Spin des Elektrons aus ihrer mathematischen
+	Struktur erklären.
+	\item Sie musste Lösungen zulassen, die mit Antiteilchen verbunden
+	sind.
+\end{enumerate}
+
+Paul Dirac\index{Dirac, Paul} suchte nach einer Gleichung, die diese
+Anforderungen erfüllt.
+
+\begin{HistoryBox}[Der nächste Schritt]
+	\label{box:naechster_schritt_dirac}
+	
+	Die Grenzen der Schrödingergleichung führten nicht zu ihrer Aufgabe,
+	sondern zu einer Erweiterung der Quantentheorie.
+	
+	Paul Dirac verband die Quantenmechanik mit der speziellen
+	Relativitätstheorie. Aus dieser Verbindung entstand eine neue Gleichung
+	für das Elektron.
+	
+	Dabei ergaben sich der Spin und die Möglichkeit von Antiteilchen nicht
+	als zusätzliche Annahmen, sondern als Folgen der mathematischen
+	Struktur.
+\end{HistoryBox}
+
+Der Weg zu dieser Gleichung begann mit der Frage, wie sich die
+relativistische Energie-Impuls-Beziehung in eine quantenmechanische
+Bewegungsgleichung übertragen lässt.
+

@@ -1,0 +1,577 @@
+
+\subsection{Die Dirac-Gleichung}
+\label{subsec:diracgleichung}
+
+Die im vorherigen Abschnitt hergeleitete Dirac-Gleichung%
+\index{Dirac-Gleichung} beschreibt ein freies Elektron gleichzeitig
+quantenmechanisch und relativistisch.
+
+Sie lautet
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\Psi}{\partial t}
+	=
+	\left(
+	-\mathrm{i}\hbar c
+	\boldsymbol{\alpha}\cdot\nabla
+	+
+	\beta m_{\mathrm e}c^2
+	\right)
+	\Psi.
+	\label{eq:diracgleichung_hamiltonform_kapitel07}
+\end{equation}
+
+Diese Gleichung ähnelt auf den ersten Blick der zeitabhängigen
+Schrödingergleichung:
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\Psi}{\partial t}
+	=
+	\hat{H}\Psi.
+\end{equation}
+
+Der entscheidende Unterschied liegt im Hamiltonoperator. In der
+Dirac-Gleichung lautet er
+
+\begin{equation}
+	\hat{H}_{\mathrm D}
+	=
+	-\mathrm{i}\hbar c
+	\boldsymbol{\alpha}\cdot\nabla
+	+
+	\beta m_{\mathrm e}c^2.
+	\label{eq:dirac_hamiltonoperator_kapitel07}
+\end{equation}
+
+Er enthält nicht nur den Impuls des Elektrons, sondern auch dessen
+Ruheenergie und eine besondere Matrizenstruktur.
+
+\begin{PhysicsBox}[Die Dirac-Gleichung]
+	\label{box:diracgleichung_kapitel07}
+	
+	Die Dirac-Gleichung
+	
+	\begin{equation}
+		\mathrm{i}\hbar
+		\frac{\partial\Psi}{\partial t}
+		=
+		\left(
+		-\mathrm{i}\hbar c
+		\boldsymbol{\alpha}\cdot\nabla
+		+
+		\beta m_{\mathrm e}c^2
+		\right)
+		\Psi
+	\end{equation}
+	
+	ist eine relativistische Bewegungsgleichung für ein Elektron.
+	
+	Sie verbindet
+	
+	\begin{itemize}
+		\item die zeitliche Entwicklung eines Quantenzustandes,
+		\item die Bewegung des Elektrons,
+		\item seine Ruheenergie und
+		\item seine Spinstruktur.
+	\end{itemize}
+\end{PhysicsBox}
+
+\subsubsection*{Bedeutung der einzelnen Größen}
+
+In der Dirac-Gleichung bezeichnet
+
+\begin{itemize}
+	\item \(\mathrm{i}\) die imaginäre Einheit,
+	\item \(\hbar\) das reduzierte Plancksche Wirkungsquantum,
+	\item \(c\) die Lichtgeschwindigkeit,
+	\item \(m_{\mathrm e}\) die Ruhemasse des Elektrons,
+	\item \(\nabla\) die räumliche Ableitung,
+	\item \(\boldsymbol{\alpha}\) eine Gruppe von Matrizen,
+	\item \(\beta\) eine weitere Matrix und
+	\item \(\Psi\) den vollständigen Zustand des Elektrons.
+\end{itemize}
+
+Der Ausdruck
+
+\begin{equation}
+	-\mathrm{i}\hbar\nabla
+\end{equation}
+
+entspricht dem Impulsoperator%
+\index{Impulsoperator}. Der erste Term des Hamiltonoperators beschreibt
+daher die Bewegung des Elektrons.
+
+Der zweite Term
+
+\begin{equation}
+	\beta m_{\mathrm e}c^2
+\end{equation}
+
+enthält die Ruheenergie
+
+\begin{equation}
+	E_0
+	=
+	m_{\mathrm e}c^2.
+\end{equation}
+
+Für das Elektron beträgt sie
+
+\begin{equation}
+	m_{\mathrm e}c^2
+	\approx
+	\SI{511}{\kilo\electronvolt}.
+	\label{eq:ruheenergie_elektron_dirac}
+\end{equation}
+
+Die Matrix \(\beta\) ist notwendig, damit sowohl positive als auch
+negative Energielösungen auftreten können.
+
+\begin{DidacticBox}[Mehr als eine Bewegungsgleichung]
+	\label{box:mehr_als_bewegungsgleichung_dirac}
+	
+	Die Dirac-Gleichung beschreibt nicht nur, wie sich ein Elektron durch
+	den Raum bewegt.
+	
+	Ihre mathematische Struktur enthält zugleich
+	
+	\begin{itemize}
+		\item die Ruheenergie,
+		\item den Spin,
+		\item das magnetische Moment und
+		\item die Möglichkeit von Antiteilchen.
+	\end{itemize}
+	
+	Diese Eigenschaften wurden nicht nachträglich angefügt. Sie ergeben
+	sich aus der Gleichung selbst.
+\end{DidacticBox}
+
+\subsubsection*{Eine Wellenfunktion mit vier Komponenten}
+
+In der einfachsten Form der Schrödingergleichung wird der Zustand eines
+Teilchens durch eine einzelne komplexe Wellenfunktion beschrieben.
+
+Bei der Dirac-Gleichung reicht eine einzelne Funktion nicht mehr aus.
+Der Zustand des Elektrons besitzt vier Komponenten:
+
+\begin{equation}
+	\Psi
+	=
+	\begin{pmatrix}
+		\psi_1 \\
+		\psi_2 \\
+		\psi_3 \\
+		\psi_4
+	\end{pmatrix}.
+	\label{eq:vierkomponentiger_dirac_spinor_kapitel07}
+\end{equation}
+
+Eine solche Größe wird als Dirac-Spinor%
+\index{Dirac-Spinor}\index{Spinor!vierkomponentiger} bezeichnet.
+
+Die vier Komponenten sind keine vier getrennten Elektronen. Sie
+gehören gemeinsam zu einem einzigen Quantenzustand.
+
+Zwei Komponenten stehen mit den beiden möglichen Spinrichtungen des
+Elektrons in Verbindung. Die vollständige vierkomponentige Struktur
+wird zusätzlich benötigt, um positive und negative Energielösungen zu
+beschreiben.
+
+\begin{DidacticBox}[Vier Komponenten, ein Elektron]
+	\label{box:vier_komponenten_ein_elektron}
+	
+	Der Dirac-Spinor besteht aus vier mathematischen Komponenten.
+	
+	Diese Komponenten beschreiben nicht vier Teilchen, sondern
+	unterschiedliche Anteile eines einzigen relativistischen
+	Elektronenzustandes.
+	
+	Sie enthalten Informationen über
+	
+	\begin{itemize}
+		\item die Spinrichtung und
+		\item die Teilchen-Antiteilchen-Struktur.
+	\end{itemize}
+\end{DidacticBox}
+
+\subsubsection*{Die Rolle der Matrizen}
+
+Die Größen \(\boldsymbol{\alpha}\) und \(\beta\) sind
+Dirac-Matrizen\index{Dirac-Matrizen}. Sie wirken auf die vier
+Komponenten des Spinors.
+
+Gewöhnliche Zahlen würden lediglich jede Komponente mit demselben Wert
+multiplizieren. Matrizen können dagegen die einzelnen Komponenten
+miteinander koppeln.
+
+Dadurch wird die zeitliche Entwicklung einer Komponente auch von den
+anderen Komponenten beeinflusst.
+
+Die Matrizen sind so konstruiert, dass beim zweimaligen Anwenden des
+Dirac-Hamiltonoperators wieder die relativistische
+Energie-Impuls-Beziehung entsteht:
+
+\begin{equation}
+	E^2
+	=
+	p^2c^2
+	+
+	m_{\mathrm e}^2c^4.
+	\label{eq:energie_impuls_aus_diracgleichung}
+\end{equation}
+
+Damit ist sichergestellt, dass die Dirac-Gleichung mit der speziellen
+Relativitätstheorie vereinbar ist.
+
+\begin{MathBox}[Aufgabe der Dirac-Matrizen]
+	\label{box:aufgabe_dirac_matrizen}
+	
+	Die Dirac-Matrizen erfüllen zwei Aufgaben:
+	
+	\begin{enumerate}
+		\item Sie koppeln die vier Komponenten der Wellenfunktion.
+		\item Sie sorgen dafür, dass die relativistische
+		Energie-Impuls-Beziehung erfüllt wird.
+	\end{enumerate}
+	
+	Die genaue Form und Algebra dieser Matrizen ist für das Verständnis der
+	physikalischen Aussage zunächst nicht erforderlich.
+\end{MathBox}
+
+\subsubsection*{Der Spin folgt aus der Gleichung}
+
+Der Spin\index{Spin!Dirac-Gleichung} musste in der
+Schrödingergleichung zusätzlich eingeführt werden.
+
+In der Dirac-Gleichung ist er dagegen bereits in der
+vierkomponentigen Struktur und in den Matrizen enthalten.
+
+Für das Elektron ergibt sich der Spin
+
+\begin{equation}
+	s
+	=
+	\frac{\hbar}{2}.
+	\label{eq:spin_aus_diracgleichung}
+\end{equation}
+
+Bei einer Messung entlang einer gewählten Raumrichtung können zwei
+mögliche Ergebnisse auftreten:
+
+\begin{equation}
+	s_z
+	=
+	+\frac{\hbar}{2}
+\end{equation}
+
+oder
+
+\begin{equation}
+	s_z
+	=
+	-\frac{\hbar}{2}.
+\end{equation}
+
+Diese beiden Möglichkeiten werden häufig vereinfacht als
+Spin nach oben und Spin nach unten bezeichnet.
+
+Dabei handelt es sich nicht um eine klassische Drehung des Elektrons.
+Der Spin ist eine intrinsische Quanteneigenschaft.
+
+\begin{PhysicsBox}[Der Spin ist keine Zusatzannahme]
+	\label{box:spin_keine_zusatzannahme_dirac}
+	
+	In der Dirac-Theorie wird der Spin des Elektrons nicht nachträglich
+	eingesetzt.
+	
+	Er folgt aus der relativistischen mathematischen Struktur der
+	Gleichung.
+	
+	Das war einer der wichtigsten Erfolge der Dirac-Gleichung.
+\end{PhysicsBox}
+
+\subsubsection*{Das magnetische Moment}
+
+Ein Teilchen mit elektrischer Ladung und Spin besitzt ein
+magnetisches Moment%
+\index{magnetisches Moment!Elektron}.
+
+Das Elektron verhält sich dadurch in einem Magnetfeld ähnlich wie ein
+kleiner Magnet. Seine möglichen Energiezustände hängen von der
+Orientierung des Spins relativ zum Magnetfeld ab.
+
+Für das magnetische Moment des Elektrons ergibt die Dirac-Theorie in
+erster Näherung den Zusammenhang
+
+\begin{equation}
+	\boldsymbol{\mu}_{\mathrm s}
+	=
+	-g
+	\frac{e}{2m_{\mathrm e}}
+	\mathbf{S},
+	\label{eq:magnetisches_moment_dirac}
+\end{equation}
+
+wobei \(g\) der sogenannte \(g\)-Faktor%
+\index{g-Faktor!Elektron} ist.
+
+Aus der Dirac-Gleichung folgt
+
+\begin{equation}
+	g
+	=
+	2.
+	\label{eq:g_faktor_dirac}
+\end{equation}
+
+Experimente zeigen einen geringfügig abweichenden Wert. Diese kleine
+Abweichung wird später durch die Quantenelektrodynamik erklärt.
+
+\begin{DidacticBox}[Ein bemerkenswerter Erfolg]
+	\label{box:g_faktor_erfolg_dirac}
+	
+	Die Dirac-Gleichung sagt für den \(g\)-Faktor des Elektrons den Wert
+	
+	\begin{equation}
+		g=2
+	\end{equation}
+	
+	voraus.
+	
+	Dieser Wert folgt aus der Theorie und muss nicht zusätzlich eingesetzt
+	werden.
+	
+	Die geringe experimentelle Abweichung von \(2\) entsteht durch
+	Wechselwirkungen des Elektrons mit dem quantisierten
+	elektromagnetischen Feld.
+\end{DidacticBox}
+
+\subsubsection*{Positive und negative Energien}
+
+Für ein freies Elektron liefert die relativistische
+Energie-Impuls-Beziehung zwei mögliche Energiezweige:
+
+\begin{equation}
+	E
+	=
+	\pm
+	\sqrt{
+		p^2c^2
+		+
+		m_{\mathrm e}^2c^4
+	}.
+	\label{eq:positive_negative_energie_dirac}
+\end{equation}
+
+Der positive Zweig lautet
+
+\begin{equation}
+	E
+	=
+	+
+	\sqrt{
+		p^2c^2
+		+
+		m_{\mathrm e}^2c^4
+	},
+\end{equation}
+
+der negative Zweig
+
+\begin{equation}
+	E
+	=
+	-
+	\sqrt{
+		p^2c^2
+		+
+		m_{\mathrm e}^2c^4
+	}.
+\end{equation}
+
+Für ein ruhendes Teilchen mit \(p=0\) ergeben sich die Energien
+
+\begin{equation}
+	E
+	=
+	\pm m_{\mathrm e}c^2.
+	\label{eq:ruheenergien_dirac}
+\end{equation}
+
+Die positiven Lösungen konnten unmittelbar mit Elektronen verbunden
+werden. Die Bedeutung der negativen Lösungen war zunächst unklar.
+
+Sie konnten jedoch nicht einfach gestrichen werden, weil sie
+zwangsläufig aus der Gleichung folgen.
+
+\begin{PhysicsBox}[Zwei Energiezweige]
+	\label{box:zwei_energiezweige_dirac}
+	
+	Die Dirac-Gleichung besitzt positive und negative Energielösungen:
+	
+	\begin{equation}
+		E
+		=
+		\pm
+		\sqrt{
+			p^2c^2
+			+
+			m_{\mathrm e}^2c^4
+		}.
+	\end{equation}
+	
+	Die negativen Lösungen waren kein Rechenfehler. Sie waren ein Hinweis
+	darauf, dass die Theorie mehr als nur das Elektron beschreibt.
+\end{PhysicsBox}
+
+\subsubsection*{Die Wahrscheinlichkeitsdichte}
+
+Eine Quantentheorie muss angeben, mit welcher Wahrscheinlichkeit ein
+Teilchen an einem bestimmten Ort gefunden werden kann.
+
+Für den Dirac-Spinor lautet die Wahrscheinlichkeitsdichte%
+\index{Wahrscheinlichkeitsdichte!Dirac-Gleichung}
+
+\begin{equation}
+	\rho
+	=
+	\Psi^\dagger\Psi.
+	\label{eq:wahrscheinlichkeitsdichte_dirac_kapitel07}
+\end{equation}
+
+Das Symbol \(\Psi^\dagger\) bezeichnet den komplex konjugierten und
+transponierten Spinor.
+
+Für die vier Komponenten ergibt sich
+
+\begin{equation}
+	\rho
+	=
+	\lvert\psi_1\rvert^2
+	+
+	\lvert\psi_2\rvert^2
+	+
+	\lvert\psi_3\rvert^2
+	+
+	\lvert\psi_4\rvert^2.
+	\label{eq:wahrscheinlichkeitsdichte_dirac_komponenten}
+\end{equation}
+
+Da jeder einzelne Summand nichtnegativ ist, gilt
+
+\begin{equation}
+	\rho
+	\geq
+	0.
+\end{equation}
+
+Die Dirac-Gleichung besitzt damit eine sinnvoll interpretierbare
+Wahrscheinlichkeitsdichte.
+
+\begin{PhysicsBox}[Positive Wahrscheinlichkeitsdichte]
+	\label{box:positive_wahrscheinlichkeitsdichte_dirac}
+	
+	Für die Dirac-Gleichung gilt
+	
+	\begin{equation}
+		\rho
+		=
+		\Psi^\dagger\Psi.
+	\end{equation}
+	
+	Diese Größe ist stets größer oder gleich null.
+	
+	Damit kann sie als Wahrscheinlichkeitsdichte für den Ort des Elektrons
+	interpretiert werden.
+\end{PhysicsBox}
+
+\subsubsection*{Der nichtrelativistische Grenzfall}
+
+Eine neue Theorie muss die ältere Theorie in dem Bereich wiedergeben,
+in dem diese erfolgreich ist.
+
+Für Geschwindigkeiten, die wesentlich kleiner als die
+Lichtgeschwindigkeit sind,
+
+\begin{equation}
+	v
+	\ll
+	c,
+\end{equation}
+
+geht die Dirac-Gleichung näherungsweise in die
+Pauli-Gleichung\index{Pauli-Gleichung!Grenzfall der Dirac-Gleichung}
+über.
+
+Werden zusätzlich Spin und Magnetfelder vernachlässigt, ergibt sich
+schließlich wieder die Schrödingergleichung.
+
+Der Zusammenhang kann vereinfacht dargestellt werden als
+
+\begin{equation}
+	\text{Dirac-Gleichung}
+	\longrightarrow
+	\text{Pauli-Gleichung}
+	\longrightarrow
+	\text{Schrödingergleichung}.
+	\label{eq:grenzfall_dirac_pauli_schroedinger}
+\end{equation}
+
+\begin{DidacticBox}[Die ältere Theorie bleibt erhalten]
+	\label{box:aeltere_theorie_bleibt_erhalten_dirac}
+	
+	Die Dirac-Gleichung ersetzt die Schrödingergleichung nicht in jedem
+	praktischen Fall.
+	
+	Für langsame Elektronen liefert sie näherungsweise wieder die bekannten
+	nichtrelativistischen Gleichungen.
+	
+	Die Schrödingergleichung bleibt deshalb für Atome, Moleküle und viele
+	Festkörperprobleme weiterhin die zweckmäßigste Beschreibung.
+\end{DidacticBox}
+
+\subsubsection*{Was die Dirac-Gleichung erklärt}
+
+Die Dirac-Gleichung brachte mehrere zuvor getrennte Eigenschaften des
+Elektrons in eine gemeinsame Theorie.
+
+Sie erklärt oder beschreibt
+
+\begin{enumerate}
+	\item die relativistische Bewegung des Elektrons,
+	\item den Spin \(s=\hbar/2\),
+	\item die beiden möglichen Spinrichtungen,
+	\item das magnetische Moment,
+	\item den \(g\)-Faktor \(g=2\) in erster Näherung,
+	\item positive und negative Energielösungen und
+	\item eine positive Wahrscheinlichkeitsdichte.
+\end{enumerate}
+
+\begin{HistoryBox}[Eine Gleichung mit unerwarteten Folgen]
+	\label{box:unerwartete_folgen_diracgleichung}
+	
+	Paul Dirac\index{Dirac, Paul} wollte ursprünglich eine relativistische
+	Quantengleichung für das Elektron finden.
+	
+	Die gefundene Gleichung leistete jedoch wesentlich mehr:
+	
+	\begin{itemize}
+		\item Sie erklärte den Spin des Elektrons.
+		\item Sie lieferte das magnetische Moment mit hoher Genauigkeit.
+		\item Sie enthielt negative Energielösungen.
+	\end{itemize}
+	
+	Gerade die zunächst problematischen negativen Energien führten zu einer
+	der bedeutendsten Vorhersagen der modernen Physik: der Existenz des
+	Positrons.
+\end{HistoryBox}
+
+Die Dirac-Gleichung beschreibt das Elektron daher nicht nur genauer als
+die Schrödingergleichung. Sie zeigt, dass Spin, Relativität und
+Antiteilchen eng miteinander verbunden sind.
+
+Die physikalische Bedeutung der negativen Energielösungen und die
+Vorhersage des Positrons werden im folgenden Abschnitt genauer
+betrachtet.
