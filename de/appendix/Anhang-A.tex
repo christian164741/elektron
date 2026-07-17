@@ -433,6 +433,429 @@ negativen Ladung des Elektrons. Das Kreuzprodukt \(\vec{v} \times \vec{B}\)
 gibt die Richtung der magnetischen Kraft für eine positive Ladung an. Beim
 Elektron ist die Richtung umgekehrt.
 
+
+\section{Mathematische Voraussetzungen}
+\label{subsec:mathematische_voraussetzungen_schroedinger}
+
+Bevor der Hamiltonoperator und die Schrödingergleichung hergeleitet werden,
+sollen einige mathematische Begriffe und Zusammenhänge eingeführt werden.
+Insbesondere muss geklärt werden, wie aus der Wellenbeschreibung eines
+Teilchens ein Impulsoperator und schließlich der Laplace-Operator entstehen.
+
+\subsubsection*{Wellenlänge und Wellenzahl}
+
+Eine ebene Welle kann in einer Raumdimension in der Form
+
+\begin{equation}
+	\psi(x,t)
+	=
+	A\exp\left[\mathrm{i}(kx-\omega t)\right]
+	\label{eq:app_ebene_welle}
+\end{equation}
+
+geschrieben werden.
+
+Dabei bezeichnet \(A\) die Amplitude, \(k\) die Wellenzahl und
+\(\omega\) die Kreisfrequenz.
+
+Nach einer vollständigen Wellenlänge \(\lambda\) hat sich die Phase der Welle
+um \(2\pi\) verändert. Daher gilt
+
+\begin{equation}
+	k\lambda
+	=
+	2\pi.
+	\label{eq:app_wellenzahl_definition}
+\end{equation}
+
+Für die Wellenzahl folgt somit
+
+\begin{equation}
+	k
+	=
+	\frac{2\pi}{\lambda}.
+	\label{eq:app_wellenzahl}
+\end{equation}
+
+Die Wellenzahl beschreibt, wie schnell sich die Phase einer Welle im Raum
+ändert. Je kleiner die Wellenlänge ist, desto größer ist die Wellenzahl.
+
+\subsubsection*{Das reduzierte Plancksche Wirkungsquantum}
+
+In der Quantenmechanik tritt häufig das reduzierte Plancksche
+Wirkungsquantum auf:
+
+\begin{equation}
+	\hbar
+	=
+	\frac{h}{2\pi}.
+	\label{eq:app_hquer_definition}
+\end{equation}
+
+Das Symbol \(\hbar\), gesprochen \enquote{\(h\) quer}, bezeichnet keine neue
+Naturkonstante. Es ist lediglich das Plancksche Wirkungsquantum \(h\),
+geteilt durch \(2\pi\).
+
+Diese Schreibweise ist besonders zweckmäßig, da Wellen mathematisch häufig
+durch die Wellenzahl \(k\) und die Kreisfrequenz \(\omega\) beschrieben
+werden.
+
+\subsubsection*{Von der de-Broglie-Beziehung zu \(p=\hbar k\)}
+
+Nach der de-Broglie-Beziehung besitzt ein Teilchen mit dem Impuls \(p\)
+eine zugehörige Wellenlänge
+
+\begin{equation}
+	\lambda
+	=
+	\frac{h}{p}.
+	\label{eq:app_de_broglie_voraussetzung}
+\end{equation}
+
+Umgestellt nach dem Impuls ergibt sich
+
+\begin{equation}
+	p
+	=
+	\frac{h}{\lambda}.
+	\label{eq:app_impuls_wellenlaenge}
+\end{equation}
+
+Aus der Definition der Wellenzahl
+
+\begin{equation}
+	k
+	=
+	\frac{2\pi}{\lambda}
+\end{equation}
+
+folgt
+
+\begin{equation}
+	\frac{1}{\lambda}
+	=
+	\frac{k}{2\pi}.
+\end{equation}
+
+Einsetzen in Gleichung~\eqref{eq:app_impuls_wellenlaenge} liefert
+
+\begin{equation}
+	p
+	=
+	h\frac{k}{2\pi}.
+\end{equation}
+
+Mit
+
+\begin{equation}
+	\hbar
+	=
+	\frac{h}{2\pi}
+\end{equation}
+
+erhält man schließlich
+
+\begin{equation}
+	\boxed{
+		p
+		=
+		\hbar k
+	}
+	\label{eq:app_impuls_hquer_k}
+\end{equation}
+
+Diese Beziehung verbindet die Teilcheneigenschaft Impuls mit der
+Welleneigenschaft Wellenzahl.
+
+\subsubsection*{Herleitung des Impulsoperators}
+
+Betrachtet wird zunächst der räumliche Anteil einer ebenen Welle:
+
+\begin{equation}
+	\psi(x)
+	=
+	A\exp(\mathrm{i}kx).
+	\label{eq:app_ebene_welle_raeumlich}
+\end{equation}
+
+Die Ableitung nach dem Ort ergibt
+
+\begin{equation}
+	\frac{\partial\psi}{\partial x}
+	=
+	\mathrm{i}k\psi.
+	\label{eq:app_ableitung_ebene_welle}
+\end{equation}
+
+Multiplikation mit \(-\mathrm{i}\hbar\) liefert
+
+\begin{align}
+	-\mathrm{i}\hbar
+	\frac{\partial\psi}{\partial x}
+	&=
+	-\mathrm{i}\hbar\,\mathrm{i}k\psi
+	\\
+	&=
+	\hbar k\psi.
+\end{align}
+
+Mit der Beziehung \(p=\hbar k\) folgt
+
+\begin{equation}
+	-\mathrm{i}\hbar
+	\frac{\partial\psi}{\partial x}
+	=
+	p\psi.
+	\label{eq:app_impulsoperator_eigenwert}
+\end{equation}
+
+Der mathematische Ausdruck, der auf die Wellenfunktion wirkt und dabei den
+Impulswert erzeugt, ist somit der Impulsoperator
+
+\begin{equation}
+	\boxed{
+		\hat{p}_x
+		=
+		-\mathrm{i}\hbar
+		\frac{\partial}{\partial x}
+	}
+	\label{eq:app_impulsoperator_eindimensional}
+\end{equation}
+
+In drei Raumdimensionen wird die gewöhnliche Ableitung durch den
+Gradienten ersetzt:
+
+\begin{equation}
+	\nabla
+	=
+	\begin{pmatrix}
+		\dfrac{\partial}{\partial x}
+		\\[6pt]
+		\dfrac{\partial}{\partial y}
+		\\[6pt]
+		\dfrac{\partial}{\partial z}
+	\end{pmatrix}.
+	\label{eq:app_gradient_definition}
+\end{equation}
+
+Damit lautet der Impulsoperator in drei Dimensionen
+
+\begin{equation}
+	\boxed{
+		\hat{\mathbf{p}}
+		=
+		-\mathrm{i}\hbar\nabla
+	}
+	\label{eq:app_impulsoperator_dreidimensional}
+\end{equation}
+
+Der Gradient enthält die räumlichen Ableitungen in allen drei
+Koordinatenrichtungen.
+
+\subsubsection*{Der Laplace-Operator}
+
+Der Laplace-Operator ist durch
+
+\begin{equation}
+	\Delta
+	=
+	\nabla^2
+	=
+	\frac{\partial^2}{\partial x^2}
+	+
+	\frac{\partial^2}{\partial y^2}
+	+
+	\frac{\partial^2}{\partial z^2}
+	\label{eq:app_laplace_operator}
+\end{equation}
+
+definiert.
+
+Er ist die Summe der zweiten räumlichen Ableitungen einer Funktion und
+beschreibt deren gesamte lokale räumliche Krümmung.
+
+Für eine Funktion \(f(x,y,z)\) gilt somit
+
+\begin{equation}
+	\Delta f
+	=
+	\frac{\partial^2 f}{\partial x^2}
+	+
+	\frac{\partial^2 f}{\partial y^2}
+	+
+	\frac{\partial^2 f}{\partial z^2}.
+\end{equation}
+
+Der Laplace-Operator entsteht in der Quantenmechanik beim Quadrat des
+Impulsoperators. Es gilt
+
+\begin{equation}
+	\hat{\mathbf{p}}^{\,2}
+	=
+	\hat{p}_x^2
+	+
+	\hat{p}_y^2
+	+
+	\hat{p}_z^2.
+\end{equation}
+
+Mit
+
+\begin{equation}
+	\hat{p}_x
+	=
+	-\mathrm{i}\hbar
+	\frac{\partial}{\partial x}
+\end{equation}
+
+folgt
+
+\begin{align}
+	\hat{p}_x^2
+	&=
+	\left(
+	-\mathrm{i}\hbar
+	\frac{\partial}{\partial x}
+	\right)^2
+	\\
+	&=
+	-\hbar^2
+	\frac{\partial^2}{\partial x^2}.
+\end{align}
+
+Entsprechend gilt für die drei Raumrichtungen
+
+\begin{equation}
+	\hat{\mathbf{p}}^{\,2}
+	=
+	-\hbar^2
+	\left(
+	\frac{\partial^2}{\partial x^2}
+	+
+	\frac{\partial^2}{\partial y^2}
+	+
+	\frac{\partial^2}{\partial z^2}
+	\right).
+\end{equation}
+
+Mit der Definition des Laplace-Operators erhält man
+
+\begin{equation}
+	\boxed{
+		\hat{\mathbf{p}}^{\,2}
+		=
+		-\hbar^2\Delta
+	}
+	\label{eq:app_impulsquadrat_laplace}
+\end{equation}
+
+Der Laplace-Operator selbst entspricht daher nicht dem Impulsoperator.
+Er tritt erst beim Quadrat des Impulsoperators auf.
+
+\subsubsection*{Übergang zum Hamiltonoperator}
+
+Die klassische Gesamtenergie eines Teilchens in einem Potential \(V\)
+lautet
+
+\begin{equation}
+	E
+	=
+	\frac{p^2}{2m}
+	+
+	V.
+	\label{eq:app_klassische_gesamtenergie}
+\end{equation}
+
+Der erste Term beschreibt die kinetische Energie, der zweite Term die
+potentielle Energie.
+
+In der Quantenmechanik werden die klassischen Größen durch Operatoren
+ersetzt. Für die kinetische Energie gilt daher
+
+\begin{equation}
+	\hat{T}
+	=
+	\frac{\hat{\mathbf{p}}^{\,2}}{2m}.
+\end{equation}
+
+Mit Gleichung~\eqref{eq:app_impulsquadrat_laplace} folgt
+
+\begin{equation}
+	\boxed{
+		\hat{T}
+		=
+		-\frac{\hbar^2}{2m}\Delta
+	}
+	\label{eq:app_kinetischer_energieoperator}
+\end{equation}
+
+Der Operator für die Gesamtenergie wird als Hamiltonoperator bezeichnet:
+
+\begin{equation}
+	\hat{H}
+	=
+	\hat{T}
+	+
+	V.
+\end{equation}
+
+Damit ergibt sich
+
+\begin{equation}
+	\boxed{
+		\hat{H}
+		=
+		-\frac{\hbar^2}{2m}\Delta
+		+
+		V
+	}
+	\label{eq:app_hamiltonoperator_voraussetzung}
+\end{equation}
+
+\begin{DidacticBox}[Vom Teilchenimpuls zum Hamiltonoperator]
+	Die mathematische Entwicklung lässt sich als geschlossene Kette darstellen:
+	
+
+	
+	Der Laplace-Operator erscheint somit nicht willkürlich in der
+	Schrödingergleichung. Er folgt aus dem Quadrat des quantenmechanischen
+	Impulsoperators und beschreibt den kinetischen Anteil der Energie.
+\end{DidacticBox}
+
+
+\begin{equation*}
+	\begin{aligned}
+		\lambda
+		&\longrightarrow
+		k
+		\longrightarrow
+		p=\hbar k,
+		\\[4pt]
+		p=\hbar k
+		&\longrightarrow
+		\hat{\mathbf{p}}
+		=
+		-\mathrm{i}\hbar\nabla
+		\longrightarrow
+		\hat{\mathbf{p}}^{\,2}
+		=
+		-\hbar^2\Delta,
+		\\[4pt]
+		\hat{\mathbf{p}}^{\,2}
+		=
+		-\hbar^2\Delta
+		&\longrightarrow
+		\hat{H}
+		=
+		-\frac{\hbar^2}{2m}\Delta+V.
+	\end{aligned}
+\end{equation*}
+
+
+
+
+
+
 \section{Schrödingergleichung für das Wasserstoffatom}
 \label{app:mathe_schroedingergleichung}
 \index{Schrödingergleichung!Wasserstoffatom}
