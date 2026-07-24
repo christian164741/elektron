@@ -442,6 +442,73 @@ sollen einige mathematische Begriffe und Zusammenhänge eingeführt werden.
 Insbesondere muss geklärt werden, wie aus der Wellenbeschreibung eines
 Teilchens ein Impulsoperator und schließlich der Laplace-Operator entstehen.
 
+\subsubsection*{Von der Sinuswelle zur komplexen Exponentialform}
+
+Eine harmonische Welle kann zunächst durch eine Sinus- oder Cosinusfunktion
+beschrieben werden, beispielsweise durch
+
+\begin{equation}
+	\psi(x,t)
+	=
+	A\cos(kx-\omega t).
+	\label{eq:app_harmonische_welle_cosinus}
+\end{equation}
+
+Dabei bezeichnet \(A\) die Amplitude, \(k\) die Wellenzahl und
+\(\omega\) die Kreisfrequenz.
+
+Mit der Eulerschen Formel
+
+\begin{equation}
+	\exp(\mathrm{i}\varphi)
+	=
+	\cos(\varphi)
+	+
+	\mathrm{i}\sin(\varphi)
+	\label{eq:app_eulersche_formel}
+\end{equation}
+
+können Sinus- und Cosinusfunktionen gemeinsam durch eine komplexe
+Exponentialfunktion dargestellt werden.
+
+Setzt man für die Phase
+
+\begin{equation}
+	\varphi
+	=
+	kx-\omega t
+\end{equation}
+
+ein, erhält man
+
+\begin{equation}
+	\exp\left[\mathrm{i}(kx-\omega t)\right]
+	=
+	\cos(kx-\omega t)
+	+
+	\mathrm{i}\sin(kx-\omega t).
+\end{equation}
+
+Eine ebene Welle kann daher besonders kompakt in der Form
+
+\begin{equation}
+	\boxed{
+		\psi(x,t)
+		=
+		A\exp\left[\mathrm{i}(kx-\omega t)\right]
+	}
+	\label{eq:app_ebene_welle}
+\end{equation}
+
+geschrieben werden.
+
+Die komplexe Schreibweise bedeutet nicht, dass eine physikalisch messbare
+Welle selbst eine komplexe Größe sein muss. Sie ist vor allem eine
+mathematisch besonders zweckmäßige Darstellung von Schwingungen und Wellen.
+Insbesondere lassen sich komplexe Exponentialfunktionen sehr einfach
+ableiten, da ihre mathematische Form dabei erhalten bleibt.
+
+
 \subsubsection*{Wellenlänge und Wellenzahl}
 
 Eine ebene Welle kann in einer Raumdimension in der Form
@@ -1152,7 +1219,259 @@ Orbitaltheorie und für das moderne Atommodell.
 
 
 
-\section{Dirac-Gleichung und Lösungen}
-q
+
+
+\section{Von der Dirac-Gleichung zur kovarianten Form}
+\label{app:diracgleichung_kovariante_form}
+\index{Dirac-Gleichung!kovariante Form}
+
+In Kapitel VII wurde die freie Dirac-Gleichung in der Hamiltonform
+eingeführt. Ziel dieses Abschnitts ist es, diese Gleichung schrittweise
+in ihre kovariante Form umzuschreiben. Dabei wird keine neue
+Bewegungsgleichung hergeleitet. Sämtliche Umformungen sind algebraisch
+umkehrbar und beschreiben dieselbe freie Dynamik des Elektrons.
+
+Wie in Kapitel VIII bezeichnet \(\psi(x)\) zunächst die klassische, noch
+nicht quantisierte Dirac-Feldfunktion. Bei der Quantisierung wird daraus
+der Feldoperator \(\hat{\psi}(x)\); die folgende kovariante Struktur bleibt
+dabei erhalten.
+
+Ausgangspunkt ist die Hamiltonform
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\psi}{\partial t}
+	=
+	\left(
+	c\,\boldsymbol{\alpha}\cdot\hat{\mathbf p}
+	+
+	\beta m_{\mathrm e}c^2
+	\right)
+	\psi.
+	\label{eq:app_dirac_hamiltonform_ausgangspunkt}
+\end{equation}
+
+Die drei Matrizen \(\alpha^1,\alpha^2,\alpha^3\) werden dabei in
+\(\boldsymbol{\alpha}\) zusammengefasst. Das Skalarprodukt steht für die
+Summe über die drei Raumrichtungen:
+
+\begin{equation}
+	\boldsymbol{\alpha}\cdot\hat{\mathbf p}
+	=
+	\sum_{i=1}^{3}\alpha^i\hat{p}_i.
+	\label{eq:app_alpha_impuls_summe}
+\end{equation}
+
+Der Index \(i=1,2,3\) zählt hier ausschließlich die räumlichen
+Komponenten. Er darf nicht mit der imaginären Einheit \(\mathrm{i}\)
+verwechselt werden.
+
+In der Ortsdarstellung lautet der Impulsoperator
+
+\begin{equation}
+	\hat{\mathbf p}
+	=
+	-\mathrm{i}\hbar\nabla.
+	\label{eq:app_impulsoperator_dirac_kovariant}
+\end{equation}
+
+Einsetzen in Gleichung~\eqref{eq:app_dirac_hamiltonform_ausgangspunkt}
+ergibt
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\psi}{\partial t}
+	=
+	\left(
+	-\mathrm{i}\hbar c\,
+	\boldsymbol{\alpha}\cdot\nabla
+	+
+	\beta m_{\mathrm e}c^2
+	\right)
+	\psi.
+	\label{eq:app_dirac_hamiltonform_ableitungen}
+\end{equation}
+
+Nun werden alle Terme auf die linke Seite gebracht:
+
+\begin{equation}
+	\left(
+	\mathrm{i}\hbar\frac{\partial}{\partial t}
+	+
+	\mathrm{i}\hbar c\,
+	\boldsymbol{\alpha}\cdot\nabla
+	-
+	\beta m_{\mathrm e}c^2
+	\right)
+	\psi
+	=
+	0.
+	\label{eq:app_dirac_alle_terme_links}
+\end{equation}
+
+Um die zeitliche und die räumlichen Ableitungen in eine gemeinsame Form
+zu bringen, wird Gleichung~\eqref{eq:app_dirac_alle_terme_links} von links
+mit \(\beta\) multipliziert. Dadurch folgt
+
+\begin{equation}
+	\left(
+	\mathrm{i}\hbar\beta\frac{\partial}{\partial t}
+	+
+	\mathrm{i}\hbar c\,
+	\beta\boldsymbol{\alpha}\cdot\nabla
+	-
+	\beta^2m_{\mathrm e}c^2
+	\right)
+	\psi
+	=
+	0.
+	\label{eq:app_dirac_mit_beta_multipliziert}
+\end{equation}
+
+Für die Dirac-Matrix \(\beta\) gilt \(\beta^2=\mathbb{1}\). Der letzte
+Term wird daher zu \(-m_{\mathrm e}c^2\). Nun werden die
+Gamma-Matrizen\index{Gamma-Matrizen} durch
+
+\begin{equation}
+	\gamma^0
+	=
+	\beta,
+	\qquad
+	\gamma^i
+	=
+	\beta\alpha^i,
+	\qquad
+	i=1,2,3,
+	\label{eq:app_gamma_matrizen_definition}
+\end{equation}
+
+definiert. Eine erneute Herleitung ihrer Matrizenstruktur ist für die
+Umformung nicht erforderlich. Mit diesen Definitionen wird
+Gleichung~\eqref{eq:app_dirac_mit_beta_multipliziert} zu
+
+\begin{equation}
+	\left[
+	\mathrm{i}\hbar c
+	\left(
+	\gamma^0\frac{1}{c}\frac{\partial}{\partial t}
+	+
+	\sum_{i=1}^{3}\gamma^i\frac{\partial}{\partial x^i}
+	\right)
+	-
+	m_{\mathrm e}c^2
+	\right]
+	\psi(x)
+	=
+	0.
+	\label{eq:app_dirac_gamma_ausgeschrieben}
+\end{equation}
+
+Im zeitlichen Term wurde lediglich ein Faktor \(c\) ausgeklammert, denn
+\(\partial/\partial t=c\,(1/c)\,\partial/\partial t\). Dadurch besitzen
+die vier Ableitungen dieselbe Dimension.
+
+Für die Raumzeitnotation verwenden wir die
+Minkowski-Metrik\index{Minkowski-Metrik} mit der Signatur
+
+\begin{equation}
+	\eta_{\mu\nu}
+	=
+	\mathrm{diag}(1,-1,-1,-1).
+	\label{eq:app_minkowski_metrik_dirac}
+\end{equation}
+
+Die Viererkoordinate und der Viererableitungsoperator lauten damit
+
+\begin{equation}
+	\begin{aligned}
+		x^\mu
+		&=
+		\left(ct,\mathbf r\right),
+		\\
+		\partial_\mu
+		&=
+		\frac{\partial}{\partial x^\mu},
+		&
+		\partial_0
+		&=
+		\frac{1}{c}\frac{\partial}{\partial t},
+		&
+		\partial_i
+		&=
+		\frac{\partial}{\partial x^i}.
+	\end{aligned}
+	\label{eq:app_viererkoordinate_ableitung_dirac}
+\end{equation}
+
+Diese Definition stimmt mit der in Kapitel VIII verwendeten Notation
+\(\partial_\mu=\partial/\partial x^\mu\) überein. Bei der gewählten
+Metrikkonvention gilt ergänzend
+
+\begin{equation*}
+	x_\mu
+	=
+	\left(ct,-\mathbf r\right),
+	\qquad
+	\partial^\mu
+	=
+	\left(
+	\frac{1}{c}\frac{\partial}{\partial t},
+	-\nabla
+	\right).
+\end{equation*}
+
+Das Anheben oder Absenken eines Viererindex ändert somit die Vorzeichen
+der räumlichen Komponenten. Für die folgende Zusammenfassung wird der
+untere Index des Ableitungsoperators verwendet.
+
+Nach der Einsteinschen Summenkonvention ergibt sich
+
+\begin{equation}
+	\gamma^\mu\partial_\mu
+	=
+	\gamma^0\partial_0
+	+
+	\sum_{i=1}^{3}\gamma^i\partial_i
+	=
+	\gamma^0\frac{1}{c}\frac{\partial}{\partial t}
+	+
+	\sum_{i=1}^{3}\gamma^i\frac{\partial}{\partial x^i}.
+	\label{eq:app_gamma_viererableitung_dirac}
+\end{equation}
+
+Der Klammerausdruck in
+Gleichung~\eqref{eq:app_dirac_gamma_ausgeschrieben} ist daher genau
+\(\gamma^\mu\partial_\mu\). Damit erhält man schließlich
+
+\begin{equation}
+	\boxed{
+		\left(
+		\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+		-
+		m_{\mathrm e}c^2
+		\right)
+		\psi(x)
+		=
+		0
+	}.
+	\label{eq:app_diracgleichung_kovariante_form}
+\end{equation}
+
+\begin{DidacticBox}[Gleiche Gleichung, andere Schreibweise]
+	\label{box:app_diracgleichung_gleiche_dynamik}
+	Die kovariante Dirac-Gleichung ist keine neue physikalische Gleichung.
+	Sie ist eine kompaktere, relativistisch geeignete Schreibweise derselben
+	freien Dirac-Gleichung, die am Anfang in Hamiltonform stand.
+
+	Da jeder Schritt der Umformung umkehrbar ist, enthalten beide Formen
+	dieselbe physikalische Aussage.
+\end{DidacticBox}
+
+Für die Quantenelektrodynamik ist die kovariante Form besonders geeignet.
+Raum und Zeit werden gemeinsam behandelt, die Lorentz-Kovarianz der
+Gleichung wird unmittelbar sichtbar und die spätere Kopplung an das
+elektromagnetische Viererpotential \(A^\mu\) lässt sich kompakt
+formulieren.
+
 \section{QED-Grundlagen (Propagatoren, Renormierung)}
 a

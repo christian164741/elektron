@@ -1,0 +1,336 @@
+\subsection{Von freien zu wechselwirkenden Quantenfeldern}
+\label{subsec:freie_wechselwirkende_quantenfelder}
+
+In Kapitel~\ref{chap:relativistisches_elektron} wurde der Übergang von der
+relativistischen Beschreibung eines einzelnen Elektrons zur
+Quantenfeldtheorie\index{Quantenfeldtheorie} vollzogen.
+Damit ist geklärt, in welchem modernen theoretischen Rahmen Elektronen,
+Positronen und Photonen beschrieben werden.
+
+Eine entscheidende Frage ist jedoch noch offen.
+Die bisher betrachteten Felder erklären zunächst, welche Zustände und
+Teilchenarten auftreten können.
+Sie legen aber noch nicht fest, wie das Elektronenfeld und das
+elektromagnetische Feld miteinander gekoppelt sind.
+
+Die zentrale Leitfrage dieses Abschnitts lautet daher:
+
+\begin{quote}
+	\textbf{Wie wird aus einer Theorie freier Quantenfelder eine Theorie
+	ihrer Wechselwirkung?}
+\end{quote}
+
+Diese Frage führt zur Quantenelektrodynamik\index{Quantenelektrodynamik},
+kurz QED\@.
+Sie beschreibt nicht nur die freien Felder, sondern vor allem die
+elektromagnetische Wechselwirkung zwischen ihnen.
+
+\subsubsection*{Freie Felder}
+
+Ein freies Quantenfeld\index{Quantenfeld!freies} wird zunächst ohne
+Wechselwirkung mit anderen Feldern betrachtet.
+Seine zeitliche Entwicklung folgt allein seiner eigenen
+Bewegungsgleichung.
+
+Für das freie Dirac-Feld bedeutet dies:
+Die Dynamik wird durch Masse, Impuls und Spinstruktur des Elektrons
+bestimmt, aber noch nicht durch ein äußeres elektromagnetisches Feld.
+
+Auch das elektromagnetische Feld kann zunächst frei betrachtet werden.
+Dann breitet es sich ohne elektrische Ladungen und Ströme aus, die es
+erzeugen, verändern oder streuen.
+
+Der Begriff \emph{frei} bezeichnet somit keine neue Art von Feld.
+Er kennzeichnet eine idealisierte Situation, in der der
+Wechselwirkungsterm\index{Wechselwirkungsterm} der Theorie weggelassen
+wird.
+
+\begin{DidacticBox}[Was bedeutet ein freies Feld?]
+	\label{box:freies_feld_ohne_wechselwirkung}
+
+	Ein freies Feld ist weder unbewegt noch physikalisch wirkungslos.
+	Es kann Energie und Impuls tragen und sich durch den Raum ausbreiten.
+
+	\emph{Frei} bedeutet lediglich, dass seine Wechselwirkung mit anderen
+	Feldern in der betrachteten Gleichung nicht berücksichtigt wird.
+
+	Freie Felder bilden den mathematischen Ausgangspunkt. Reale
+	Streu-, Emissions- und Absorptionsprozesse erfordern zusätzlich eine
+	Kopplung zwischen den Feldern.
+\end{DidacticBox}
+
+Die Beschreibung durch freie Felder ist dennoch von großer praktischer
+Bedeutung.
+Vor einer Wechselwirkung können einfallende Teilchen häufig
+näherungsweise als freie Zustände behandelt werden.
+Nach der Wechselwirkung entfernen sich die erzeugten oder gestreuten
+Teilchen wieder voneinander und können erneut näherungsweise durch freie
+Zustände beschrieben werden.
+
+Die eigentliche Wechselwirkung findet zwischen diesen beiden
+Grenzsituationen statt.
+Gerade diese Trennung bildet später die Grundlage für die Berechnung von
+Streuprozessen.
+
+\subsubsection*{Die freie Dirac-Gleichung in kovarianter Form}
+
+In Kapitel VII wurde die Dirac-Gleichung in einer Form behandelt, die
+der zeitabhängigen Schrödingergleichung ähnelt.
+Für den Übergang zur Quantenelektrodynamik ist eine kompaktere
+Schreibweise zweckmäßig.
+
+Die freie Dirac-Gleichung\index{Dirac-Gleichung!kovariante Form} kann
+kovariant geschrieben werden als
+
+\begin{equation}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi(x)
+	=
+	0.
+	\label{eq:kovariante_diracgleichung_qed}
+\end{equation}
+
+Die Umformung der Dirac-Gleichung von der Hamiltonform in die kovariante
+Schreibweise wird in
+Anhang~\ref{app:diracgleichung_kovariante_form} schrittweise hergeleitet.
+
+Das Symbol \(\psi(x)\) bezeichnet hier zunächst eine klassische, noch
+nicht quantisierte Dirac-Feldfunktion am Raumzeitpunkt \(x\).
+Diese Schreibweise dient dazu, die kovariante Struktur der
+Bewegungsgleichung einzuführen.
+
+Bei der Quantisierung wird aus dieser Feldfunktion der Feldoperator
+\(\hat{\psi}(x)\), wie in Kapitel VII erläutert.
+Die Ersetzung \(\psi(x)\longrightarrow\hat{\psi}(x)\) verändert jedoch
+nicht die hier eingeführte kovariante Form der Dirac-Gleichung.
+Sie erweitert die Bedeutung des Feldes, nicht seine relativistische
+mathematische Struktur.
+
+Die kompakte Gleichung enthält dieselbe freie relativistische Dynamik wie
+die bereits bekannte Hamiltonform der Dirac-Gleichung.
+Sie ordnet Raum und Zeit jedoch in einer gemeinsamen
+vierdimensionalen Schreibweise an.
+
+Dazu fasst man Zeit und Raum in einer
+Viererkoordinate\index{Viererkoordinate} zusammen:
+
+\begin{equation}
+	x^\mu
+	=
+	\left(ct,\mathbf r\right),
+	\qquad
+	\mu=0,1,2,3.
+	\label{eq:viererkoordinate_qed}
+\end{equation}
+
+Der Index \(\mu=0\) bezeichnet die zeitliche Komponente.
+Die Werte \(\mu=1,2,3\) bezeichnen die drei räumlichen Komponenten.
+
+Entsprechend wird die Ableitung nach Raum und Zeit durch den
+Viererableitungsoperator\index{Viererableitung}
+
+\begin{equation}
+	\partial_\mu
+	=
+	\frac{\partial}{\partial x^\mu}
+	\label{eq:viererableitung_qed}
+\end{equation}
+
+zusammengefasst.
+Die Stellung des Viererindex ist dabei nicht beliebig.
+Obere und untere Indizes werden mithilfe der
+Minkowski-Metrik\index{Minkowski-Metrik} ineinander überführt.
+Je nach verwendeter Metrikkonvention können sich beim Anheben oder
+Absenken eines Index die Vorzeichen der räumlichen Komponenten ändern.
+Größen wie \(x^\mu\) und \(x_\mu\), \(A^\mu\) und \(A_\mu\) oder
+\(\partial^\mu\) und \(\partial_\mu\) gehören daher jeweils zusammen,
+sind aber nicht in jeder Komponente einfach identisch.
+Für den weiteren Gedankengang genügt diese Unterscheidung; eine
+ausführliche Tensorrechnung ist hier nicht erforderlich.
+
+Der Ausdruck \(\partial_\mu\psi\) beschreibt damit, wie sich das
+Dirac-Feld in der Raumzeit verändert.
+
+In Gleichung~\eqref{eq:kovariante_diracgleichung_qed} tritt der Index
+\(\mu\) zweimal auf.
+Nach der Einsteinschen
+Summenkonvention\index{Einsteinsche Summenkonvention} wird dann über
+alle vier Werte
+summiert:
+
+\begin{equation}
+	\gamma^\mu\partial_\mu
+	=
+	\gamma^0\partial_0
+	+
+	\gamma^1\partial_1
+	+
+	\gamma^2\partial_2
+	+
+	\gamma^3\partial_3.
+	\label{eq:gamma_partial_summe_qed}
+\end{equation}
+
+Die Größen \(\gamma^\mu\) sind die bereits aus der Dirac-Theorie
+stammenden Gamma-Matrizen\index{Gamma-Matrizen}.
+Sie sorgen dafür, dass die vier Komponenten des Dirac-Feldes in der
+richtigen Weise miteinander gekoppelt werden.
+
+Ihre genaue Matrizenform muss hier nicht erneut hergeleitet werden.
+Für den Übergang zur QED ist vor allem ihre physikalische Aufgabe
+wichtig:
+Sie verbinden die Spinstruktur des Elektrons mit seiner Bewegung durch
+die Raumzeit.
+
+Die Bezeichnung \emph{kovariant}\index{Lorentz-Kovarianz} bedeutet,
+dass die Gleichung bei einem Wechsel zwischen gleichförmig bewegten
+Bezugssystemen ihre mathematische Form behält.
+Raum und Zeit erscheinen nicht als voneinander getrennte Bestandteile,
+sondern als Komponenten einer gemeinsamen Raumzeitbeschreibung.
+
+\begin{PhysicsBox}[Bedeutung der kovarianten Dirac-Gleichung]
+	\label{box:bedeutung_kovariante_diracgleichung_qed}
+
+	Die kovariante Dirac-Gleichung beschreibt die freie relativistische
+	Dynamik des Elektronenfeldes:
+
+	\begin{equation*}
+		\left(
+		\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+		-
+		m_{\mathrm e}c^2
+		\right)
+		\psi
+		=
+		0.
+	\end{equation*}
+
+	Die Viererableitung verbindet die zeitliche und räumliche Änderung des
+	Feldes. Die Gamma-Matrizen enthalten die relativistische
+	Spinstruktur.
+
+	Eine elektromagnetische Wechselwirkung ist in dieser freien Gleichung
+	noch nicht enthalten.
+\end{PhysicsBox}
+
+Der letzte Punkt ist entscheidend.
+Gleichung~\eqref{eq:kovariante_diracgleichung_qed} beschreibt, wie sich
+das Dirac-Feld ohne elektromagnetische Kopplung entwickelt.
+In ihr tritt weder ein elektrisches noch ein magnetisches Potential auf.
+
+Für eine Theorie der Wechselwirkung muss die freie Gleichung daher
+erweitert werden.
+
+\subsubsection*{Das elektromagnetische Viererpotential}
+
+In der klassischen Elektrodynamik können das elektrische und das
+magnetische Feld mithilfe zweier Potentiale beschrieben werden:
+dem skalaren elektrischen Potential \(\phi\) und dem magnetischen
+Vektorpotential \(\mathbf A\).
+
+In der relativistischen Schreibweise werden beide zum
+Viererpotential\index{Viererpotential}
+
+\begin{equation}
+	A^\mu
+	=
+	\left(
+	\frac{\phi}{c},
+	\mathbf A
+	\right)
+	\label{eq:viererpotential_qed}
+\end{equation}
+
+zusammengefasst.
+
+Aus den Potentialen ergeben sich die bekannten Felder:
+
+\begin{equation}
+	\mathbf E
+	=
+	-\nabla\phi
+	-
+	\frac{\partial\mathbf A}{\partial t},
+	\qquad
+	\mathbf B
+	=
+	\nabla\times\mathbf A.
+	\label{eq:felder_aus_potentialen_qed}
+\end{equation}
+
+Das Viererpotential ist deshalb die natürliche relativistische Größe,
+mit der das Dirac-Feld an die elektromagnetische Wechselwirkung
+gekoppelt werden kann.
+
+An dieser Stelle genügt zunächst diese strukturelle Aussage.
+Die genaue Kopplung wird nicht durch ein beliebiges Hinzufügen des
+Potentials festgelegt.
+Sie muss mit der Relativitätstheorie, der Ladungserhaltung und der
+Quantenmechanik vereinbar sein.
+
+Zudem ist das Viererpotential nicht eindeutig bestimmt.
+Verschiedene Potentiale können zu denselben messbaren elektrischen und
+magnetischen Feldern führen.
+Diese Freiheit wird als Eichfreiheit\index{Eichfreiheit} bezeichnet.
+Sie ist kein mathematischer Mangel, sondern der Schlüssel zur Form der
+elektromagnetischen Wechselwirkung.
+
+\subsubsection*{Was eine Wechselwirkungstheorie ergänzen muss}
+
+Bei freien Feldern können die Gleichungen für das Dirac-Feld und das
+elektromagnetische Feld zunächst getrennt betrachtet werden.
+In der Quantenelektrodynamik ist diese Trennung nicht mehr vollständig
+möglich.
+
+Das elektromagnetische Feld beeinflusst die zeitliche und räumliche
+Entwicklung des Dirac-Feldes.
+Umgekehrt ist die elektrische Ladung des Dirac-Feldes eine Quelle des
+elektromagnetischen Feldes.
+
+Beide Felder müssen daher durch einen gemeinsamen Wechselwirkungsterm
+miteinander verbunden werden.
+
+\begin{PhysicsBox}[Von den freien Feldern zur QED]
+	\label{box:von_freien_feldern_zur_qed}
+
+	Die Struktur der Quantenelektrodynamik lässt sich zunächst symbolisch
+	als Summe dreier Bestandteile schreiben:
+
+	\begin{equation*}
+		\begin{aligned}
+			\text{QED}
+			&=
+			\text{freies Dirac-Feld}
+			\\
+			&\quad+
+			\text{freies elektromagnetisches Feld}
+			\\
+			&\quad+
+			\text{Wechselwirkung}.
+		\end{aligned}
+	\end{equation*}
+
+	Die freien Gleichungen legen fest, wie sich beide Felder ohne Kopplung
+	entwickeln. Der Wechselwirkungsterm bestimmt, wie Elektronen,
+	Positronen und Photonen an elektromagnetischen Prozessen beteiligt
+	sind.
+\end{PhysicsBox}
+
+Damit ist die Aufgabe für den nächsten Schritt klar.
+Gesucht ist keine beliebige Kopplung, sondern eine mathematisch
+eindeutige Erweiterung der freien Dirac-Gleichung.
+
+Die entscheidende Forderung lautet, dass die physikalischen Aussagen
+unverändert bleiben, wenn die Phase des Dirac-Feldes an jedem
+Raumzeitpunkt in geeigneter Weise verändert wird.
+Diese Forderung führt zur lokalen
+Eichsymmetrie\index{Eichsymmetrie!lokale}.
+
+Im nächsten Abschnitt wird gezeigt, warum gerade diese Symmetrie das
+elektromagnetische Viererpotential notwendig macht und wie daraus die
+Kopplung zwischen dem Dirac-Feld und dem elektromagnetischen Feld
+entsteht.

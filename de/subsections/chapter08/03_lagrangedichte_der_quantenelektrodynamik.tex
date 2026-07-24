@@ -1,0 +1,340 @@
+\subsection{Die Lagrangedichte der Quantenelektrodynamik}
+\label{subsec:lagrangedichte_quantenelektrodynamik}
+
+Im vorangegangenen Abschnitt wurde gezeigt, wie die lokale
+\(U(1)\)-Eichsymmetrie zur kovarianten Ableitung und damit zur
+elektromagnetischen Kopplung führt. Nun sollen das Dirac-Feld, das
+elektromagnetische Feld und ihre Wechselwirkung nicht mehr getrennt
+nebeneinanderstehen.
+
+Die zentrale Leitfrage dieses Abschnitts lautet daher:
+
+\begin{quote}
+	\textbf{Wie lässt sich die gesamte Quantenelektrodynamik -- freies
+	Elektronenfeld, freies elektromagnetisches Feld und ihre Wechselwirkung
+	-- in einer einzigen mathematischen Struktur zusammenfassen?}
+\end{quote}
+
+Diese Aufgabe übernimmt die
+Lagrangedichte\index{Lagrangedichte}\index{Quantenelektrodynamik!Lagrangedichte}.
+Sie ist der kompakte mathematische Bauplan der Theorie.
+
+\subsubsection*{Ein mathematischer Bauplan für die Theorie}
+
+Eine Feldtheorie muss festlegen, wie sich ihre Felder ohne äußeren
+Eingriff entwickeln und wie sie einander beeinflussen. Die
+Lagrangedichte \(\mathcal L\) fasst genau diese Informationen für jeden
+Raumzeitpunkt zusammen.
+
+Ihre Grundidee lässt sich symbolisch schreiben als
+
+\begin{equation*}
+	\text{Lagrangedichte}
+	\longrightarrow
+	\text{Bewegungsgleichungen und Wechselwirkungen}.
+\end{equation*}
+
+Die Lagrangedichte selbst ist keine direkt gemessene Größe. Aus ihr
+lassen sich mithilfe des Wirkungsprinzips und der
+Euler-Lagrange-Gleichungen für Felder\index{Euler-Lagrange-Gleichungen!Felder}
+die Bewegungsgleichungen der Theorie gewinnen. Für den physikalischen
+Gedankengang genügt diese Aussage; eine vollständige Variationsrechnung
+ist im Haupttext nicht erforderlich.
+
+Im Folgenden werden weiterhin SI-Einheiten verwendet. Damit bleiben die
+Faktoren \(c\), \(\hbar\) und \(\mu_0\) sichtbar und die Formeln schließen
+unmittelbar an die Konventionen aus
+Abschnitt~\ref{subsec:eichsymmetrie_elektromagnetische_wechselwirkung}
+an. Natürliche Einheiten würden dieselbe Physik beschreiben, hier aber
+lediglich diese Konstanten unterdrücken.
+
+\subsubsection*{Das Dirac-adjungierte Feld}
+
+Um das Dirac-Feld in einer relativistisch geeigneten Lagrangedichte zu
+verwenden, benötigt man neben \(\psi\) das
+Dirac-adjungierte Feld\index{Dirac-adjungiertes Feld}
+
+\begin{equation}
+	\bar{\psi}
+	=
+	\psi^\dagger\gamma^0.
+	\label{eq:dirac_adjunktion_qed}
+\end{equation}
+
+Dabei bezeichnet \(\psi^\dagger\) das komplex konjugierte und
+transponierte Dirac-Feld. Der zusätzliche Faktor \(\gamma^0\) sorgt
+dafür, dass sich Kombinationen wie \(\bar{\psi}\psi\) unter
+Lorentz-Transformationen in der benötigten Weise verhalten.
+\(\bar{\psi}\) ist also kein neues physikalisches Feld, sondern eine an
+die relativistische Spinorstruktur angepasste Schreibweise.
+
+Wie bereits in Abschnitt~\ref{subsec:freie_wechselwirkende_quantenfelder}
+erläutert, wird die mathematische Struktur zunächst mit \(\psi\) und
+\(\bar{\psi}\) notiert. In der quantisierten Theorie werden die
+entsprechenden Größen als Feldoperatoren verstanden.
+
+\subsubsection*{Drei physikalische Beiträge}
+
+Die in Abschnitt~\ref{subsec:freie_wechselwirkende_quantenfelder}
+vorbereitete Gliederung wird durch die Lagrangedichte mathematisch
+konkret:
+
+\begin{equation}
+	\mathcal L_{\mathrm{QED}}
+	=
+	\mathcal L_{\mathrm D}
+	+
+	\mathcal L_{\mathrm{EM}}
+	+
+	\mathcal L_{\mathrm{int}}.
+	\label{eq:zerlegung_lagrangedichte_qed}
+\end{equation}
+
+Jeder Term erfüllt eine eigene physikalische Aufgabe: Der erste
+beschreibt das freie Dirac-Feld, der zweite das freie elektromagnetische
+Feld und der dritte die Kopplung zwischen beiden.
+
+\subsubsection*{Das freie Dirac-Feld}
+
+Der erste Beitrag muss die relativistische Bewegung, die Masse und die
+Spinstruktur des Elektronenfeldes enthalten. Diese Informationen werden
+in der freien Dirac-Lagrangedichte zusammengefasst:
+
+\begin{equation}
+	\mathcal L_{\mathrm D}
+	=
+	\bar{\psi}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi.
+	\label{eq:lagrangedichte_freies_diracfeld_qed}
+\end{equation}
+
+Der Ableitungsterm beschreibt die Bewegung des Feldes durch die
+Raumzeit und enthält über die Gamma-Matrizen seine relativistische
+Spinstruktur. Der Massenterm legt die Ruhemasse des Elektrons fest. Aus
+diesem Teil der Lagrangedichte folgt die freie Dirac-Gleichung, die
+bereits in Abschnitt~\ref{subsec:freie_wechselwirkende_quantenfelder}
+eingeführt wurde; sie muss hier nicht erneut hergeleitet werden.
+
+\subsubsection*{Das freie elektromagnetische Feld}
+
+Auch das elektromagnetische Feld benötigt einen eigenen dynamischen
+Term. Er muss elektrische und magnetische Felder beschreiben können,
+ohne bereits eine Ladung oder einen Strom als Quelle vorauszusetzen.
+Mit dem in Abschnitt~\ref{subsec:eichsymmetrie_elektromagnetische_wechselwirkung}
+eingeführten Feldstärketensor lautet dieser Beitrag
+
+\begin{equation}
+	\mathcal L_{\mathrm{EM}}
+	=
+	-
+	\frac{1}{4\mu_0}
+	F_{\mu\nu}F^{\mu\nu}.
+	\label{eq:lagrangedichte_freies_em_feld_qed}
+\end{equation}
+
+Die Kontraktion \(F_{\mu\nu}F^{\mu\nu}\) verbindet alle Komponenten des
+elektrischen und magnetischen Feldes zu einer Lorentz-invarianten
+Größe. Der Faktor \(\mu_0\) und das Vorzeichen gehören zur hier
+verwendeten SI-Konvention mit der Minkowski-Signatur \((+,-,-,-)\).
+Physikalisch erzeugt dieser Term die Dynamik des freien
+elektromagnetischen Feldes und damit die Maxwell-Gleichungen ohne
+Quellen.
+
+\subsubsection*{Die Kopplung von Materie und elektromagnetischem Feld}
+
+Die beiden freien Terme beschreiben noch keine gegenseitige
+Beeinflussung. Entscheidend ist deshalb die Frage, an welcher Stelle
+das elektromagnetische Feld in die Dynamik des geladenen Dirac-Feldes
+eintritt.
+
+Wie in Abschnitt~\ref{subsec:eichsymmetrie_elektromagnetische_wechselwirkung}
+gezeigt wurde, ersetzt die minimale Kopplung im Dirac-Term
+\(\partial_\mu\) durch \(D_\mu\). Setzt man
+Gleichung~\eqref{eq:kovariante_ableitung_qed} ein, wird ohne lange
+Umformung sichtbar:
+
+\begin{equation}
+	\begin{aligned}
+	&\bar{\psi}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu D_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi
+	\\[4pt]
+	&\qquad=
+	\mathcal L_{\mathrm D}
+	-
+	qc\,\bar{\psi}\gamma^\mu\psi A_\mu.
+	\end{aligned}
+	\label{eq:minimale_kopplung_lagrangedichte_qed}
+\end{equation}
+
+Die minimale Kopplung verändert also nicht nur ein Symbol in der
+Ableitung. Sie verbindet das Dirac-Feld unmittelbar mit dem
+Viererpotential und erzeugt dadurch den fundamentalen
+Wechselwirkungsterm der QED.
+
+Die Kombination des Dirac-Feldes, die dabei auftritt, besitzt eine
+anschauliche Bedeutung. Der elektrische
+Viererstrom\index{Viererstrom!Dirac-Feld} ist
+
+\begin{equation}
+	j^\mu
+	=
+	qc\,\bar{\psi}\gamma^\mu\psi
+	=
+	\left(c\rho,\mathbf j\right).
+	\label{eq:viererstrom_diracfeld_qed}
+\end{equation}
+
+Die zeitliche Komponente enthält die elektrische Ladungsdichte
+\(\rho\), die drei räumlichen Komponenten bilden die elektrische
+Stromdichte \(\mathbf j\). Das Vorzeichen der Ladung steckt bereits in
+\(q\); für das Elektronenfeld gilt \(q=-e\).
+
+Damit kann der Wechselwirkungsterm besonders übersichtlich geschrieben
+werden als
+
+\begin{equation}
+	\mathcal L_{\mathrm{int}}
+	=
+	-j^\mu A_\mu
+	=
+	-qc\,\bar{\psi}\gamma^\mu\psi A_\mu.
+	\label{eq:wechselwirkungsterm_qed}
+\end{equation}
+
+Wegen \(A_\mu=(\phi/c,-\mathbf A)\) verbindet die Kontraktion
+\(j^\mu A_\mu\) sowohl die Ladungsdichte mit dem elektrischen Potential
+als auch die Stromdichte mit dem Vektorpotential:
+
+\begin{equation*}
+	j^\mu A_\mu
+	=
+	\rho\phi
+	-
+	\mathbf j\cdot\mathbf A.
+\end{equation*}
+
+Ein einziger Kopplungsterm beschreibt damit die elementare
+Wechselwirkung zwischen dem geladenen Dirac-Feld und dem
+elektromagnetischen Feld. Er wurde nicht unabhängig hinzugefügt,
+sondern entsteht aus dem in
+Abschnitt~\ref{subsec:eichsymmetrie_elektromagnetische_wechselwirkung}
+begründeten Übergang
+\(\partial_\mu\longrightarrow D_\mu\).
+
+\subsubsection*{Die vollständige QED-Lagrangedichte}
+
+Nun können alle Bestandteile in einer einzigen Formel zusammengeführt
+werden:
+
+\begin{equation}
+	\begin{aligned}
+	\mathcal L_{\mathrm{QED}}
+	&=
+	\bar{\psi}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu D_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi
+	-
+	\frac{1}{4\mu_0}F_{\mu\nu}F^{\mu\nu}
+	\\[4pt]
+	&=
+	\mathcal L_{\mathrm D}
+	+
+	\mathcal L_{\mathrm{EM}}
+	+
+	\mathcal L_{\mathrm{int}}.
+	\end{aligned}
+	\label{eq:lagrangedichte_qed}
+\end{equation}
+
+In der ersten Zeile steckt der Wechselwirkungsterm bereits in
+\(D_\mu\). Die zweite Zeile macht die physikalische Zerlegung sichtbar.
+Die Gleichung enthält somit die freie Bewegung des Elektronenfeldes,
+die Ausbreitung des elektromagnetischen Feldes und die Kopplung beider
+Felder.
+
+\begin{PhysicsBox}[Die gesamte QED in drei Termen]
+	\label{box:qed_drei_terme}
+
+	Die Lagrangedichte der Quantenelektrodynamik besitzt die grundlegende
+	Struktur
+
+	\begin{equation*}
+		\boxed{
+		\text{Materiefeld}
+		+
+		\text{Eichfeld}
+		+
+		\text{Kopplung}
+		}.
+	\end{equation*}
+
+	\(\mathcal L_{\mathrm D}\) beschreibt das Elektronenfeld,
+	\(\mathcal L_{\mathrm{EM}}\) das elektromagnetische Feld und
+	\(\mathcal L_{\mathrm{int}}\) ihre Wechselwirkung. Wenige Terme legen
+	damit die physikalische Struktur der gesamten Theorie fest.
+\end{PhysicsBox}
+
+\subsubsection*{Von der Lagrangedichte zu physikalischen Vorhersagen}
+
+Wendet man die Euler-Lagrange-Gleichungen auf
+\(\mathcal L_{\mathrm{QED}}\) an, erhält man zwei bereits bekannte Seiten
+derselben Wechselwirkung:
+
+\begin{itemize}
+	\item Die Variation nach dem Dirac-adjungierten Feld \(\bar{\psi}\)
+	      liefert die Dirac-Gleichung mit elektromagnetischer Kopplung.
+	\item Die Variation nach \(\psi\) führt zur adjungierten Dirac-Gleichung.
+	\item Die Variation von \(A_\mu\) liefert die Maxwell-Gleichungen mit
+	      \(j^\mu\) als Quelle.
+\end{itemize}
+
+Dabei werden \(\psi\) und \(\bar{\psi}\) in der Variationsrechnung als
+unabhängige Feldvariablen behandelt.
+
+Das elektromagnetische Feld beeinflusst also die Bewegung des
+Dirac-Feldes, während Ladung und Strom des Dirac-Feldes zugleich das
+elektromagnetische Feld beeinflussen. Gerade diese wechselseitige
+Verknüpfung macht aus zwei freien Feldtheorien die Quantenelektrodynamik.
+
+Die Lagrangedichte ist dennoch nicht selbst das Ergebnis eines
+Experiments. Sie ist der Ausgangspunkt, aus dem später
+Streuamplituden\index{Streuamplitude},
+Wechselwirkungswahrscheinlichkeiten sowie die Emission und Absorption
+von Photonen berechnet werden. Ebenso führt sie zu Vorhersagen für
+Elektron-Positron-Prozesse und für Präzisionskorrekturen wie die kleine
+Abweichung des magnetischen Moments des Elektrons vom Dirac-Wert.
+
+Damit ist das mathematische Fundament gelegt. Für eine konkrete
+Berechnung muss nun derjenige Teil der Lagrangedichte genauer betrachtet
+werden, der die Felder unmittelbar miteinander verbindet. Die nächste
+Leitfrage lautet deshalb:
+
+\begin{quote}
+	\textbf{Welcher Teil der QED-Lagrangedichte beschreibt das elementare
+	Wechselwirkungsereignis zwischen Elektron, Positron und Photon?}
+\end{quote}
+
+Diese Frage führt zum QED-Vertex, dem elementaren Baustein der
+Wechselwirkung:
+
+\begin{equation*}
+	\mathcal L_{\mathrm{QED}}
+	\longrightarrow
+	\mathcal L_{\mathrm{int}}
+	\longrightarrow
+	\text{QED-Vertex}.
+\end{equation*}

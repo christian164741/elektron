@@ -1,0 +1,557 @@
+\subsection{Eichsymmetrie und elektromagnetische Wechselwirkung}
+\label{subsec:eichsymmetrie_elektromagnetische_wechselwirkung}
+
+Im vorangegangenen Abschnitt wurde die freie kovariante
+Dirac-Gleichung betrachtet. Außerdem wurde das elektromagnetische
+Viererpotential als die natürliche relativistische Größe eingeführt,
+über die das Dirac-Feld an das elektromagnetische Feld gekoppelt werden
+kann.
+
+Noch ist jedoch nicht geklärt, warum diese Kopplung gerade eine
+bestimmte mathematische Form besitzen muss. Die zentrale Leitfrage
+dieses Abschnitts lautet daher:
+
+\begin{quote}
+	\textbf{Warum besitzt die elektromagnetische Wechselwirkung gerade die
+	mathematische Form, die in der Quantenelektrodynamik verwendet wird?}
+\end{quote}
+
+Die Antwort liegt in einer Symmetrie der Phase des Dirac-Feldes. Die
+Forderung nach lokaler \(U(1)\)-Eichsymmetrie führt zunächst zur
+Einführung eines \(U(1)\)-Eichfeldes. Identifiziert man die zugehörige
+\(U(1)\)-Ladung \(q\) mit der elektrischen Ladung, erhält dieses Eichfeld
+die Bedeutung des elektromagnetischen Viererpotentials und beschreibt
+die elektromagnetische Kopplung.
+
+\subsubsection*{Eine globale Phasentransformation}
+
+Zunächst wird das Dirac-Feld mit einem überall gleichen komplexen
+Phasenfaktor multipliziert:
+
+\begin{equation}
+	\psi(x)
+	\longrightarrow
+	\psi'(x)
+	=
+	\exp\left(
+	\frac{\mathrm{i}q\chi}{\hbar}
+	\right)
+	\psi(x),
+	\qquad
+	\chi=\text{konstant}.
+	\label{eq:globale_phasentransformation_qed}
+\end{equation}
+
+Dabei bezeichnet \(q\) zunächst die zu dieser \(U(1)\)-Transformation
+gehörende Ladung. In der QED wird sie mit der elektrischen Ladung
+identifiziert; für das Elektronenfeld gilt dann \(q=-e\). Die Größe
+\(\chi\) ist hier zunächst eine Konstante.
+
+Eine solche Transformation verändert nur die absolute Phase des
+Feldes. Messbare Größen bleiben unverändert, weil sich der Phasenfaktor
+mit seinem komplex konjugierten Faktor aufhebt. Für die Dichte gilt
+beispielsweise
+
+\begin{equation*}
+	\psi'^{\dagger}\psi'
+	=
+	\exp\left(-\frac{\mathrm{i}q\chi}{\hbar}\right)
+	\exp\left(\frac{\mathrm{i}q\chi}{\hbar}\right)
+	\psi^{\dagger}\psi
+	=
+	\psi^{\dagger}\psi.
+\end{equation*}
+
+Die absolute Phase einer Wellen- oder Feldfunktion ist daher nicht
+messbar. Physikalisch beobachtbar sind nur Größen, in denen sich diese
+gemeinsame Phase herauskürzt.
+
+Die Phasenfaktoren
+
+\begin{equation*}
+	\exp(\mathrm{i}\alpha),
+	\qquad
+	\alpha\in\mathbb{R},
+	\qquad
+	\left|\exp(\mathrm{i}\alpha)\right|=1,
+\end{equation*}
+
+bilden die Symmetriegruppe \(U(1)\)\index{U(1)-Symmetrie}. Der Name
+bezeichnet hier lediglich die Menge aller komplexen Phasenfaktoren mit
+dem Betrag eins. Eine weitergehende Gruppentheorie ist für den
+folgenden Gedankengang nicht erforderlich.
+
+\begin{DidacticBox}[Was bedeutet globale \(U(1)\)-Symmetrie?]
+	\label{box:globale_u1_symmetrie_qed}
+
+	\emph{Global} bedeutet, dass an jedem Raumzeitpunkt derselbe
+	Phasenfaktor verwendet wird.
+
+	Die Transformation verändert die mathematische Darstellung des
+	Dirac-Feldes, aber keine physikalische Vorhersage. Die freie
+	Dirac-Gleichung besitzt deshalb eine globale
+	\(U(1)\)-Symmetrie\index{Eichsymmetrie!globale}.
+\end{DidacticBox}
+
+Da \(\chi\) konstant ist, verschwindet ihre Ableitung. Deshalb gilt
+
+\begin{equation}
+	\partial_\mu\psi'(x)
+	=
+	\exp\left(
+	\frac{\mathrm{i}q\chi}{\hbar}
+	\right)
+	\partial_\mu\psi(x).
+	\label{eq:ableitung_globale_phase_qed}
+\end{equation}
+
+Die freie Dirac-Gleichung erhält dadurch lediglich denselben
+Phasenfaktor auf beiden Seiten. Ihre Form und ihre physikalischen
+Aussagen bleiben unverändert.
+
+\subsubsection*{Von der globalen zur lokalen Symmetrie}
+
+Nun wird die Symmetrieforderung verschärft. Die Phase soll nicht mehr
+überall gleich sein, sondern vom Raumzeitpunkt abhängen:
+
+\begin{equation}
+	\chi
+	\longrightarrow
+	\chi(x).
+	\label{eq:phase_wird_lokal_qed}
+\end{equation}
+
+Die lokale Phasentransformation\index{Phasentransformation!lokale}
+lautet damit
+
+\begin{equation}
+	\psi(x)
+	\longrightarrow
+	\psi'(x)
+	=
+	\exp\left(
+	\frac{\mathrm{i}q\chi(x)}{\hbar}
+	\right)
+	\psi(x).
+	\label{eq:lokale_phasentransformation_qed}
+\end{equation}
+
+Jetzt wirkt die Ableitung nicht nur auf \(\psi(x)\), sondern auch auf
+den ortsabhängigen Phasenfaktor. Mit der Produkt- und der Kettenregel
+folgt
+
+\begin{equation}
+	\begin{aligned}
+		\partial_\mu\psi'(x)
+		&=
+		\partial_\mu
+		\left[
+		\exp\left(
+		\frac{\mathrm{i}q\chi(x)}{\hbar}
+		\right)
+		\psi(x)
+		\right]
+		\\[4pt]
+		&=
+		\exp\left(
+		\frac{\mathrm{i}q\chi(x)}{\hbar}
+		\right)
+		\left[
+		\partial_\mu\psi(x)
+		+
+		\frac{\mathrm{i}q}{\hbar}
+		\left(\partial_\mu\chi(x)\right)
+		\psi(x)
+		\right].
+	\end{aligned}
+	\label{eq:ableitung_lokale_phase_qed}
+\end{equation}
+
+Der zweite Term in der eckigen Klammer ist neu. Er verschwindet nur,
+wenn \(\chi\) konstant ist. Für eine lokale Phase kann die gewöhnliche
+Ableitung daher nicht in derselben einfachen Weise transformieren wie
+das Feld selbst.
+
+Setzt man Gleichung~\eqref{eq:ableitung_lokale_phase_qed} in die freie
+kovariante Dirac-Gleichung ein, erhält man
+
+\begin{equation}
+	\begin{aligned}
+	&\left(
+	\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi'(x)
+	\\[4pt]
+	&\quad=
+	\exp\left(
+	\frac{\mathrm{i}q\chi(x)}{\hbar}
+	\right)
+	\left[
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi(x)
+	-
+	qc\,\gamma^\mu
+	\left(\partial_\mu\chi(x)\right)
+	\psi(x)
+	\right].
+	\end{aligned}
+	\label{eq:freie_diracgleichung_lokal_transformiert_qed}
+\end{equation}
+
+Selbst wenn \(\psi(x)\) die freie Dirac-Gleichung erfüllt, bleibt der
+zusätzliche letzte Term bestehen. Eine lokale Phasenänderung zerstört
+somit zunächst die einfache Form der freien Gleichung.
+
+\subsubsection*{Das Eichfeld und die kovariante Ableitung}
+
+Soll die lokale Phasentransformation dennoch eine Symmetrie sein, muss
+der zusätzliche Ableitungsterm ausgeglichen werden. Dazu wird ein
+weiteres Feld benötigt: das \(U(1)\)-Eichfeld\index{Eichfeld}
+\(A_\mu(x)\).
+
+In Abschnitt~\ref{subsec:freie_wechselwirkende_quantenfelder} wurde das
+Viererpotential mit oberem Index als
+\(A^\mu=(\phi/c,\mathbf A)\) eingeführt. Mit der im mathematischen
+Anhang verwendeten Minkowski-Signatur \((+,-,-,-)\) gilt entsprechend
+
+\begin{equation}
+	A_\mu
+	=
+	\left(
+	\frac{\phi}{c},
+	-\mathbf A
+	\right).
+	\label{eq:viererpotential_unterer_index_qed}
+\end{equation}
+
+An die Stelle der gewöhnlichen Ableitung tritt nun die
+eichkovariante Ableitung\index{kovariante Ableitung!Eichsymmetrie}
+
+\begin{equation}
+	D_\mu
+	=
+	\partial_\mu
+	+
+	\frac{\mathrm{i}q}{\hbar}A_\mu.
+	\label{eq:kovariante_ableitung_qed}
+\end{equation}
+
+Diese Definition ist mit den in
+Abschnitt~\ref{subsec:freie_wechselwirkende_quantenfelder} verwendeten
+SI-Einheiten konsistent. Da \(A^0=\phi/c\) gewählt wurde, besitzen alle
+Komponenten von \(A_\mu\) die Einheit eines Impulses pro Ladung. Der Ausdruck
+\(qA_\mu/\hbar\) besitzt daher wie \(\partial_\mu\) die Einheit einer
+inversen Länge. Ein zusätzlicher Faktor \(c\) ist in
+Gleichung~\eqref{eq:kovariante_ableitung_qed} nicht erforderlich.
+
+Der Buchstabe \(D\) erinnert daran, dass nicht mehr nur die räumliche
+oder zeitliche Änderung des Feldes gemessen wird. Die Ableitung enthält
+zusätzlich den Einfluss des Eichfeldes.
+
+\subsubsection*{Wie sich das Viererpotential transformieren muss}
+
+Damit \(D_\mu\psi\) unter einer lokalen Phasenänderung dieselbe Form
+behält wie \(\psi\), muss sich auch das Viererpotential verändern. Die
+erforderliche Eichtransformation\index{Eichtransformation!Viererpotential}
+lautet
+
+\begin{equation}
+	A_\mu(x)
+	\longrightarrow
+	A'_\mu(x)
+	=
+	A_\mu(x)
+	-
+	\partial_\mu\chi(x).
+	\label{eq:eichtransformation_viererpotential_qed}
+\end{equation}
+
+Mit dieser Transformation lässt sich die gewünschte Eigenschaft direkt
+überprüfen:
+
+\begin{equation}
+	\begin{aligned}
+		D'_\mu\psi'(x)
+		&=
+		\left(
+		\partial_\mu
+		+
+		\frac{\mathrm{i}q}{\hbar}A'_\mu
+		\right)
+		\exp\left(
+		\frac{\mathrm{i}q\chi(x)}{\hbar}
+		\right)
+		\psi(x)
+		\\[4pt]
+		&=
+		\exp\left(
+		\frac{\mathrm{i}q\chi(x)}{\hbar}
+		\right)
+		\left[
+		\partial_\mu
+		+
+		\frac{\mathrm{i}q}{\hbar}
+		\left(
+		A'_\mu
+		+
+		\partial_\mu\chi
+		\right)
+		\right]
+		\psi(x)
+		\\[4pt]
+		&=
+		\exp\left(
+		\frac{\mathrm{i}q\chi(x)}{\hbar}
+		\right)
+		D_\mu\psi(x).
+	\end{aligned}
+	\label{eq:transformation_kovariante_ableitung_qed}
+\end{equation}
+
+Im letzten Schritt wurde
+\(A'_\mu+\partial_\mu\chi=A_\mu\) verwendet. Der störende Zusatzterm
+aus Gleichung~\eqref{eq:ableitung_lokale_phase_qed} wird somit genau
+durch die Transformation des Eichfeldes aufgehoben.
+
+Für das skalare Potential und das Vektorpotential entspricht
+Gleichung~\eqref{eq:eichtransformation_viererpotential_qed} den bekannten
+Transformationen
+
+\begin{equation}
+	\phi'
+	=
+	\phi
+	-
+	\frac{\partial\chi}{\partial t},
+	\qquad
+	\mathbf A'
+	=
+	\mathbf A
+	+
+	\nabla\chi.
+	\label{eq:eichtransformation_potentiale_qed}
+\end{equation}
+
+Die lokale \(U(1)\)-Eichsymmetrie führt damit zunächst zu einem Eichfeld
+mit der Transformationsstruktur eines \(U(1)\)-Viererpotentials.
+Identifiziert man die zugehörige Ladung \(q\) mit der elektrischen
+Ladung, wird \(A_\mu\) als elektromagnetisches Viererpotential gedeutet
+und die Kopplung erhält die Bedeutung der elektromagnetischen
+Wechselwirkung.
+
+\subsubsection*{Das Prinzip der minimalen Kopplung}
+
+Der Übergang von der freien zur wechselwirkenden Dirac-Gleichung wird
+durch eine einzige Ersetzung vollzogen:
+
+\begin{equation}
+	\boxed{
+		\partial_\mu
+		\longrightarrow
+		D_\mu
+	}.
+	\label{eq:minimale_kopplung_qed}
+\end{equation}
+
+Diese Vorschrift heißt minimale Kopplung\index{minimale Kopplung}. Sie
+fügt den einfachsten und fundamentalen Wechselwirkungsterm hinzu, der
+mit der lokalen \(U(1)\)-Eichsymmetrie vereinbar ist, und bildet die
+Grundlage der QED in ihrer üblichen renormierbaren Form.
+
+Wendet man die Ersetzung auf die freie kovariante Dirac-Gleichung aus
+Gleichung~\eqref{eq:kovariante_diracgleichung_qed} an, folgt
+
+\begin{equation}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu D_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi(x)
+	=
+	0.
+	\label{eq:diracgleichung_kovariante_ableitung_qed}
+\end{equation}
+
+Mit Gleichung~\eqref{eq:kovariante_ableitung_qed} ergibt sich daraus
+
+\begin{equation}
+	\left(
+	\mathrm{i}\hbar c\,\gamma^\mu\partial_\mu
+	-
+	qc\,\gamma^\mu A_\mu
+	-
+	m_{\mathrm e}c^2
+	\right)
+	\psi(x)
+	=
+	0.
+	\label{eq:diracgleichung_elektromagnetische_kopplung_qed}
+\end{equation}
+
+Der neue Term \(-qc\,\gamma^\mu A_\mu\) beschreibt die Kopplung
+zwischen dem Dirac-Feld und dem elektromagnetischen Feld. Sein
+Vorzeichen enthält die Ladung \(q\) bereits. Für das Elektronenfeld ist
+also \(q=-e\) einzusetzen.
+
+In der aus Kapitel VII bekannten Hamiltonform entspricht dieselbe
+Ersetzung der Gleichung
+
+\begin{equation}
+	\mathrm{i}\hbar
+	\frac{\partial\psi}{\partial t}
+	=
+	\left[
+	c\,\boldsymbol{\alpha}\cdot
+	\left(
+	\hat{\mathbf p}
+	-
+	q\mathbf A
+	\right)
+	+
+	\beta m_{\mathrm e}c^2
+	+
+	q\phi
+	\right]
+	\psi.
+	\label{eq:diracgleichung_minimale_kopplung_hamiltonform_qed}
+\end{equation}
+
+Damit ist auch in der vertrauten Form sichtbar, dass der Impuls durch
+\(\hat{\mathbf p}-q\mathbf A\) und die Energie durch das skalare
+Potential \(q\phi\) ergänzt werden.
+
+\begin{PhysicsBox}[Lokale Symmetrie bestimmt die Kopplung]
+	\label{box:lokale_symmetrie_bestimmt_kopplung_qed}
+
+	Die Forderung nach lokaler \(U(1)\)-Eichsymmetrie führt zur Einführung
+	eines \(U(1)\)-Eichfeldes und der kovarianten Ableitung. Wird die
+	zugehörige \(U(1)\)-Ladung \(q\) mit der elektrischen Ladung
+	identifiziert, erhält das Eichfeld die Bedeutung des
+	elektromagnetischen Viererpotentials.
+
+	\begin{equation*}
+		\begin{gathered}
+			\text{freie Dirac-Gleichung}
+			\\
+			+\;\text{lokale }U(1)\text{-Symmetrie}
+			\\[4pt]
+			\Downarrow
+			\\[4pt]
+			\partial_\mu\longrightarrow D_\mu
+			\quad\text{mit Eichfeld }A_\mu
+			\\[4pt]
+			\Downarrow
+			\\[4pt]
+			q=\text{elektrische Ladung}
+			\\[4pt]
+			\Downarrow
+			\\[4pt]
+			\text{elektromagnetische Kopplung}.
+		\end{gathered}
+	\end{equation*}
+
+	Das Symmetrieprinzip bestimmt zunächst die mathematische Struktur des
+	\(U(1)\)-Eichfeldes. Durch die Identifikation der \(U(1)\)-Ladung mit
+	der elektrischen Ladung wird daraus die elektromagnetische Kopplung.
+\end{PhysicsBox}
+
+\subsubsection*{Der elektromagnetische Feldstärketensor}
+
+Das Viererpotential beschreibt das Eichfeld. Die messbaren elektrischen
+und magnetischen Felder werden in der relativistischen Schreibweise im
+elektromagnetischen Feldstärketensor\index{Feldstärketensor!elektromagnetischer}
+
+\begin{equation}
+	F_{\mu\nu}
+	=
+	\partial_\mu A_\nu
+	-
+	\partial_\nu A_\mu
+	\label{eq:feldstaerketensor_qed}
+\end{equation}
+
+zusammengefasst. Die Komponenten mit einem zeitlichen und einem
+räumlichen Index enthalten das elektrische Feld. Die rein räumlichen
+Komponenten enthalten das magnetische Feld. Eine ausführliche
+Komponentendarstellung ist für den weiteren Gedankengang nicht
+erforderlich.
+
+Der Feldstärketensor bleibt unter der Eichtransformation des Potentials
+unverändert. Einsetzen von
+Gleichung~\eqref{eq:eichtransformation_viererpotential_qed} liefert
+
+\begin{equation}
+	\begin{aligned}
+		F'_{\mu\nu}
+		&=
+		\partial_\mu
+		\left(A_\nu-\partial_\nu\chi\right)
+		-
+		\partial_\nu
+		\left(A_\mu-\partial_\mu\chi\right)
+		\\[4pt]
+		&=
+		F_{\mu\nu}
+		-
+		\partial_\mu\partial_\nu\chi
+		+
+		\partial_\nu\partial_\mu\chi
+		\\[4pt]
+		&=
+		F_{\mu\nu}.
+	\end{aligned}
+	\label{eq:feldstaerketensor_eichinvariant_qed}
+\end{equation}
+
+Im letzten Schritt wurde verwendet, dass gewöhnliche partielle
+Ableitungen vertauschbar sind. Unterschiedliche Potentiale, die durch
+eine Eichtransformation miteinander verbunden sind, beschreiben somit
+dieselben elektrischen und magnetischen Felder.
+
+\subsubsection*{Von der Symmetrie zur vollständigen Theorie}
+
+Die Argumentation dieses Abschnitts lässt sich als geschlossene Kette
+zusammenfassen:
+
+\begin{equation}
+	\begin{aligned}
+		\text{globale Phasensymmetrie}
+		&\longrightarrow
+		\text{lokale Phasensymmetrie}
+		\\
+		&\longrightarrow
+		\text{zusätzlicher Ableitungsterm}
+		\\
+		&\longrightarrow
+		\text{Eichfeld }A_\mu
+		\longrightarrow
+		D_\mu
+		\\
+		&\longrightarrow
+		\text{Identifikation }q=\text{elektrische Ladung}
+		\\
+		&\longrightarrow
+		\text{elektromagnetische Wechselwirkung}.
+	\end{aligned}
+	\label{eq:leitstruktur_eichsymmetrie_qed}
+\end{equation}
+
+Damit ist erklärt, wie die lokale \(U(1)\)-Eichsymmetrie zu einem
+\(U(1)\)-Eichfeld und zur kovarianten Ableitung führt. Identifiziert man
+die \(U(1)\)-Ladung mit der elektrischen Ladung, beschreibt diese
+Struktur die elektromagnetische Wechselwirkung; die minimale Kopplung
+liefert dabei den fundamentalen Wechselwirkungsterm der üblichen
+renormierbaren QED.
+
+Für die vollständige Quantenelektrodynamik fehlt jedoch noch eine
+gemeinsame mathematische Struktur, die das freie Dirac-Feld, das freie
+elektromagnetische Feld und ihre Wechselwirkung zugleich enthält.
+Genau diese Aufgabe übernimmt die Lagrangedichte der
+Quantenelektrodynamik, die im nächsten Abschnitt eingeführt wird.
